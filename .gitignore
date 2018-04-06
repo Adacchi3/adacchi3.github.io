@@ -1,5 +1,7 @@
 # Created by https://www.gitignore.io/api/emacs,macos
 
+_site/*
+
 ### Emacs ###
 # -*- mode: gitignore; -*-
 *~
