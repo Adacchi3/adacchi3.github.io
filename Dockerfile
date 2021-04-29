@@ -1,12 +1,13 @@
 FROM node:14.16.1-alpine
 
+ENV TZ=Asia/Tokyo
 WORKDIR /app
 
-ADD package.json /app
-ADD yarn.lock /app
+COPY package.json /app
+COPY yarn.lock /app
 
 RUN yarn install
 
-ADD . /app
+COPY . /app
 
 CMD ["yarn", "dev"]
