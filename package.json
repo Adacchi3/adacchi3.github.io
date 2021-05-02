@@ -10,9 +10,13 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx,.json .",
-    "prepare": "husky install"
+    "apollo:download": "apollo client:download-schema src/graphql/contentful/schema.graphql",
+    "prepare": "husky install",
+    "generate": "graphql-codegen --config codegen.yml"
   },
   "dependencies": {
+    "@apollo/client": "3.3.16",
+    "graphql": "15.5.0",
     "next": "10.2.0",
     "next-plugin-preact": "3.0.4",
     "preact": "10.5.13",
@@ -22,9 +26,15 @@
     "react-ssr-prepass": "npm:preact-ssr-prepass"
   },
   "devDependencies": {
+    "@graphql-codegen/cli": "1.21.4",
+    "@graphql-codegen/introspection": "1.18.2",
+    "@graphql-codegen/typescript": "1.22.0",
+    "@graphql-codegen/typescript-operations": "1.17.16",
+    "@graphql-codegen/typescript-react-apollo": "2.2.4",
     "@types/react": "17.0.4",
     "@typescript-eslint/eslint-plugin": "4.22.0",
     "@typescript-eslint/parser": "4.22.0",
+    "apollo": "2.32.11",
     "autoprefixer": "10.2.5",
     "cssnano": "5.0.2",
     "eslint": "7.25.0",
