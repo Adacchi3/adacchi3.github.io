@@ -66,4 +66,15 @@ query Top($preview: Boolean, $locale: String!, $authorId: String!) {
       awardDate
     }
   }
+  academicBackgroundCollection(
+    preview: $preview
+    locale: $locale
+    where: { user: { sys: { id: $authorId } } }
+  ) {
+    items {
+      organization
+      startDate
+      endDate
+    }
+  }
 }
