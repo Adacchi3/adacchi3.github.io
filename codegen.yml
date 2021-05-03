@@ -1,5 +1,6 @@
 overwrite: true
 schema: "src/graphql/contentful/schema.graphql"
+documents: "src/graphql/queries/*.graphql"
 generates:
   src/graphql/generated/graphql.tsx:
     plugins:

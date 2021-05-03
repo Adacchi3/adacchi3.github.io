@@ -6,6 +6,7 @@
   "extends": [
     "eslint:recommended",
     "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:prettier/recommended"
@@ -26,9 +27,18 @@
     "prettier/prettier": [
       "warn",
       {
+        "tabWidth": 2,
         "semi": false,
         "singleQuote": true
       }
     ]
-  }
+  },
+  "overrides": [
+    {
+      "files": ["src/graphql/generated/*.ts", "src/graphql/generated/*.tsx"],
+      "rules": {
+        "@typescript-eslint/explicit-module-boundary-types": "off"
+      }
+    }
+  ]
 }

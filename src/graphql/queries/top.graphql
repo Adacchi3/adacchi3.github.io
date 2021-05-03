@@ -1,0 +1,25 @@
+query Top($preview: Boolean, $locale: String) {
+  fetchedConetnts: achievementCollection(
+    preview: $preview
+    locale: $locale
+    order: publishedDate_DESC
+  ) {
+    items {
+      title
+      link
+      category {
+        name
+      }
+      authorsCollection {
+        items {
+          name
+        }
+      }
+      proceeding
+      publishedDate
+      startPage
+      endPage
+      note
+    }
+  }
+}

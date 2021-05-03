@@ -1,3 +1,5 @@
+import { gql } from '@apollo/client'
+import * as Apollo from '@apollo/client'
 export type Maybe<T> = T | null
 export type Exact<T extends { [key: string]: unknown }> = {
   [K in keyof T]: T[K]
@@ -6,6 +8,7 @@ export type MakeOptional<T, K extends keyof T> = Omit<T, K> &
   { [SubKey in K]?: Maybe<T[SubKey]> }
 export type MakeMaybe<T, K extends keyof T> = Omit<T, K> &
   { [SubKey in K]: Maybe<T[SubKey]> }
+const defaultOptions = {}
 /** All built-in and custom scalars, mapped to their actual values */
 export type Scalars = {
   ID: string
@@ -1273,3 +1276,104 @@ export type CfAuthorNestedFilter = {
   OR?: Maybe<Array<Maybe<CfAuthorNestedFilter>>>
   AND?: Maybe<Array<Maybe<CfAuthorNestedFilter>>>
 }
+
+export type TopQueryVariables = Exact<{
+  preview?: Maybe<Scalars['Boolean']>
+  locale?: Maybe<Scalars['String']>
+}>
+
+export type TopQuery = { __typename?: 'Query' } & {
+  fetchedConetnts?: Maybe<
+    { __typename?: 'AchievementCollection' } & {
+      items: Array<
+        Maybe<
+          { __typename?: 'Achievement' } & Pick<
+            Achievement,
+            | 'title'
+            | 'link'
+            | 'proceeding'
+            | 'publishedDate'
+            | 'startPage'
+            | 'endPage'
+            | 'note'
+          > & {
+              category?: Maybe<
+                { __typename?: 'AchievementCategory' } & Pick<
+                  AchievementCategory,
+                  'name'
+                >
+              >
+              authorsCollection?: Maybe<
+                { __typename?: 'AchievementAuthorsCollection' } & {
+                  items: Array<
+                    Maybe<{ __typename?: 'Author' } & Pick<Author, 'name'>>
+                  >
+                }
+              >
+            }
+        >
+      >
+    }
+  >
+}
+
+export const TopDocument = gql`
+  query Top($preview: Boolean, $locale: String) {
+    fetchedConetnts: achievementCollection(
+      preview: $preview
+      locale: $locale
+      order: publishedDate_DESC
+    ) {
+      items {
+        title
+        link
+        category {
+          name
+        }
+        authorsCollection {
+          items {
+            name
+          }
+        }
+        proceeding
+        publishedDate
+        startPage
+        endPage
+        note
+      }
+    }
+  }
+`
+
+/**
+ * __useTopQuery__
+ *
+ * To run a query within a React component, call `useTopQuery` and pass it any options that fit your needs.
+ * When your component renders, `useTopQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useTopQuery({
+ *   variables: {
+ *      preview: // value for 'preview'
+ *      locale: // value for 'locale'
+ *   },
+ * });
+ */
+export function useTopQuery(
+  baseOptions?: Apollo.QueryHookOptions<TopQuery, TopQueryVariables>
+) {
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useQuery<TopQuery, TopQueryVariables>(TopDocument, options)
+}
+export function useTopLazyQuery(
+  baseOptions?: Apollo.LazyQueryHookOptions<TopQuery, TopQueryVariables>
+) {
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useLazyQuery<TopQuery, TopQueryVariables>(TopDocument, options)
+}
+export type TopQueryHookResult = ReturnType<typeof useTopQuery>
+export type TopLazyQueryHookResult = ReturnType<typeof useTopLazyQuery>
+export type TopQueryResult = Apollo.QueryResult<TopQuery, TopQueryVariables>
