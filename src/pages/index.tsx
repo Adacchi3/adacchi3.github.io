@@ -1,17 +1,31 @@
 import React from 'react'
-import { useTopQuery } from '@graphql/generated/graphql'
+import { GetStaticProps } from 'next'
+import { TopDocument, useTopQuery } from '@graphql/generated/graphql'
+import { addApolloState, initializeApollo } from '@client'
 
-const Top: React.FC = () => {
-  const { data, loading } = useTopQuery({
+export const getStaticProps: GetStaticProps = async () => {
+  const apolloClient = initializeApollo()
+
+  await apolloClient.query({
+    query: TopDocument,
     variables: {
       preview: true,
       locale: 'ja-JP',
     },
   })
 
-  if (loading) {
-    return <p>loading...</p>
-  }
+  return addApolloState(apolloClient, {
+    props: {},
+  })
+}
+
+const Top: React.FC = () => {
+  const { data } = useTopQuery({
+    variables: {
+      preview: true,
+      locale: 'ja-JP',
+    },
+  })
 
   const contents = data?.fetchedConetnts?.items.map((content) => {
     return content?.title
