@@ -1,8 +1,40 @@
-query Top($preview: Boolean, $locale: String) {
-  fetchedConetnts: achievementCollection(
+query Top($preview: Boolean, $locale: String!, $authorId: String!) {
+  me: author(id: $authorId, preview: $preview, locale: $locale) {
+    name
+    nickname
+    description
+    image(preview: $preview, locale: $locale) {
+      url
+    }
+  }
+  contacts: contactCollection(
+    preview: $preview
+    where: { user: { sys: { id: $authorId } } }
+    order: media_DESC
+  ) {
+    items {
+      media
+      account
+      link
+    }
+  }
+  workExperiences: workExperienceCollection(
+    preview: $preview
+    locale: $locale
+    order: startDate_DESC
+  ) {
+    items {
+      organization
+      role
+      startDate
+      endDate
+    }
+  }
+  achievements: achievementCollection(
     preview: $preview
     locale: $locale
     order: publishedDate_DESC
+    where: { category: { name_exists: true } }
   ) {
     items {
       title
@@ -13,6 +45,7 @@ query Top($preview: Boolean, $locale: String) {
       authorsCollection {
         items {
           name
+          underline
         }
       }
       proceeding
@@ -20,6 +53,17 @@ query Top($preview: Boolean, $locale: String) {
       startPage
       endPage
       note
+    }
+  }
+  awards: awardCollection(
+    preview: $preview
+    locale: $locale
+    order: awardDate_DESC
+  ) {
+    items {
+      name
+      publication
+      awardDate
     }
   }
 }

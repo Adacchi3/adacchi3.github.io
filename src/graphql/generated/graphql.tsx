@@ -1279,11 +1279,42 @@ export type CfAuthorNestedFilter = {
 
 export type TopQueryVariables = Exact<{
   preview?: Maybe<Scalars['Boolean']>
-  locale?: Maybe<Scalars['String']>
+  locale: Scalars['String']
+  authorId: Scalars['String']
 }>
 
 export type TopQuery = { __typename?: 'Query' } & {
-  fetchedConetnts?: Maybe<
+  me?: Maybe<
+    { __typename?: 'Author' } & Pick<
+      Author,
+      'name' | 'nickname' | 'description'
+    > & { image?: Maybe<{ __typename?: 'Asset' } & Pick<Asset, 'url'>> }
+  >
+  contacts?: Maybe<
+    { __typename?: 'ContactCollection' } & {
+      items: Array<
+        Maybe<
+          { __typename?: 'Contact' } & Pick<
+            Contact,
+            'media' | 'account' | 'link'
+          >
+        >
+      >
+    }
+  >
+  workExperiences?: Maybe<
+    { __typename?: 'WorkExperienceCollection' } & {
+      items: Array<
+        Maybe<
+          { __typename?: 'WorkExperience' } & Pick<
+            WorkExperience,
+            'organization' | 'role' | 'startDate' | 'endDate'
+          >
+        >
+      >
+    }
+  >
+  achievements?: Maybe<
     { __typename?: 'AchievementCollection' } & {
       items: Array<
         Maybe<
@@ -1306,7 +1337,12 @@ export type TopQuery = { __typename?: 'Query' } & {
               authorsCollection?: Maybe<
                 { __typename?: 'AchievementAuthorsCollection' } & {
                   items: Array<
-                    Maybe<{ __typename?: 'Author' } & Pick<Author, 'name'>>
+                    Maybe<
+                      { __typename?: 'Author' } & Pick<
+                        Author,
+                        'name' | 'underline'
+                      >
+                    >
                   >
                 }
               >
@@ -1315,14 +1351,58 @@ export type TopQuery = { __typename?: 'Query' } & {
       >
     }
   >
+  awards?: Maybe<
+    { __typename?: 'AwardCollection' } & {
+      items: Array<
+        Maybe<
+          { __typename?: 'Award' } & Pick<
+            Award,
+            'name' | 'publication' | 'awardDate'
+          >
+        >
+      >
+    }
+  >
 }
 
 export const TopDocument = gql`
-  query Top($preview: Boolean, $locale: String) {
-    fetchedConetnts: achievementCollection(
+  query Top($preview: Boolean, $locale: String!, $authorId: String!) {
+    me: author(id: $authorId, preview: $preview, locale: $locale) {
+      name
+      nickname
+      description
+      image(preview: $preview, locale: $locale) {
+        url
+      }
+    }
+    contacts: contactCollection(
+      preview: $preview
+      where: { user: { sys: { id: $authorId } } }
+      order: media_DESC
+    ) {
+      items {
+        media
+        account
+        link
+      }
+    }
+    workExperiences: workExperienceCollection(
+      preview: $preview
+      locale: $locale
+      order: startDate_DESC
+    ) {
+      items {
+        organization
+        role
+        startDate
+        endDate
+      }
+    }
+    achievements: achievementCollection(
       preview: $preview
       locale: $locale
       order: publishedDate_DESC
+      where: { category: { name_exists: true } }
     ) {
       items {
         title
@@ -1333,6 +1413,7 @@ export const TopDocument = gql`
         authorsCollection {
           items {
             name
+            underline
           }
         }
         proceeding
@@ -1340,6 +1421,17 @@ export const TopDocument = gql`
         startPage
         endPage
         note
+      }
+    }
+    awards: awardCollection(
+      preview: $preview
+      locale: $locale
+      order: awardDate_DESC
+    ) {
+      items {
+        name
+        publication
+        awardDate
       }
     }
   }
@@ -1359,11 +1451,12 @@ export const TopDocument = gql`
  *   variables: {
  *      preview: // value for 'preview'
  *      locale: // value for 'locale'
+ *      authorId: // value for 'authorId'
  *   },
  * });
  */
 export function useTopQuery(
-  baseOptions?: Apollo.QueryHookOptions<TopQuery, TopQueryVariables>
+  baseOptions: Apollo.QueryHookOptions<TopQuery, TopQueryVariables>
 ) {
   const options = { ...defaultOptions, ...baseOptions }
   return Apollo.useQuery<TopQuery, TopQueryVariables>(TopDocument, options)

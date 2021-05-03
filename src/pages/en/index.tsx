@@ -10,7 +10,7 @@ export const getStaticProps: GetStaticProps = async () => {
     query: TopDocument,
     variables: {
       preview: process.env.PREVIEW,
-      locale: 'ja-JP',
+      locale: 'en-US',
       authorId: process.env.AUTHOR_ID,
     },
   })
@@ -24,7 +24,7 @@ const Top: React.FC = () => {
   const { data } = useTopQuery({
     variables: {
       preview: Boolean(process.env.PREVIEW),
-      locale: 'ja-JP',
+      locale: 'en-US',
       authorId: String(process.env.AUTHOR_ID),
     },
   })

@@ -14,5 +14,7 @@ services:
     stdin_open: true
     environment:
       - GRAPHQL_ENDPOINT
+      - PREVIEW=true
+      - AUTHOR_ID
 volumes:
   node_modules:
