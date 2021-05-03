@@ -9,6 +9,8 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
+    "export": "next export",
+    "serve": "yarn run build && yarn run export && serve ./out",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx,.json .",
     "apollo:download": "apollo client:download-schema src/graphql/contentful/schema.graphql",
     "prepare": "husky install",
@@ -18,12 +20,8 @@
     "@apollo/client": "3.3.16",
     "graphql": "15.5.0",
     "next": "10.2.0",
-    "next-plugin-preact": "3.0.4",
-    "preact": "10.5.13",
-    "preact-render-to-string": "5.1.19",
-    "react": "npm:@preact/compat",
-    "react-dom": "npm:@preact/compat",
-    "react-ssr-prepass": "npm:preact-ssr-prepass"
+    "react": "17.0.2",
+    "react-dom": "17.0.2"
   },
   "devDependencies": {
     "@graphql-codegen/cli": "1.21.4",
@@ -48,6 +46,7 @@
     "lint-staged": "10.5.4",
     "postcss": "8.2.13",
     "prettier": "2.2.1",
+    "serve": "11.3.2",
     "tailwindcss": "2.1.2",
     "typescript": "4.2.4"
   },
