@@ -2,6 +2,7 @@ import React from 'react'
 import { AppProps } from 'next/app'
 import { ApolloProvider } from '@apollo/client'
 import { useApollo } from '@client'
+import 'tailwindcss/tailwind.css'
 
 const MyApp: React.FC<AppProps> = ({ Component, pageProps }: AppProps) => {
   const apolloClient = useApollo(pageProps)
