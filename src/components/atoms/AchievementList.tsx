@@ -35,7 +35,12 @@ const AchievementList: React.VFC<Props> = ({
     return achievement.link ? (
       <>
         “
-        <a className="hover:underline text-blue-600" href={achievement.link}>
+        <a
+          className="hover:underline text-blue-600"
+          href={achievement.link}
+          rel="noopener noreferrer"
+          target="_blank"
+        >
           {achievement.title}
         </a>
         ”
