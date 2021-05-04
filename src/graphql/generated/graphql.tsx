@@ -1704,6 +1704,7 @@ export const TopDocument = gql`
       preview: $preview
       locale: $locale
       where: { user: { sys: { id: $authorId } } }
+      order: startDate_DESC
     ) {
       items {
         organization
