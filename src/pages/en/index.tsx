@@ -1,7 +1,8 @@
 import React from 'react'
 import { GetStaticProps } from 'next'
-import { TopDocument, useTopQuery, TopQuery } from '@graphql/generated/graphql'
+import { TopDocument } from '@graphql/generated/graphql'
 import { addApolloState, initializeApollo } from '@client'
+import TopTemplate from '@components/templates/TopTemplate'
 
 export const getStaticProps: GetStaticProps = async () => {
   const apolloClient = initializeApollo()
@@ -21,17 +22,7 @@ export const getStaticProps: GetStaticProps = async () => {
 }
 
 const Top: React.FC = () => {
-  const { data } = useTopQuery({
-    variables: {
-      preview: Boolean(process.env.PREVIEW),
-      locale: 'en-US',
-      authorId: String(process.env.AUTHOR_ID),
-    },
-  })
-
-  const { me } = data as TopQuery
-
-  return <p>{me?.description}</p>
+  return <TopTemplate locale="en-US"></TopTemplate>
 }
 
 export default Top
