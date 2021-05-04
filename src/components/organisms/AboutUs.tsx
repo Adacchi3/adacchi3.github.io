@@ -22,7 +22,8 @@ const AboutUs: React.VFC = () => {
             <img
               alt="profile-icon"
               src={String(data?.me?.image?.url)}
-              className="mx-auto object-cover rounded-full h-40 w-40 "
+              className="mx-auto object-cover rounded-full h-40 w-40"
+              loading="lazy"
             />
           </div>
         </div>
