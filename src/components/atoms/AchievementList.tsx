@@ -35,7 +35,7 @@ const AchievementList: React.VFC<Props> = ({
     return achievement.link ? (
       <>
         “
-        <a className="hover:underline text-blue-500" href={achievement.link}>
+        <a className="hover:underline text-blue-600" href={achievement.link}>
           {achievement.title}
         </a>
         ”
