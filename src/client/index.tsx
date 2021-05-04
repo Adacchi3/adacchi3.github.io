@@ -1,12 +1,26 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import { useMemo } from 'react'
-import { ApolloClient, HttpLink, InMemoryCache } from '@apollo/client'
+import { ApolloClient, HttpLink, InMemoryCache, makeVar } from '@apollo/client'
 import merge from 'deepmerge'
 import isEqual from 'lodash/isEqual'
 
 export const APOLLO_STATE_PROP_NAME = '__APOLLO_STATE__'
 
 let apolloClient
+
+export const cache = new InMemoryCache({
+  typePolicies: {
+    Query: {
+      fields: {
+        locale: {
+          read() {
+            return localeVar()
+          },
+        },
+      },
+    },
+  },
+})
 
 function createApolloClient() {
   return new ApolloClient({
@@ -15,7 +29,7 @@ function createApolloClient() {
       uri: process.env.GRAPHQL_ENDPOINT, // Server URL (must be absolute)
       credentials: 'same-origin', // Additional fetch() options like `credentials` or `headers`
     }),
-    cache: new InMemoryCache(),
+    cache: cache,
   })
 }
 
@@ -67,3 +81,5 @@ export function useApollo(pageProps) {
   const store = useMemo(() => initializeApollo(state), [state])
   return store
 }
+
+export const localeVar = makeVar('ja-JP')

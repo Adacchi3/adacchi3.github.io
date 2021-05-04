@@ -1,11 +1,10 @@
+import { useLocaleQuery } from '@graphql/generated/graphql'
 import React from 'react'
 
-type Props = {
-  locale: string
-}
+const Achievements: React.VFC = () => {
+  const { data } = useLocaleQuery()
 
-const Achievements: React.VFC<Props> = ({ locale }) => {
-  return <>{locale}</>
+  return <p>{data?.locale}</p>
 }
 
 export default Achievements

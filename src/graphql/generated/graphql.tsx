@@ -1080,98 +1080,24 @@ export type ImageTransformOptions = {
 
 export type Query = {
   __typename?: 'Query'
-  asset?: Maybe<Asset>
-  assetCollection?: Maybe<AssetCollection>
-  achievement?: Maybe<Achievement>
-  achievementCollection?: Maybe<AchievementCollection>
-  award?: Maybe<Award>
-  awardCollection?: Maybe<AwardCollection>
-  workExperience?: Maybe<WorkExperience>
-  workExperienceCollection?: Maybe<WorkExperienceCollection>
-  contact?: Maybe<Contact>
-  contactCollection?: Maybe<ContactCollection>
   academicBackground?: Maybe<AcademicBackground>
   academicBackgroundCollection?: Maybe<AcademicBackgroundCollection>
-  author?: Maybe<Author>
-  authorCollection?: Maybe<AuthorCollection>
+  achievement?: Maybe<Achievement>
   achievementCategory?: Maybe<AchievementCategory>
   achievementCategoryCollection?: Maybe<AchievementCategoryCollection>
+  achievementCollection?: Maybe<AchievementCollection>
+  asset?: Maybe<Asset>
+  assetCollection?: Maybe<AssetCollection>
+  author?: Maybe<Author>
+  authorCollection?: Maybe<AuthorCollection>
+  award?: Maybe<Award>
+  awardCollection?: Maybe<AwardCollection>
+  contact?: Maybe<Contact>
+  contactCollection?: Maybe<ContactCollection>
   entryCollection?: Maybe<EntryCollection>
-}
-
-export type QueryAssetArgs = {
-  id: Scalars['String']
-  preview?: Maybe<Scalars['Boolean']>
-  locale?: Maybe<Scalars['String']>
-}
-
-export type QueryAssetCollectionArgs = {
-  skip?: Maybe<Scalars['Int']>
-  limit?: Maybe<Scalars['Int']>
-  preview?: Maybe<Scalars['Boolean']>
-  locale?: Maybe<Scalars['String']>
-  where?: Maybe<AssetFilter>
-  order?: Maybe<Array<Maybe<AssetOrder>>>
-}
-
-export type QueryAchievementArgs = {
-  id: Scalars['String']
-  preview?: Maybe<Scalars['Boolean']>
-  locale?: Maybe<Scalars['String']>
-}
-
-export type QueryAchievementCollectionArgs = {
-  skip?: Maybe<Scalars['Int']>
-  limit?: Maybe<Scalars['Int']>
-  preview?: Maybe<Scalars['Boolean']>
-  locale?: Maybe<Scalars['String']>
-  where?: Maybe<AchievementFilter>
-  order?: Maybe<Array<Maybe<AchievementOrder>>>
-}
-
-export type QueryAwardArgs = {
-  id: Scalars['String']
-  preview?: Maybe<Scalars['Boolean']>
-  locale?: Maybe<Scalars['String']>
-}
-
-export type QueryAwardCollectionArgs = {
-  skip?: Maybe<Scalars['Int']>
-  limit?: Maybe<Scalars['Int']>
-  preview?: Maybe<Scalars['Boolean']>
-  locale?: Maybe<Scalars['String']>
-  where?: Maybe<AwardFilter>
-  order?: Maybe<Array<Maybe<AwardOrder>>>
-}
-
-export type QueryWorkExperienceArgs = {
-  id: Scalars['String']
-  preview?: Maybe<Scalars['Boolean']>
-  locale?: Maybe<Scalars['String']>
-}
-
-export type QueryWorkExperienceCollectionArgs = {
-  skip?: Maybe<Scalars['Int']>
-  limit?: Maybe<Scalars['Int']>
-  preview?: Maybe<Scalars['Boolean']>
-  locale?: Maybe<Scalars['String']>
-  where?: Maybe<WorkExperienceFilter>
-  order?: Maybe<Array<Maybe<WorkExperienceOrder>>>
-}
-
-export type QueryContactArgs = {
-  id: Scalars['String']
-  preview?: Maybe<Scalars['Boolean']>
-  locale?: Maybe<Scalars['String']>
-}
-
-export type QueryContactCollectionArgs = {
-  skip?: Maybe<Scalars['Int']>
-  limit?: Maybe<Scalars['Int']>
-  preview?: Maybe<Scalars['Boolean']>
-  locale?: Maybe<Scalars['String']>
-  where?: Maybe<ContactFilter>
-  order?: Maybe<Array<Maybe<ContactOrder>>>
+  locale: Scalars['String']
+  workExperience?: Maybe<WorkExperience>
+  workExperienceCollection?: Maybe<WorkExperienceCollection>
 }
 
 export type QueryAcademicBackgroundArgs = {
@@ -1189,19 +1115,10 @@ export type QueryAcademicBackgroundCollectionArgs = {
   order?: Maybe<Array<Maybe<AcademicBackgroundOrder>>>
 }
 
-export type QueryAuthorArgs = {
+export type QueryAchievementArgs = {
   id: Scalars['String']
   preview?: Maybe<Scalars['Boolean']>
   locale?: Maybe<Scalars['String']>
-}
-
-export type QueryAuthorCollectionArgs = {
-  skip?: Maybe<Scalars['Int']>
-  limit?: Maybe<Scalars['Int']>
-  preview?: Maybe<Scalars['Boolean']>
-  locale?: Maybe<Scalars['String']>
-  where?: Maybe<AuthorFilter>
-  order?: Maybe<Array<Maybe<AuthorOrder>>>
 }
 
 export type QueryAchievementCategoryArgs = {
@@ -1219,6 +1136,75 @@ export type QueryAchievementCategoryCollectionArgs = {
   order?: Maybe<Array<Maybe<AchievementCategoryOrder>>>
 }
 
+export type QueryAchievementCollectionArgs = {
+  skip?: Maybe<Scalars['Int']>
+  limit?: Maybe<Scalars['Int']>
+  preview?: Maybe<Scalars['Boolean']>
+  locale?: Maybe<Scalars['String']>
+  where?: Maybe<AchievementFilter>
+  order?: Maybe<Array<Maybe<AchievementOrder>>>
+}
+
+export type QueryAssetArgs = {
+  id: Scalars['String']
+  preview?: Maybe<Scalars['Boolean']>
+  locale?: Maybe<Scalars['String']>
+}
+
+export type QueryAssetCollectionArgs = {
+  skip?: Maybe<Scalars['Int']>
+  limit?: Maybe<Scalars['Int']>
+  preview?: Maybe<Scalars['Boolean']>
+  locale?: Maybe<Scalars['String']>
+  where?: Maybe<AssetFilter>
+  order?: Maybe<Array<Maybe<AssetOrder>>>
+}
+
+export type QueryAuthorArgs = {
+  id: Scalars['String']
+  preview?: Maybe<Scalars['Boolean']>
+  locale?: Maybe<Scalars['String']>
+}
+
+export type QueryAuthorCollectionArgs = {
+  skip?: Maybe<Scalars['Int']>
+  limit?: Maybe<Scalars['Int']>
+  preview?: Maybe<Scalars['Boolean']>
+  locale?: Maybe<Scalars['String']>
+  where?: Maybe<AuthorFilter>
+  order?: Maybe<Array<Maybe<AuthorOrder>>>
+}
+
+export type QueryAwardArgs = {
+  id: Scalars['String']
+  preview?: Maybe<Scalars['Boolean']>
+  locale?: Maybe<Scalars['String']>
+}
+
+export type QueryAwardCollectionArgs = {
+  skip?: Maybe<Scalars['Int']>
+  limit?: Maybe<Scalars['Int']>
+  preview?: Maybe<Scalars['Boolean']>
+  locale?: Maybe<Scalars['String']>
+  where?: Maybe<AwardFilter>
+  order?: Maybe<Array<Maybe<AwardOrder>>>
+}
+
+export type QueryContactArgs = {
+  id: Scalars['String']
+  preview?: Maybe<Scalars['Boolean']>
+  locale?: Maybe<Scalars['String']>
+}
+
+export type QueryContactCollectionArgs = {
+  skip?: Maybe<Scalars['Int']>
+  limit?: Maybe<Scalars['Int']>
+  preview?: Maybe<Scalars['Boolean']>
+  locale?: Maybe<Scalars['String']>
+  where?: Maybe<ContactFilter>
+  order?: Maybe<Array<Maybe<ContactOrder>>>
+}
+
 export type QueryEntryCollectionArgs = {
   skip?: Maybe<Scalars['Int']>
   limit?: Maybe<Scalars['Int']>
@@ -1226,6 +1212,21 @@ export type QueryEntryCollectionArgs = {
   locale?: Maybe<Scalars['String']>
   where?: Maybe<EntryFilter>
   order?: Maybe<Array<Maybe<EntryOrder>>>
+}
+
+export type QueryWorkExperienceArgs = {
+  id: Scalars['String']
+  preview?: Maybe<Scalars['Boolean']>
+  locale?: Maybe<Scalars['String']>
+}
+
+export type QueryWorkExperienceCollectionArgs = {
+  skip?: Maybe<Scalars['Int']>
+  limit?: Maybe<Scalars['Int']>
+  preview?: Maybe<Scalars['Boolean']>
+  locale?: Maybe<Scalars['String']>
+  where?: Maybe<WorkExperienceFilter>
+  order?: Maybe<Array<Maybe<WorkExperienceOrder>>>
 }
 
 export type Sys = {
@@ -1445,6 +1446,10 @@ export type CfAuthorNestedFilter = {
   AND?: Maybe<Array<Maybe<CfAuthorNestedFilter>>>
 }
 
+export type LocaleQueryVariables = Exact<{ [key: string]: never }>
+
+export type LocaleQuery = { __typename?: 'Query' } & Pick<Query, 'locale'>
+
 export type TopQueryVariables = Exact<{
   preview?: Maybe<Scalars['Boolean']>
   locale: Scalars['String']
@@ -1545,6 +1550,51 @@ export type TopQuery = { __typename?: 'Query' } & {
   >
 }
 
+export const LocaleDocument = gql`
+  query Locale {
+    locale @client
+  }
+`
+
+/**
+ * __useLocaleQuery__
+ *
+ * To run a query within a React component, call `useLocaleQuery` and pass it any options that fit your needs.
+ * When your component renders, `useLocaleQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useLocaleQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useLocaleQuery(
+  baseOptions?: Apollo.QueryHookOptions<LocaleQuery, LocaleQueryVariables>
+) {
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useQuery<LocaleQuery, LocaleQueryVariables>(
+    LocaleDocument,
+    options
+  )
+}
+export function useLocaleLazyQuery(
+  baseOptions?: Apollo.LazyQueryHookOptions<LocaleQuery, LocaleQueryVariables>
+) {
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useLazyQuery<LocaleQuery, LocaleQueryVariables>(
+    LocaleDocument,
+    options
+  )
+}
+export type LocaleQueryHookResult = ReturnType<typeof useLocaleQuery>
+export type LocaleLazyQueryHookResult = ReturnType<typeof useLocaleLazyQuery>
+export type LocaleQueryResult = Apollo.QueryResult<
+  LocaleQuery,
+  LocaleQueryVariables
+>
 export const TopDocument = gql`
   query Top($preview: Boolean, $locale: String!, $authorId: String!) {
     me: author(id: $authorId, preview: $preview, locale: $locale) {
