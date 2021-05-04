@@ -35,6 +35,8 @@ directive @connection(
 type Query {
   asset(id: String!, preview: Boolean, locale: String): Asset
   assetCollection(skip: Int = 0, limit: Int = 100, preview: Boolean, locale: String, where: AssetFilter, order: [AssetOrder]): AssetCollection
+  achievementCategory(id: String!, preview: Boolean, locale: String): AchievementCategory
+  achievementCategoryCollection(skip: Int = 0, limit: Int = 100, preview: Boolean, locale: String, where: AchievementCategoryFilter, order: [AchievementCategoryOrder]): AchievementCategoryCollection
   achievement(id: String!, preview: Boolean, locale: String): Achievement
   achievementCollection(skip: Int = 0, limit: Int = 100, preview: Boolean, locale: String, where: AchievementFilter, order: [AchievementOrder]): AchievementCollection
   award(id: String!, preview: Boolean, locale: String): Award
@@ -47,8 +49,6 @@ type Query {
   academicBackgroundCollection(skip: Int = 0, limit: Int = 100, preview: Boolean, locale: String, where: AcademicBackgroundFilter, order: [AcademicBackgroundOrder]): AcademicBackgroundCollection
   author(id: String!, preview: Boolean, locale: String): Author
   authorCollection(skip: Int = 0, limit: Int = 100, preview: Boolean, locale: String, where: AuthorFilter, order: [AuthorOrder]): AuthorCollection
-  achievementCategory(id: String!, preview: Boolean, locale: String): AchievementCategory
-  achievementCategoryCollection(skip: Int = 0, limit: Int = 100, preview: Boolean, locale: String, where: AchievementCategoryFilter, order: [AchievementCategoryOrder]): AchievementCategoryCollection
   entryCollection(skip: Int = 0, limit: Int = 100, preview: Boolean, locale: String, where: EntryFilter, order: [EntryOrder]): EntryCollection
 }
 
@@ -321,6 +321,7 @@ type AchievementCategory implements Entry {
   contentfulMetadata: ContentfulMetadata!
   linkedFrom(allowedLocales: [String]): AchievementCategoryLinkingCollections
   name(locale: String): String
+  orderNumber(locale: String): Int
 }
 
 type AchievementCategoryLinkingCollections {
@@ -579,6 +580,51 @@ enum AssetOrder {
   sys_publishedVersion_DESC
 }
 
+type AchievementCategoryCollection {
+  total: Int!
+  skip: Int!
+  limit: Int!
+  items: [AchievementCategory]!
+}
+
+input AchievementCategoryFilter {
+  sys: SysFilter
+  contentfulMetadata: ContentfulMetadataFilter
+  name_exists: Boolean
+  name: String
+  name_not: String
+  name_in: [String]
+  name_not_in: [String]
+  name_contains: String
+  name_not_contains: String
+  orderNumber_exists: Boolean
+  orderNumber: Int
+  orderNumber_not: Int
+  orderNumber_in: [Int]
+  orderNumber_not_in: [Int]
+  orderNumber_gt: Int
+  orderNumber_gte: Int
+  orderNumber_lt: Int
+  orderNumber_lte: Int
+  OR: [AchievementCategoryFilter]
+  AND: [AchievementCategoryFilter]
+}
+
+enum AchievementCategoryOrder {
+  name_ASC
+  name_DESC
+  orderNumber_ASC
+  orderNumber_DESC
+  sys_id_ASC
+  sys_id_DESC
+  sys_publishedAt_ASC
+  sys_publishedAt_DESC
+  sys_firstPublishedAt_ASC
+  sys_firstPublishedAt_DESC
+  sys_publishedVersion_ASC
+  sys_publishedVersion_DESC
+}
+
 input AchievementFilter {
   category: cfAchievementCategoryNestedFilter
   sys: SysFilter
@@ -661,6 +707,15 @@ input cfAchievementCategoryNestedFilter {
   name_not_in: [String]
   name_contains: String
   name_not_contains: String
+  orderNumber_exists: Boolean
+  orderNumber: Int
+  orderNumber_not: Int
+  orderNumber_in: [Int]
+  orderNumber_not_in: [Int]
+  orderNumber_gt: Int
+  orderNumber_gte: Int
+  orderNumber_lt: Int
+  orderNumber_lte: Int
   OR: [cfAchievementCategoryNestedFilter]
   AND: [cfAchievementCategoryNestedFilter]
 }
@@ -968,40 +1023,6 @@ enum AuthorOrder {
   nickname_DESC
   underline_ASC
   underline_DESC
-  sys_id_ASC
-  sys_id_DESC
-  sys_publishedAt_ASC
-  sys_publishedAt_DESC
-  sys_firstPublishedAt_ASC
-  sys_firstPublishedAt_DESC
-  sys_publishedVersion_ASC
-  sys_publishedVersion_DESC
-}
-
-type AchievementCategoryCollection {
-  total: Int!
-  skip: Int!
-  limit: Int!
-  items: [AchievementCategory]!
-}
-
-input AchievementCategoryFilter {
-  sys: SysFilter
-  contentfulMetadata: ContentfulMetadataFilter
-  name_exists: Boolean
-  name: String
-  name_not: String
-  name_in: [String]
-  name_not_in: [String]
-  name_contains: String
-  name_not_contains: String
-  OR: [AchievementCategoryFilter]
-  AND: [AchievementCategoryFilter]
-}
-
-enum AchievementCategoryOrder {
-  name_ASC
-  name_DESC
   sys_id_ASC
   sys_id_DESC
   sys_publishedAt_ASC

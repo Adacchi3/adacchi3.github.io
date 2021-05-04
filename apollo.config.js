@@ -1,7 +1,7 @@
 module.exports = {
   client: {
     name: 'client',
-    includes: ['src/graphql/**/*.{ts,tsx,graphql}'],
+    includes: ['src/graphql/schema/**/*.{ts,tsx,graphql}'],
     excludes: [
       'src/graphql/queries/*.{ts,tsx,graphql}',
       'src/graphql/generated/*.{ts,tsx,graphql}',

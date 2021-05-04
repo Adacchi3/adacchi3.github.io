@@ -12,7 +12,7 @@
     "export": "next export",
     "serve": "yarn run build && yarn run export && serve ./out",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx,.json .",
-    "apollo:download": "apollo client:download-schema src/graphql/contentful/schema.graphql",
+    "apollo:download": "apollo client:download-schema src/graphql/schemas/contentful/schema.graphql",
     "prepare": "husky install",
     "generate": "graphql-codegen --config codegen.yml"
   },
@@ -23,6 +23,7 @@
     "deepmerge": "4.2.2",
     "graphql": "15.5.0",
     "lodash": "4.17.21",
+    "moment": "2.29.1",
     "next": "10.2.0",
     "react": "17.0.2",
     "react-dom": "17.0.2"

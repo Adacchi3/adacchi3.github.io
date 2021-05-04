@@ -232,6 +232,7 @@ export type AchievementCategory = Entry & {
   contentfulMetadata: ContentfulMetadata
   linkedFrom?: Maybe<AchievementCategoryLinkingCollections>
   name?: Maybe<Scalars['String']>
+  orderNumber?: Maybe<Scalars['Int']>
 }
 
 /** [See type definition](https://app.contentful.com/spaces/{spaceId}/content_types/achievementCategory) */
@@ -241,6 +242,11 @@ export type AchievementCategoryLinkedFromArgs = {
 
 /** [See type definition](https://app.contentful.com/spaces/{spaceId}/content_types/achievementCategory) */
 export type AchievementCategoryNameArgs = {
+  locale?: Maybe<Scalars['String']>
+}
+
+/** [See type definition](https://app.contentful.com/spaces/{spaceId}/content_types/achievementCategory) */
+export type AchievementCategoryOrderNumberArgs = {
   locale?: Maybe<Scalars['String']>
 }
 
@@ -262,6 +268,15 @@ export type AchievementCategoryFilter = {
   name_not_in?: Maybe<Array<Maybe<Scalars['String']>>>
   name_contains?: Maybe<Scalars['String']>
   name_not_contains?: Maybe<Scalars['String']>
+  orderNumber_exists?: Maybe<Scalars['Boolean']>
+  orderNumber?: Maybe<Scalars['Int']>
+  orderNumber_not?: Maybe<Scalars['Int']>
+  orderNumber_in?: Maybe<Array<Maybe<Scalars['Int']>>>
+  orderNumber_not_in?: Maybe<Array<Maybe<Scalars['Int']>>>
+  orderNumber_gt?: Maybe<Scalars['Int']>
+  orderNumber_gte?: Maybe<Scalars['Int']>
+  orderNumber_lt?: Maybe<Scalars['Int']>
+  orderNumber_lte?: Maybe<Scalars['Int']>
   OR?: Maybe<Array<Maybe<AchievementCategoryFilter>>>
   AND?: Maybe<Array<Maybe<AchievementCategoryFilter>>>
 }
@@ -289,6 +304,8 @@ export type AchievementCategoryLinkingCollectionsAchievementCollectionArgs = {
 export enum AchievementCategoryOrder {
   NameAsc = 'name_ASC',
   NameDesc = 'name_DESC',
+  OrderNumberAsc = 'orderNumber_ASC',
+  OrderNumberDesc = 'orderNumber_DESC',
   SysIdAsc = 'sys_id_ASC',
   SysIdDesc = 'sys_id_DESC',
   SysPublishedAtAsc = 'sys_publishedAt_ASC',
@@ -1410,6 +1427,15 @@ export type CfAchievementCategoryNestedFilter = {
   name_not_in?: Maybe<Array<Maybe<Scalars['String']>>>
   name_contains?: Maybe<Scalars['String']>
   name_not_contains?: Maybe<Scalars['String']>
+  orderNumber_exists?: Maybe<Scalars['Boolean']>
+  orderNumber?: Maybe<Scalars['Int']>
+  orderNumber_not?: Maybe<Scalars['Int']>
+  orderNumber_in?: Maybe<Array<Maybe<Scalars['Int']>>>
+  orderNumber_not_in?: Maybe<Array<Maybe<Scalars['Int']>>>
+  orderNumber_gt?: Maybe<Scalars['Int']>
+  orderNumber_gte?: Maybe<Scalars['Int']>
+  orderNumber_lt?: Maybe<Scalars['Int']>
+  orderNumber_lte?: Maybe<Scalars['Int']>
   OR?: Maybe<Array<Maybe<CfAchievementCategoryNestedFilter>>>
   AND?: Maybe<Array<Maybe<CfAchievementCategoryNestedFilter>>>
 }
@@ -1499,22 +1525,26 @@ export type TopQuery = { __typename?: 'Query' } & {
             | 'publishedDate'
             | 'startPage'
             | 'endPage'
+            | 'sessionId'
             | 'note'
           > & {
               category?: Maybe<
                 { __typename?: 'AchievementCategory' } & Pick<
                   AchievementCategory,
-                  'name'
-                >
+                  'orderNumber'
+                > & {
+                    nameJP: AchievementCategory['name']
+                    nameUS: AchievementCategory['name']
+                  }
               >
               authorsCollection?: Maybe<
                 { __typename?: 'AchievementAuthorsCollection' } & {
                   items: Array<
                     Maybe<
-                      { __typename?: 'Author' } & Pick<
-                        Author,
-                        'name' | 'underline'
-                      >
+                      { __typename?: 'Author' } & Pick<Author, 'underline'> & {
+                          nameJP: Author['name']
+                          nameUS: Author['name']
+                        }
                     >
                   >
                 }
@@ -1639,11 +1669,14 @@ export const TopDocument = gql`
         title
         link
         category {
-          name
+          nameJP: name(locale: "ja-JP")
+          nameUS: name(locale: "en-US")
+          orderNumber
         }
         authorsCollection {
           items {
-            name
+            nameJP: name(locale: "ja-JP")
+            nameUS: name(locale: "en-US")
             underline
           }
         }
@@ -1651,6 +1684,7 @@ export const TopDocument = gql`
         publishedDate
         startPage
         endPage
+        sessionId
         note
       }
     }
