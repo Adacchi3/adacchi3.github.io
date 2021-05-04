@@ -23,7 +23,7 @@ export const getStaticProps: GetStaticProps = async () => {
 
 const Top: React.FC = () => {
   localeVar('en-US')
-  return <TopTemplate></TopTemplate>
+  return <TopTemplate />
 }
 
 export default Top
