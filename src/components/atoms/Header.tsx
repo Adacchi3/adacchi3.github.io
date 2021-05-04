@@ -1,10 +1,11 @@
 import React from 'react'
+import Link from 'next/link'
 import { Disclosure } from '@headlessui/react'
 import { MenuIcon, XIcon } from '@heroicons/react/outline'
 
 const navigation = [
-  { name: 'About', href: '' },
-  { name: 'Memo', href: '' },
+  { name: 'About', href: '/' },
+  { name: 'Memo', href: '/' },
 ]
 
 const Header: React.VFC = () => {
@@ -30,14 +31,12 @@ const Header: React.VFC = () => {
                 </div>
                 <div className="hidden sm:block sm:ml-6">
                   <div className="flex space-x-4">
-                    {navigation.map((item) => (
-                      <a
-                        key={item.name}
-                        href={item.href}
-                        className="py-2 px-3 text-sm font-medium text-gray-500 hover:text-gray-600 hover:bg-gray-200 rounded-md"
-                      >
-                        {item.name}
-                      </a>
+                    {navigation.map((item, index) => (
+                      <Link href={item.href} key={index}>
+                        <a className="py-2 px-3 text-sm font-medium text-gray-500 hover:text-gray-600 hover:bg-gray-200 rounded-md">
+                          {item.name}
+                        </a>
+                      </Link>
                     ))}
                   </div>
                 </div>
@@ -47,14 +46,12 @@ const Header: React.VFC = () => {
           </div>
           <Disclosure.Panel className="sm:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1">
-              {navigation.map((item) => (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  className="block py-2 px-3 text-base font-medium text-gray-500 hover:text-gray-600 hover:bg-gray-200 rounded-md"
-                >
-                  {item.name}
-                </a>
+              {navigation.map((item, index) => (
+                <Link href={item.href} key={index}>
+                  <a className="block py-2 px-3 text-base font-medium text-gray-500 hover:text-gray-600 hover:bg-gray-200 rounded-md">
+                    {item.name}
+                  </a>
+                </Link>
               ))}
             </div>
           </Disclosure.Panel>

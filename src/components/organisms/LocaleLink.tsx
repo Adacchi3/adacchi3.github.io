@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 import Container from '@components/atoms/Container'
 import { useLocale } from '@hooks/Locale'
 
@@ -8,17 +9,17 @@ const LocaleLink: React.VFC = () => {
   const links =
     locale === 'en-US' ? (
       <>
-        <a href="/" className="text-blue-600 hover:underline">
-          日本語
-        </a>{' '}
+        <Link href="/">
+          <a className="text-blue-600 hover:underline">日本語</a>
+        </Link>{' '}
         / <a>English</a>
       </>
     ) : (
       <>
         <a>日本語</a> /{' '}
-        <a href="/en/" className="text-blue-600 hover:underline">
-          English
-        </a>
+        <Link href="/en/">
+          <a className="text-blue-600 hover:underline">English</a>
+        </Link>
       </>
     )
 
