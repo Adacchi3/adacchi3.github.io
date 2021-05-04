@@ -2,6 +2,7 @@ import React from 'react'
 import AchievementList from '@components/atoms/AchievementList'
 import { useTopQuery, Achievement } from '@graphql/generated/graphql'
 import { useLocale } from '@hooks/Locale'
+import Container from '@components/atoms/Container'
 
 const convertCategoryKeyObject = (items, locale) => {
   const localeName = locale === 'en-US' ? 'nameUS' : 'nameJP'
@@ -37,7 +38,7 @@ const Achievements: React.VFC = () => {
   const achievementsData = achievements as Array<Achievement>
 
   return (
-    <div className="container mx-auto py-4">
+    <Container>
       <h2 className="text-4xl my-4 font-medium">Achievements</h2>
       <hr />
       {categoryOrder.map((category, index) => {
@@ -52,7 +53,7 @@ const Achievements: React.VFC = () => {
           </React.Fragment>
         )
       })}
-    </div>
+    </Container>
   )
 }
 

@@ -2,6 +2,7 @@ import React from 'react'
 import { useTopQuery, WorkExperience } from '@graphql/generated/graphql'
 import { useLocale } from '@hooks/Locale'
 import moment from 'moment'
+import Container from '@components/atoms/Container'
 
 const WorkExperiences: React.VFC = () => {
   const locale = useLocale()
@@ -26,7 +27,7 @@ const WorkExperiences: React.VFC = () => {
   }
 
   return (
-    <div className="container mx-auto py-4">
+    <Container>
       <h2 className="text-4xl my-4 font-medium">Work Experiences</h2>
       <hr />
       <ul className="list-disc mt-4 mb-1">
@@ -46,7 +47,7 @@ const WorkExperiences: React.VFC = () => {
           }
         )}
       </ul>
-    </div>
+    </Container>
   )
 }
 
