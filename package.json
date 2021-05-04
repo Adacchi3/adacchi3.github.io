@@ -1,0 +1,63 @@
+{
+  "name": "adacchi3.github.io",
+  "version": "0.0.0",
+  "main": "index.js",
+  "author": "Adacchi3 <adachi.prog@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "export": "next export",
+    "serve": "yarn run build && yarn run export && serve ./out",
+    "lint": "eslint --ext .js,.jsx,.ts,.tsx,.json .",
+    "apollo:download": "apollo client:download-schema src/graphql/schemas/contentful/schema.graphql",
+    "prepare": "husky install",
+    "generate": "graphql-codegen --config codegen.yml"
+  },
+  "dependencies": {
+    "@apollo/client": "3.3.16",
+    "@headlessui/react": "1.1.1",
+    "@heroicons/react": "1.0.1",
+    "deepmerge": "4.2.2",
+    "graphql": "15.5.0",
+    "lodash": "4.17.21",
+    "moment": "2.29.1",
+    "next": "10.2.0",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-gtm-module": "2.0.11"
+  },
+  "devDependencies": {
+    "@graphql-codegen/cli": "1.21.4",
+    "@graphql-codegen/introspection": "1.18.2",
+    "@graphql-codegen/typescript": "1.22.0",
+    "@graphql-codegen/typescript-operations": "1.17.16",
+    "@graphql-codegen/typescript-react-apollo": "2.2.4",
+    "@types/react": "17.0.4",
+    "@types/react-gtm-module": "2.0.0",
+    "@typescript-eslint/eslint-plugin": "4.22.0",
+    "@typescript-eslint/parser": "4.22.0",
+    "apollo": "2.32.11",
+    "autoprefixer": "10.2.5",
+    "cssnano": "5.0.2",
+    "eslint": "7.25.0",
+    "eslint-config-prettier": "8.3.0",
+    "eslint-plugin-prettier": "3.4.0",
+    "eslint-plugin-react": "7.23.2",
+    "eslint-plugin-react-hooks": "4.2.0",
+    "eslint-plugin-tailwindcss": "1.4.1",
+    "eslint-plugin-tsc": "2.0.0",
+    "husky": "6.0.0",
+    "lint-staged": "10.5.4",
+    "postcss": "8.2.13",
+    "prettier": "2.2.1",
+    "serve": "11.3.2",
+    "tailwindcss": "2.1.2",
+    "typescript": "4.2.4"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,json}": "yarn run lint"
+  }
+}

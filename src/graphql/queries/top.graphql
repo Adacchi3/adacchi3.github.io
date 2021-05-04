@@ -1,0 +1,87 @@
+query Top($preview: Boolean, $locale: String!, $authorId: String!) {
+  me: author(id: $authorId, preview: $preview, locale: $locale) {
+    name
+    nickname
+    description
+    image(preview: $preview, locale: $locale) {
+      url
+    }
+  }
+  contacts: contactCollection(
+    preview: $preview
+    where: { user: { sys: { id: $authorId } } }
+    order: media_DESC
+  ) {
+    items {
+      media
+      account
+      link
+    }
+  }
+  workExperiences: workExperienceCollection(
+    preview: $preview
+    locale: $locale
+    order: startDate_DESC
+    where: { user: { sys: { id: $authorId } } }
+  ) {
+    items {
+      organization
+      role
+      startDate
+      endDate
+    }
+  }
+achievements: achievementCollection(
+    preview: $preview
+    locale: $locale
+    order: publishedDate_DESC
+    where: { category: { name_exists: true } }
+  ) {
+    items {
+      title
+      link
+      category {
+        nameJP: name(locale: "ja-JP")
+        nameUS: name(locale: "en-US")
+        orderNumber
+      }
+      authorsCollection {
+        items {
+          nameJP: name(locale: "ja-JP")
+          nameUS: name(locale: "en-US")
+          underline
+        }
+      }
+      proceeding
+      publishedDate
+      startPage
+      endPage
+      sessionId
+      note
+    }
+  }
+  awards: awardCollection(
+    preview: $preview
+    locale: $locale
+    order: awardDate_DESC
+    where: { user: { sys: { id: $authorId } } }
+  ) {
+    items {
+      name
+      publication
+      awardDate
+    }
+  }
+  academicBackgroundCollection(
+    preview: $preview
+    locale: $locale
+    where: { user: { sys: { id: $authorId } } }
+    order: startDate_DESC
+  ) {
+    items {
+      organization
+      startDate
+      endDate
+    }
+  }
+}

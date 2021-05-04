@@ -1,0 +1,48 @@
+{
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "plugins": ["@typescript-eslint", "react-hooks", "tailwindcss", "tsc"],
+  "settings": {
+    "react": {
+      "version": "latest"
+    }
+  },
+  "rules": {
+    "eol-last": ["error", "always"],
+    "react/prop-types": [0],
+    "tailwindcss/classnames-order": 2,
+    "tailwindcss/no-custom-classname": 2,
+    "tailwindcss/no-contradicting-classname": 2,
+    "prettier/prettier": [
+      "warn",
+      {
+        "tabWidth": 2,
+        "semi": false,
+        "singleQuote": true
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": ["src/graphql/generated/*.ts", "src/graphql/generated/*.tsx"],
+      "rules": {
+        "@typescript-eslint/explicit-module-boundary-types": "off"
+      }
+    }
+  ]
+}
