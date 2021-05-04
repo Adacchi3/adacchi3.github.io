@@ -1,7 +1,7 @@
 import React from 'react'
 import { GetStaticProps } from 'next'
 import { TopDocument } from '@graphql/generated/graphql'
-import { addApolloState, initializeApollo } from '@client'
+import { addApolloState, initializeApollo, localeVar } from '@client'
 import TopTemplate from '@components/templates/TopTemplate'
 
 export const getStaticProps: GetStaticProps = async () => {
@@ -22,6 +22,7 @@ export const getStaticProps: GetStaticProps = async () => {
 }
 
 const Top: React.FC = () => {
+  localeVar('ja-JP')
   return <TopTemplate></TopTemplate>
 }
 
