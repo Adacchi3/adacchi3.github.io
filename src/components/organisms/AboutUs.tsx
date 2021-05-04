@@ -30,7 +30,7 @@ const AboutUs: React.VFC = () => {
           </div>
         </div>
         <div className="text-center">
-          <p className="text-3xl">{data?.me?.name}</p>
+          <h1 className="text-3xl">{data?.me?.name}</h1>
           <p className="text-xl text-gray-600">{data?.me?.nickname}</p>
           <p className="py-4 md:mx-20 text-center text-gray-600">
             <SimpleFormat text={String(data?.me?.description)} />
