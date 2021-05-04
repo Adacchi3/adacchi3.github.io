@@ -11,13 +11,15 @@ import LocaleLink from '@components/organisms/LocaleLink'
 const TopTemplate: React.VFC = () => {
   return (
     <div className="flex flex-col min-h-screen bg-white">
-      <Header />
-      <AboutUs />
-      <LocaleLink />
-      <Achievements />
-      <Awards />
-      <WorkExperiences />
-      <AcademicBackgrounds />
+      <div className="flex-grow">
+        <Header />
+        <AboutUs />
+        <LocaleLink />
+        <Achievements />
+        <Awards />
+        <WorkExperiences />
+        <AcademicBackgrounds />
+      </div>
       <Footer />
     </div>
   )

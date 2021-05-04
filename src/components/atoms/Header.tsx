@@ -5,7 +5,7 @@ import { MenuIcon, XIcon } from '@heroicons/react/outline'
 
 const navigation = [
   { name: 'About', href: '/' },
-  { name: 'Memo', href: '/' },
+  { name: 'Memo', href: '/articles/' },
 ]
 
 const Header: React.VFC = () => {
