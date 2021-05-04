@@ -8,7 +8,7 @@ const convertCategoryKeyObject = (items, locale) => {
   const localeName = locale === 'en-US' ? 'nameUS' : 'nameJP'
   const achievements = {}
   const categoryOrder = [] as { name: string; orderNum: number }[]
-  items.forEach((item) => {
+  items?.forEach((item) => {
     const cat = item.category[localeName]
     if (typeof achievements[cat] == 'undefined') achievements[cat] = []
     achievements[cat].push(item)

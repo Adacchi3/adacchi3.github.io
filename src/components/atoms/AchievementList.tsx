@@ -33,7 +33,7 @@ const AchievementList: React.VFC<Props> = ({
 
   const title = (achievement: Achievement) => {
     return achievement.link ? (
-      <>
+      <React.Fragment key={achievement.title}>
         “
         <a
           className="text-blue-600 hover:underline"
@@ -44,18 +44,20 @@ const AchievementList: React.VFC<Props> = ({
           {achievement.title}
         </a>
         ”
-      </>
+      </React.Fragment>
     ) : (
-      <>“{achievement.title}”</>
+      <React.Fragment key={achievement.title}>
+        “{achievement.title}”
+      </React.Fragment>
     )
   }
 
   const pages = (achievement: Achievement) => {
     return achievement.startPage ? (
-      <>
+      <React.Fragment key={`pp-${achievement.title}`}>
         pp.{achievement.startPage}--
         {achievement.endPage}
-      </>
+      </React.Fragment>
     ) : null
   }
 
