@@ -28,9 +28,9 @@ const WorkExperiences: React.VFC = () => {
 
   return (
     <Container>
-      <h2 className="text-4xl my-4 font-medium">Work Experiences</h2>
+      <h2 className="my-4 text-4xl font-medium">Work Experiences</h2>
       <hr />
-      <ul className="list-disc mt-4 mb-1">
+      <ul className="mt-4 mb-1 list-disc">
         {data?.workExperiences?.items.map(
           (workExperience: WorkExperience, index) => {
             return (

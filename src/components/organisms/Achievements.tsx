@@ -39,7 +39,7 @@ const Achievements: React.VFC = () => {
 
   return (
     <Container>
-      <h2 className="text-4xl my-4 font-medium">Achievements</h2>
+      <h2 className="my-4 text-4xl font-medium">Achievements</h2>
       <hr />
       {categoryOrder.map((category, index) => {
         return (

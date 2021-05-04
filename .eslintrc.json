@@ -25,6 +25,9 @@
   "rules": {
     "eol-last": ["error", "always"],
     "react/prop-types": [0],
+    "tailwindcss/classnames-order": 2,
+    "tailwindcss/no-custom-classname": 2,
+    "tailwindcss/no-contradicting-classname": 2,
     "prettier/prettier": [
       "warn",
       {

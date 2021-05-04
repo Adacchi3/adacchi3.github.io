@@ -16,9 +16,9 @@ const Awards: React.VFC = () => {
 
   return (
     <Container>
-      <h2 className="text-4xl my-4 font-medium">Awards</h2>
+      <h2 className="my-4 text-4xl font-medium">Awards</h2>
       <hr />
-      <ul className="list-disc mt-4 mb-1">
+      <ul className="mt-4 mb-1 list-disc">
         {data?.awards?.items.map((award: Award, index) => {
           return (
             <li key={index} className="mx-10 mb-1">

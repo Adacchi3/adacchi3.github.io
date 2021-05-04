@@ -8,7 +8,7 @@ const LocaleLink: React.VFC = () => {
   const links =
     locale === 'en-US' ? (
       <>
-        <a href="/" className="hover:underline text-blue-600">
+        <a href="/" className="text-blue-600 hover:underline">
           日本語
         </a>{' '}
         / <a>English</a>
@@ -16,7 +16,7 @@ const LocaleLink: React.VFC = () => {
     ) : (
       <>
         <a>日本語</a> /{' '}
-        <a href="/en/" className="hover:underline text-blue-600">
+        <a href="/en/" className="text-blue-600 hover:underline">
           English
         </a>
       </>
