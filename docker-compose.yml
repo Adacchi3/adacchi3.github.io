@@ -16,5 +16,6 @@ services:
       - GRAPHQL_ENDPOINT
       - PREVIEW=true
       - AUTHOR_ID
+      - GTM_ID
 volumes:
   node_modules:
