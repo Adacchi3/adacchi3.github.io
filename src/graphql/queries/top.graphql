@@ -22,6 +22,7 @@ query Top($preview: Boolean, $locale: String!, $authorId: String!) {
     preview: $preview
     locale: $locale
     order: startDate_DESC
+    where: { user: { sys: { id: $authorId } } }
   ) {
     items {
       organization
@@ -59,6 +60,7 @@ query Top($preview: Boolean, $locale: String!, $authorId: String!) {
     preview: $preview
     locale: $locale
     order: awardDate_DESC
+    where: { user: { sys: { id: $authorId } } }
   ) {
     items {
       name

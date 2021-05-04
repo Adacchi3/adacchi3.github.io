@@ -31,6 +31,115 @@ export type Scalars = {
   Quality: number
 }
 
+/** [See type definition](https://app.contentful.com/spaces/{spaceId}/content_types/academicBackground) */
+export type AcademicBackground = Entry & {
+  __typename?: 'AcademicBackground'
+  sys: Sys
+  contentfulMetadata: ContentfulMetadata
+  linkedFrom?: Maybe<AcademicBackgroundLinkingCollections>
+  organization?: Maybe<Scalars['String']>
+  startDate?: Maybe<Scalars['DateTime']>
+  endDate?: Maybe<Scalars['DateTime']>
+  user?: Maybe<Author>
+}
+
+/** [See type definition](https://app.contentful.com/spaces/{spaceId}/content_types/academicBackground) */
+export type AcademicBackgroundLinkedFromArgs = {
+  allowedLocales?: Maybe<Array<Maybe<Scalars['String']>>>
+}
+
+/** [See type definition](https://app.contentful.com/spaces/{spaceId}/content_types/academicBackground) */
+export type AcademicBackgroundOrganizationArgs = {
+  locale?: Maybe<Scalars['String']>
+}
+
+/** [See type definition](https://app.contentful.com/spaces/{spaceId}/content_types/academicBackground) */
+export type AcademicBackgroundStartDateArgs = {
+  locale?: Maybe<Scalars['String']>
+}
+
+/** [See type definition](https://app.contentful.com/spaces/{spaceId}/content_types/academicBackground) */
+export type AcademicBackgroundEndDateArgs = {
+  locale?: Maybe<Scalars['String']>
+}
+
+/** [See type definition](https://app.contentful.com/spaces/{spaceId}/content_types/academicBackground) */
+export type AcademicBackgroundUserArgs = {
+  preview?: Maybe<Scalars['Boolean']>
+  locale?: Maybe<Scalars['String']>
+}
+
+export type AcademicBackgroundCollection = {
+  __typename?: 'AcademicBackgroundCollection'
+  total: Scalars['Int']
+  skip: Scalars['Int']
+  limit: Scalars['Int']
+  items: Array<Maybe<AcademicBackground>>
+}
+
+export type AcademicBackgroundFilter = {
+  user?: Maybe<CfAuthorNestedFilter>
+  sys?: Maybe<SysFilter>
+  contentfulMetadata?: Maybe<ContentfulMetadataFilter>
+  organization_exists?: Maybe<Scalars['Boolean']>
+  organization?: Maybe<Scalars['String']>
+  organization_not?: Maybe<Scalars['String']>
+  organization_in?: Maybe<Array<Maybe<Scalars['String']>>>
+  organization_not_in?: Maybe<Array<Maybe<Scalars['String']>>>
+  organization_contains?: Maybe<Scalars['String']>
+  organization_not_contains?: Maybe<Scalars['String']>
+  startDate_exists?: Maybe<Scalars['Boolean']>
+  startDate?: Maybe<Scalars['DateTime']>
+  startDate_not?: Maybe<Scalars['DateTime']>
+  startDate_in?: Maybe<Array<Maybe<Scalars['DateTime']>>>
+  startDate_not_in?: Maybe<Array<Maybe<Scalars['DateTime']>>>
+  startDate_gt?: Maybe<Scalars['DateTime']>
+  startDate_gte?: Maybe<Scalars['DateTime']>
+  startDate_lt?: Maybe<Scalars['DateTime']>
+  startDate_lte?: Maybe<Scalars['DateTime']>
+  endDate_exists?: Maybe<Scalars['Boolean']>
+  endDate?: Maybe<Scalars['DateTime']>
+  endDate_not?: Maybe<Scalars['DateTime']>
+  endDate_in?: Maybe<Array<Maybe<Scalars['DateTime']>>>
+  endDate_not_in?: Maybe<Array<Maybe<Scalars['DateTime']>>>
+  endDate_gt?: Maybe<Scalars['DateTime']>
+  endDate_gte?: Maybe<Scalars['DateTime']>
+  endDate_lt?: Maybe<Scalars['DateTime']>
+  endDate_lte?: Maybe<Scalars['DateTime']>
+  user_exists?: Maybe<Scalars['Boolean']>
+  OR?: Maybe<Array<Maybe<AcademicBackgroundFilter>>>
+  AND?: Maybe<Array<Maybe<AcademicBackgroundFilter>>>
+}
+
+export type AcademicBackgroundLinkingCollections = {
+  __typename?: 'AcademicBackgroundLinkingCollections'
+  entryCollection?: Maybe<EntryCollection>
+}
+
+export type AcademicBackgroundLinkingCollectionsEntryCollectionArgs = {
+  skip?: Maybe<Scalars['Int']>
+  limit?: Maybe<Scalars['Int']>
+  preview?: Maybe<Scalars['Boolean']>
+  locale?: Maybe<Scalars['String']>
+}
+
+export enum AcademicBackgroundOrder {
+  OrganizationAsc = 'organization_ASC',
+  OrganizationDesc = 'organization_DESC',
+  StartDateAsc = 'startDate_ASC',
+  StartDateDesc = 'startDate_DESC',
+  EndDateAsc = 'endDate_ASC',
+  EndDateDesc = 'endDate_DESC',
+  SysIdAsc = 'sys_id_ASC',
+  SysIdDesc = 'sys_id_DESC',
+  SysPublishedAtAsc = 'sys_publishedAt_ASC',
+  SysPublishedAtDesc = 'sys_publishedAt_DESC',
+  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
+  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
+  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
+  SysPublishedVersionDesc = 'sys_publishedVersion_DESC',
+}
+
 /** [See type definition](https://app.contentful.com/spaces/{spaceId}/content_types/achievement) */
 export type Achievement = Entry & {
   __typename?: 'Achievement'
@@ -540,11 +649,35 @@ export type AuthorFilter = {
 export type AuthorLinkingCollections = {
   __typename?: 'AuthorLinkingCollections'
   entryCollection?: Maybe<EntryCollection>
-  contactCollection?: Maybe<ContactCollection>
   achievementCollection?: Maybe<AchievementCollection>
+  awardCollection?: Maybe<AwardCollection>
+  workExperienceCollection?: Maybe<WorkExperienceCollection>
+  contactCollection?: Maybe<ContactCollection>
+  academicBackgroundCollection?: Maybe<AcademicBackgroundCollection>
 }
 
 export type AuthorLinkingCollectionsEntryCollectionArgs = {
+  skip?: Maybe<Scalars['Int']>
+  limit?: Maybe<Scalars['Int']>
+  preview?: Maybe<Scalars['Boolean']>
+  locale?: Maybe<Scalars['String']>
+}
+
+export type AuthorLinkingCollectionsAchievementCollectionArgs = {
+  skip?: Maybe<Scalars['Int']>
+  limit?: Maybe<Scalars['Int']>
+  preview?: Maybe<Scalars['Boolean']>
+  locale?: Maybe<Scalars['String']>
+}
+
+export type AuthorLinkingCollectionsAwardCollectionArgs = {
+  skip?: Maybe<Scalars['Int']>
+  limit?: Maybe<Scalars['Int']>
+  preview?: Maybe<Scalars['Boolean']>
+  locale?: Maybe<Scalars['String']>
+}
+
+export type AuthorLinkingCollectionsWorkExperienceCollectionArgs = {
   skip?: Maybe<Scalars['Int']>
   limit?: Maybe<Scalars['Int']>
   preview?: Maybe<Scalars['Boolean']>
@@ -558,7 +691,7 @@ export type AuthorLinkingCollectionsContactCollectionArgs = {
   locale?: Maybe<Scalars['String']>
 }
 
-export type AuthorLinkingCollectionsAchievementCollectionArgs = {
+export type AuthorLinkingCollectionsAcademicBackgroundCollectionArgs = {
   skip?: Maybe<Scalars['Int']>
   limit?: Maybe<Scalars['Int']>
   preview?: Maybe<Scalars['Boolean']>
@@ -591,6 +724,7 @@ export type Award = Entry & {
   name?: Maybe<Scalars['String']>
   publication?: Maybe<Scalars['String']>
   awardDate?: Maybe<Scalars['DateTime']>
+  user?: Maybe<Author>
 }
 
 /** [See type definition](https://app.contentful.com/spaces/{spaceId}/content_types/award) */
@@ -613,6 +747,12 @@ export type AwardAwardDateArgs = {
   locale?: Maybe<Scalars['String']>
 }
 
+/** [See type definition](https://app.contentful.com/spaces/{spaceId}/content_types/award) */
+export type AwardUserArgs = {
+  preview?: Maybe<Scalars['Boolean']>
+  locale?: Maybe<Scalars['String']>
+}
+
 export type AwardCollection = {
   __typename?: 'AwardCollection'
   total: Scalars['Int']
@@ -622,6 +762,7 @@ export type AwardCollection = {
 }
 
 export type AwardFilter = {
+  user?: Maybe<CfAuthorNestedFilter>
   sys?: Maybe<SysFilter>
   contentfulMetadata?: Maybe<ContentfulMetadataFilter>
   name_exists?: Maybe<Scalars['Boolean']>
@@ -647,6 +788,7 @@ export type AwardFilter = {
   awardDate_gte?: Maybe<Scalars['DateTime']>
   awardDate_lt?: Maybe<Scalars['DateTime']>
   awardDate_lte?: Maybe<Scalars['DateTime']>
+  user_exists?: Maybe<Scalars['Boolean']>
   OR?: Maybe<Array<Maybe<AwardFilter>>>
   AND?: Maybe<Array<Maybe<AwardFilter>>>
 }
@@ -940,16 +1082,18 @@ export type Query = {
   __typename?: 'Query'
   asset?: Maybe<Asset>
   assetCollection?: Maybe<AssetCollection>
-  contact?: Maybe<Contact>
-  contactCollection?: Maybe<ContactCollection>
+  achievement?: Maybe<Achievement>
+  achievementCollection?: Maybe<AchievementCollection>
   award?: Maybe<Award>
   awardCollection?: Maybe<AwardCollection>
   workExperience?: Maybe<WorkExperience>
   workExperienceCollection?: Maybe<WorkExperienceCollection>
+  contact?: Maybe<Contact>
+  contactCollection?: Maybe<ContactCollection>
+  academicBackground?: Maybe<AcademicBackground>
+  academicBackgroundCollection?: Maybe<AcademicBackgroundCollection>
   author?: Maybe<Author>
   authorCollection?: Maybe<AuthorCollection>
-  achievement?: Maybe<Achievement>
-  achievementCollection?: Maybe<AchievementCollection>
   achievementCategory?: Maybe<AchievementCategory>
   achievementCategoryCollection?: Maybe<AchievementCategoryCollection>
   entryCollection?: Maybe<EntryCollection>
@@ -970,19 +1114,19 @@ export type QueryAssetCollectionArgs = {
   order?: Maybe<Array<Maybe<AssetOrder>>>
 }
 
-export type QueryContactArgs = {
+export type QueryAchievementArgs = {
   id: Scalars['String']
   preview?: Maybe<Scalars['Boolean']>
   locale?: Maybe<Scalars['String']>
 }
 
-export type QueryContactCollectionArgs = {
+export type QueryAchievementCollectionArgs = {
   skip?: Maybe<Scalars['Int']>
   limit?: Maybe<Scalars['Int']>
   preview?: Maybe<Scalars['Boolean']>
   locale?: Maybe<Scalars['String']>
-  where?: Maybe<ContactFilter>
-  order?: Maybe<Array<Maybe<ContactOrder>>>
+  where?: Maybe<AchievementFilter>
+  order?: Maybe<Array<Maybe<AchievementOrder>>>
 }
 
 export type QueryAwardArgs = {
@@ -1015,6 +1159,36 @@ export type QueryWorkExperienceCollectionArgs = {
   order?: Maybe<Array<Maybe<WorkExperienceOrder>>>
 }
 
+export type QueryContactArgs = {
+  id: Scalars['String']
+  preview?: Maybe<Scalars['Boolean']>
+  locale?: Maybe<Scalars['String']>
+}
+
+export type QueryContactCollectionArgs = {
+  skip?: Maybe<Scalars['Int']>
+  limit?: Maybe<Scalars['Int']>
+  preview?: Maybe<Scalars['Boolean']>
+  locale?: Maybe<Scalars['String']>
+  where?: Maybe<ContactFilter>
+  order?: Maybe<Array<Maybe<ContactOrder>>>
+}
+
+export type QueryAcademicBackgroundArgs = {
+  id: Scalars['String']
+  preview?: Maybe<Scalars['Boolean']>
+  locale?: Maybe<Scalars['String']>
+}
+
+export type QueryAcademicBackgroundCollectionArgs = {
+  skip?: Maybe<Scalars['Int']>
+  limit?: Maybe<Scalars['Int']>
+  preview?: Maybe<Scalars['Boolean']>
+  locale?: Maybe<Scalars['String']>
+  where?: Maybe<AcademicBackgroundFilter>
+  order?: Maybe<Array<Maybe<AcademicBackgroundOrder>>>
+}
+
 export type QueryAuthorArgs = {
   id: Scalars['String']
   preview?: Maybe<Scalars['Boolean']>
@@ -1028,21 +1202,6 @@ export type QueryAuthorCollectionArgs = {
   locale?: Maybe<Scalars['String']>
   where?: Maybe<AuthorFilter>
   order?: Maybe<Array<Maybe<AuthorOrder>>>
-}
-
-export type QueryAchievementArgs = {
-  id: Scalars['String']
-  preview?: Maybe<Scalars['Boolean']>
-  locale?: Maybe<Scalars['String']>
-}
-
-export type QueryAchievementCollectionArgs = {
-  skip?: Maybe<Scalars['Int']>
-  limit?: Maybe<Scalars['Int']>
-  preview?: Maybe<Scalars['Boolean']>
-  locale?: Maybe<Scalars['String']>
-  where?: Maybe<AchievementFilter>
-  order?: Maybe<Array<Maybe<AchievementOrder>>>
 }
 
 export type QueryAchievementCategoryArgs = {
@@ -1126,6 +1285,7 @@ export type WorkExperience = Entry & {
   role?: Maybe<Scalars['String']>
   startDate?: Maybe<Scalars['DateTime']>
   endDate?: Maybe<Scalars['DateTime']>
+  user?: Maybe<Author>
 }
 
 /** [See type definition](https://app.contentful.com/spaces/{spaceId}/content_types/workExperience) */
@@ -1153,6 +1313,12 @@ export type WorkExperienceEndDateArgs = {
   locale?: Maybe<Scalars['String']>
 }
 
+/** [See type definition](https://app.contentful.com/spaces/{spaceId}/content_types/workExperience) */
+export type WorkExperienceUserArgs = {
+  preview?: Maybe<Scalars['Boolean']>
+  locale?: Maybe<Scalars['String']>
+}
+
 export type WorkExperienceCollection = {
   __typename?: 'WorkExperienceCollection'
   total: Scalars['Int']
@@ -1162,6 +1328,7 @@ export type WorkExperienceCollection = {
 }
 
 export type WorkExperienceFilter = {
+  user?: Maybe<CfAuthorNestedFilter>
   sys?: Maybe<SysFilter>
   contentfulMetadata?: Maybe<ContentfulMetadataFilter>
   organization_exists?: Maybe<Scalars['Boolean']>
@@ -1196,6 +1363,7 @@ export type WorkExperienceFilter = {
   endDate_gte?: Maybe<Scalars['DateTime']>
   endDate_lt?: Maybe<Scalars['DateTime']>
   endDate_lte?: Maybe<Scalars['DateTime']>
+  user_exists?: Maybe<Scalars['Boolean']>
   OR?: Maybe<Array<Maybe<WorkExperienceFilter>>>
   AND?: Maybe<Array<Maybe<WorkExperienceFilter>>>
 }
@@ -1363,6 +1531,18 @@ export type TopQuery = { __typename?: 'Query' } & {
       >
     }
   >
+  academicBackgroundCollection?: Maybe<
+    { __typename?: 'AcademicBackgroundCollection' } & {
+      items: Array<
+        Maybe<
+          { __typename?: 'AcademicBackground' } & Pick<
+            AcademicBackground,
+            'organization' | 'startDate' | 'endDate'
+          >
+        >
+      >
+    }
+  >
 }
 
 export const TopDocument = gql`
@@ -1390,6 +1570,7 @@ export const TopDocument = gql`
       preview: $preview
       locale: $locale
       order: startDate_DESC
+      where: { user: { sys: { id: $authorId } } }
     ) {
       items {
         organization
@@ -1427,11 +1608,23 @@ export const TopDocument = gql`
       preview: $preview
       locale: $locale
       order: awardDate_DESC
+      where: { user: { sys: { id: $authorId } } }
     ) {
       items {
         name
         publication
         awardDate
+      }
+    }
+    academicBackgroundCollection(
+      preview: $preview
+      locale: $locale
+      where: { user: { sys: { id: $authorId } } }
+    ) {
+      items {
+        organization
+        startDate
+        endDate
       }
     }
   }
