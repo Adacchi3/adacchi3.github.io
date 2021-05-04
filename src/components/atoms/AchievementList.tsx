@@ -63,7 +63,7 @@ const AchievementList: React.VFC<Props> = ({
       {achievements[categoryName].map(
         (achievement: Achievement, index: number) => {
           return (
-            <li key={`${achievement.title}-${index}`} className="mx-10">
+            <li key={`${achievement.title}-${index}`} className="mx-10 mb-1">
               {[
                 authors(achievement),
                 title(achievement),
@@ -75,7 +75,6 @@ const AchievementList: React.VFC<Props> = ({
               ]
                 .filter((value) => value)
                 .reduce((previous, current) => [previous, ', ', current])}
-              .
             </li>
           )
         }

@@ -2,6 +2,9 @@ import React from 'react'
 import Header from '@components/atoms/Header'
 import Footer from '@components/atoms/Footer'
 import Achievements from '@components/organisms/Achievements'
+import Awards from '@components/organisms/Awards'
+import WorkExperiences from '@components/organisms/WorkExperience'
+import AcademicBackgrounds from '@components/organisms/AcademicBackgrounds'
 
 const TopTemplate: React.FC = ({ children }) => {
   return (
@@ -9,6 +12,9 @@ const TopTemplate: React.FC = ({ children }) => {
       <Header />
       {children}
       <Achievements />
+      <Awards />
+      <WorkExperiences />
+      <AcademicBackgrounds />
       <Footer />
     </div>
   )
