@@ -12,11 +12,11 @@ const LocaleLink: React.VFC = () => {
         <Link href="/">
           <a className="text-blue-600 hover:underline">日本語</a>
         </Link>{' '}
-        / <a>English</a>
+        / English
       </>
     ) : (
       <>
-        <a>日本語</a> /{' '}
+        日本語 /{' '}
         <Link href="/en/">
           <a className="text-blue-600 hover:underline">English</a>
         </Link>

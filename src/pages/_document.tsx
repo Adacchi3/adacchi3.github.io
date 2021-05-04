@@ -18,7 +18,7 @@ class MyDocument extends Document {
 
   render(): JSX.Element {
     return (
-      <Html>
+      <Html lang="ja">
         <Head>
           <link rel="preconnect" href="https://www.googletagmanager.com" />
           <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
