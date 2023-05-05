@@ -32,10 +32,8 @@ const Header: React.VFC = () => {
                 <div className="hidden sm:ml-6 sm:block">
                   <div className="flex space-x-4">
                     {navigation.map((item, index) => (
-                      <Link href={item.href} key={index}>
-                        <a className="rounded-md px-3 py-2 text-sm font-medium text-gray-500 hover:bg-gray-200 hover:text-gray-600">
+                      <Link href={item.href} key={index} className="rounded-md px-3 py-2 text-sm font-medium text-gray-500 hover:bg-gray-200 hover:text-gray-600">
                           {item.name}
-                        </a>
                       </Link>
                     ))}
                   </div>
@@ -47,10 +45,8 @@ const Header: React.VFC = () => {
           <Disclosure.Panel className="sm:hidden">
             <div className="space-y-1 px-2 pb-3 pt-2">
               {navigation.map((item, index) => (
-                <Link href={item.href} key={index}>
-                  <a className="block rounded-md px-3 py-2 text-base font-medium text-gray-500 hover:bg-gray-200 hover:text-gray-600">
+                <Link href={item.href} key={index} className="block rounded-md px-3 py-2 text-base font-medium text-gray-500 hover:bg-gray-200 hover:text-gray-600">
                     {item.name}
-                  </a>
                 </Link>
               ))}
             </div>
