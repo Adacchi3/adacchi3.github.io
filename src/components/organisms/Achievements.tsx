@@ -44,7 +44,7 @@ const Achievements: React.VFC = () => {
       {categoryOrder.map((category, index) => {
         return (
           <React.Fragment key={index}>
-            <h3 className="mt-4 mb-1">{category.name}</h3>
+            <h3 className="mb-1 mt-4">{category.name}</h3>
             <AchievementList
               achievements={achievementsData}
               categoryName={category.name}

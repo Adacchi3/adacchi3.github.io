@@ -5,5 +5,6 @@ module.exports = {
     PREVIEW: process.env.NODE_ENV === 'production' ? false : true,
     AUTHOR_ID: process.env.AUTHOR_ID,
     GTM_ID: process.env.GTM_ID,
-  }
+  },
+  swcMinify: true,
 }

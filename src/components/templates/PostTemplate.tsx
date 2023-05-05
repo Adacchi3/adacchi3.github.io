@@ -9,7 +9,7 @@ const PostTemplate: React.VFC = () => {
   const { slug } = router.query
 
   return (
-    <div className="flex flex-col min-h-screen bg-white">
+    <div className="flex min-h-screen flex-col bg-white">
       <div className="flex-grow">
         <Header />
         <Container>

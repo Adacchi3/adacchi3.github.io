@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 import { Disclosure } from '@headlessui/react'
-import { MenuIcon, XIcon } from '@heroicons/react/outline'
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 
 const navigation = [
   { name: 'About', href: '/' },
@@ -13,44 +13,40 @@ const Header: React.VFC = () => {
     <Disclosure as="nav" className="bg-gray-100">
       {({ open }) => (
         <>
-          <div className="px-2 sm:px-6 lg:px-8 mx-auto max-w-7xl">
-            <div className="flex relative justify-between items-center h-16">
-              <div className="flex sm:hidden absolute inset-y-0 left-0 items-center">
-                <Disclosure.Button className="inline-flex justify-center items-center p-2 text-gray-400 hover:bg-gray-200 rounded-md focus:ring-2 focus:ring-inset focus:ring-white focus:outline-none">
+          <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+            <div className="relative flex h-16 items-center justify-between">
+              <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
+                <Disclosure.Button className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
                   <span className="sr-only">Open main menu</span>
                   {open ? (
-                    <XIcon className="block w-6 h-6" aria-hidden="true" />
+                    <XMarkIcon className="block h-6 w-6" aria-hidden="true" />
                   ) : (
-                    <MenuIcon className="block w-6 h-6" aria-hidden="true" />
+                    <Bars3Icon className="block h-6 w-6" aria-hidden="true" />
                   )}
                 </Disclosure.Button>
               </div>
-              <div className="flex flex-1 justify-center sm:justify-start items-center sm:items-stretch">
+              <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex flex-shrink-0 items-center">
                   <p className="text-lg text-gray-600">Adacchi3</p>
                 </div>
-                <div className="hidden sm:block sm:ml-6">
+                <div className="hidden sm:ml-6 sm:block">
                   <div className="flex space-x-4">
                     {navigation.map((item, index) => (
-                      <Link href={item.href} key={index}>
-                        <a className="py-2 px-3 text-sm font-medium text-gray-500 hover:text-gray-600 hover:bg-gray-200 rounded-md">
+                      <Link href={item.href} key={index} className="rounded-md px-3 py-2 text-sm font-medium text-gray-500 hover:bg-gray-200 hover:text-gray-600">
                           {item.name}
-                        </a>
                       </Link>
                     ))}
                   </div>
                 </div>
               </div>
-              <div className="flex absolute sm:static sm:inset-auto inset-y-0 right-0 items-center pr-2 sm:pr-0 sm:ml-6"></div>
+              <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0"></div>
             </div>
           </div>
           <Disclosure.Panel className="sm:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1">
+            <div className="space-y-1 px-2 pb-3 pt-2">
               {navigation.map((item, index) => (
-                <Link href={item.href} key={index}>
-                  <a className="block py-2 px-3 text-base font-medium text-gray-500 hover:text-gray-600 hover:bg-gray-200 rounded-md">
+                <Link href={item.href} key={index} className="block rounded-md px-3 py-2 text-base font-medium text-gray-500 hover:bg-gray-200 hover:text-gray-600">
                     {item.name}
-                  </a>
                 </Link>
               ))}
             </div>

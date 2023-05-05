@@ -2,8 +2,8 @@ import React from 'react'
 
 const Container: React.FC = ({ children }) => {
   return (
-    <div className="py-2 px-6">
-      <div className="container lg:px-8 xl:px-24 mx-auto">{children}</div>
+    <div className="px-6 py-2">
+      <div className="container mx-auto lg:px-8 xl:px-24">{children}</div>
     </div>
   )
 }
