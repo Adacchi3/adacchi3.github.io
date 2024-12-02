@@ -13,6 +13,8 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: '18'
+      - name: setup corepack
+        run: corepack enable
       - name: get yarn cache directory path
         id: yarn-cache-dir-path
         run: echo "::set-output name=dir::$(yarn cache dir)"
