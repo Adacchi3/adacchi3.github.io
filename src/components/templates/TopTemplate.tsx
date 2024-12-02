@@ -8,7 +8,7 @@ import AcademicBackgrounds from '@components/organisms/AcademicBackgrounds'
 import AboutUs from '@components/organisms/AboutUs'
 import LocaleLink from '@components/organisms/LocaleLink'
 
-const TopTemplate: React.VFC = () => {
+const TopTemplate: React.FC = () => {
   return (
     <div className="flex min-h-screen flex-col bg-white">
       <div className="flex-grow">

@@ -3,7 +3,7 @@ import Link from 'next/link'
 import Container from '@components/atoms/Container'
 import { useLocale } from '@hooks/Locale'
 
-const LocaleLink: React.VFC = () => {
+const LocaleLink: React.FC = () => {
   const locale = useLocale()
 
   const links =

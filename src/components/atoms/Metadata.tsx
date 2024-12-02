@@ -5,7 +5,7 @@ type Props = {
   description?: string
 }
 
-const Metadata: React.VFC<Props> = ({ title, description }) => {
+const Metadata: React.FC<Props> = ({ title, description }) => {
   const meta = [
     {
       name: 'description',

@@ -4,7 +4,7 @@ import Footer from '@components/atoms/Footer'
 import Container from '@components/atoms/Container'
 import { useRouter } from 'next/dist/client/router'
 
-const PostTemplate: React.VFC = () => {
+const PostTemplate: React.FC = () => {
   const router = useRouter()
   const { slug } = router.query
 
