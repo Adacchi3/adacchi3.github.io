@@ -8,7 +8,7 @@ const navigation = [
   { name: 'Note', href: 'https://note.com/ayata_taguchi' },
 ]
 
-const Header: React.VFC = () => {
+const Header: React.FC = () => {
   return (
     <Disclosure as="nav" className="bg-gray-100">
       {({ open }) => (

@@ -21,7 +21,7 @@ const convertCategoryKeyObject = (items, locale) => {
   return { achievements, categoryOrder }
 }
 
-const Achievements: React.VFC = () => {
+const Achievements: React.FC = () => {
   const locale = useLocale()
   const { data } = useTopQuery({
     variables: {

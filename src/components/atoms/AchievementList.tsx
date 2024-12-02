@@ -8,7 +8,7 @@ type Props = {
   locale: string
 }
 
-const AchievementList: React.VFC<Props> = ({
+const AchievementList: React.FC<Props> = ({
   achievements,
   categoryName,
   locale,

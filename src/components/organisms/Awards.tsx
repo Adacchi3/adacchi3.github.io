@@ -4,7 +4,7 @@ import { useLocale } from '@hooks/Locale'
 import moment from 'moment'
 import Container from '@components/atoms/Container'
 
-const Awards: React.VFC = () => {
+const Awards: React.FC = () => {
   const locale = useLocale()
   const { data } = useTopQuery({
     variables: {

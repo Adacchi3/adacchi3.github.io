@@ -26,7 +26,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   }
 }
 
-const Post: React.VFC = () => {
+const Post: React.FC = () => {
   return <PostTemplate />
 }
 

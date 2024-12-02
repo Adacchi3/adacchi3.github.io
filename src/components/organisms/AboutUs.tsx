@@ -4,7 +4,7 @@ import { useLocale } from '@hooks/Locale'
 import React from 'react'
 import SimpleFormat from 'src/lib/SimpleFormat'
 
-const AboutUs: React.VFC = () => {
+const AboutUs: React.FC = () => {
   const locale = useLocale()
   const { data } = useTopQuery({
     variables: {

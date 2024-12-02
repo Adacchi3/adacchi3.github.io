@@ -4,7 +4,7 @@ type Props = {
   text: string
 }
 
-const SimpleFormat: React.VFC<Props> = ({ text }) => {
+const SimpleFormat: React.FC<Props> = ({ text }) => {
   return (
     <>
       {text.split('\n').map((str, index) => (
