@@ -6,7 +6,7 @@ import React from 'react'
 const ArticleIndexTemplate: React.FC = () => {
   return (
     <div className="flex min-h-screen flex-col bg-white">
-      <div className="flex-grow">
+      <div className="grow">
         <Header />
         <Container>
           <p className="text-center">WIP: 工事中です。。。</p>
