@@ -5,7 +5,12 @@
   "formatter": {
     "enabled": true,
     "indentStyle": "space",
-    "ignore": ["**/node_modules/**", "**/.next/**", "**/next.config.js", "**/out/**"]
+    "ignore": [
+      "**/node_modules/**",
+      "**/.next/**",
+      "**/next.config.js",
+      "**/out/**"
+    ]
   },
   "organizeImports": { "enabled": true },
   "linter": {
@@ -89,9 +94,17 @@
         "useGetterReturn": "error",
         "useNamespaceKeyword": "error",
         "useValidTypeof": "error"
+      },
+      "nursery": {
+        "useSortedClasses": "warn"
       }
     },
-    "ignore": ["**/node_modules/**", "**/.next/**", "**/next.config.js", "**/out/**"]
+    "ignore": [
+      "**/node_modules/**",
+      "**/.next/**",
+      "**/next.config.js",
+      "**/out/**"
+    ]
   },
   "javascript": {
     "formatter": { "quoteStyle": "single", "semicolons": "asNeeded" }

@@ -31,7 +31,7 @@ const AboutUs: React.FC = () => {
         </div>
         <div className="text-center">
           <h1 className="text-3xl">{data?.me?.name}</h1>
-          <p className="text-xl text-gray-600">{data?.me?.nickname}</p>
+          <p className="text-gray-600 text-xl">{data?.me?.nickname}</p>
           <p className="py-4 text-center text-gray-600 md:mx-20">
             <SimpleFormat text={String(data?.me?.description)} />
           </p>

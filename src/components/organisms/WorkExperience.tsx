@@ -28,9 +28,9 @@ const WorkExperiences: React.FC = () => {
 
   return (
     <Container>
-      <h2 className="my-4 text-4xl font-medium">Work Experiences</h2>
+      <h2 className="my-4 font-medium text-4xl">Work Experiences</h2>
       <hr />
-      <ul className="mb-1 mt-4 list-disc">
+      <ul className="mt-4 mb-1 list-disc">
         {data?.workExperiences?.items.map(
           (workExperience: WorkExperience, index) => {
             return (

@@ -39,12 +39,12 @@ const Achievements: React.FC = () => {
 
   return (
     <Container>
-      <h2 className="my-4 text-4xl font-medium">Achievements</h2>
+      <h2 className="my-4 font-medium text-4xl">Achievements</h2>
       <hr />
       {categoryOrder.map((category, index) => {
         return (
           <React.Fragment key={index}>
-            <h3 className="mb-1 mt-4">{category.name}</h3>
+            <h3 className="mt-4 mb-1">{category.name}</h3>
             <AchievementList
               achievements={achievementsData}
               categoryName={category.name}
