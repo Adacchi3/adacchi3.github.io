@@ -11,7 +11,7 @@
     "start": "next start",
     "export": "next export",
     "serve": "yarn run build && yarn run export && serve ./out",
-    "lint": "eslint --ext .js,.jsx,.ts,.tsx,.json .",
+    "lint": "biome check src",
     "apollo:download": "apollo client:download-schema src/graphql/schemas/contentful/schema.graphql",
     "prepare": "husky install",
     "generate": "graphql-codegen --config codegen.yml"

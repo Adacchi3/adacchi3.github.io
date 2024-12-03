@@ -1,7 +1,7 @@
-import React from 'react'
-import Link from 'next/link'
 import { Disclosure } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import Link from 'next/link'
+import React from 'react'
 
 const navigation = [
   { name: 'About', href: '/' },

@@ -1,6 +1,6 @@
-import React from 'react'
 import PostTemplate from '@components/templates/PostTemplate'
 import { GetStaticPaths, GetStaticProps } from 'next'
+import React from 'react'
 
 type StaticProps = {
   params: {

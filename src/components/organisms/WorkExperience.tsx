@@ -1,8 +1,8 @@
-import React from 'react'
-import { useTopQuery, WorkExperience } from '@graphql/generated/graphql'
+import Container from '@components/atoms/Container'
+import { WorkExperience, useTopQuery } from '@graphql/generated/graphql'
 import { useLocale } from '@hooks/Locale'
 import moment from 'moment'
-import Container from '@components/atoms/Container'
+import React from 'react'
 
 const WorkExperiences: React.FC = () => {
   const locale = useLocale()
@@ -22,8 +22,8 @@ const WorkExperiences: React.FC = () => {
     return startDate === endDate
       ? startDate
       : endDate
-      ? `${startDate} - ${endDate}`
-      : `${startDate} -`
+        ? `${startDate} - ${endDate}`
+        : `${startDate} -`
   }
 
   return (
@@ -44,7 +44,7 @@ const WorkExperiences: React.FC = () => {
                   .join(', ')}
               </li>
             )
-          }
+          },
         )}
       </ul>
     </Container>

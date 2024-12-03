@@ -14,7 +14,9 @@ Export this locally resolved field as a variable to be used in the remainder of 
 https://www.apollographql.com/docs/react/essentials/local-state/#using-client-fields-as-variables
 """
 directive @export(
-  """The variable name to export this field as."""
+  """
+  The variable name to export this field as.
+  """
   as: String!
 ) on FIELD
 
@@ -23,7 +25,9 @@ Specify a custom store key for this result. See
 https://www.apollographql.com/docs/react/advanced/caching/#the-connection-directive
 """
 directive @connection(
-  """Specify the store key."""
+  """
+  Specify the store key.
+  """
   key: String!
 
   """
@@ -34,25 +38,98 @@ directive @connection(
 
 type Query {
   asset(id: String!, preview: Boolean, locale: String): Asset
-  assetCollection(skip: Int = 0, limit: Int = 100, preview: Boolean, locale: String, where: AssetFilter, order: [AssetOrder]): AssetCollection
-  achievementCategory(id: String!, preview: Boolean, locale: String): AchievementCategory
-  achievementCategoryCollection(skip: Int = 0, limit: Int = 100, preview: Boolean, locale: String, where: AchievementCategoryFilter, order: [AchievementCategoryOrder]): AchievementCategoryCollection
+  assetCollection(
+    skip: Int = 0
+    limit: Int = 100
+    preview: Boolean
+    locale: String
+    where: AssetFilter
+    order: [AssetOrder]
+  ): AssetCollection
+  achievementCategory(
+    id: String!
+    preview: Boolean
+    locale: String
+  ): AchievementCategory
+  achievementCategoryCollection(
+    skip: Int = 0
+    limit: Int = 100
+    preview: Boolean
+    locale: String
+    where: AchievementCategoryFilter
+    order: [AchievementCategoryOrder]
+  ): AchievementCategoryCollection
   achievement(id: String!, preview: Boolean, locale: String): Achievement
-  achievementCollection(skip: Int = 0, limit: Int = 100, preview: Boolean, locale: String, where: AchievementFilter, order: [AchievementOrder]): AchievementCollection
+  achievementCollection(
+    skip: Int = 0
+    limit: Int = 100
+    preview: Boolean
+    locale: String
+    where: AchievementFilter
+    order: [AchievementOrder]
+  ): AchievementCollection
   award(id: String!, preview: Boolean, locale: String): Award
-  awardCollection(skip: Int = 0, limit: Int = 100, preview: Boolean, locale: String, where: AwardFilter, order: [AwardOrder]): AwardCollection
+  awardCollection(
+    skip: Int = 0
+    limit: Int = 100
+    preview: Boolean
+    locale: String
+    where: AwardFilter
+    order: [AwardOrder]
+  ): AwardCollection
   workExperience(id: String!, preview: Boolean, locale: String): WorkExperience
-  workExperienceCollection(skip: Int = 0, limit: Int = 100, preview: Boolean, locale: String, where: WorkExperienceFilter, order: [WorkExperienceOrder]): WorkExperienceCollection
+  workExperienceCollection(
+    skip: Int = 0
+    limit: Int = 100
+    preview: Boolean
+    locale: String
+    where: WorkExperienceFilter
+    order: [WorkExperienceOrder]
+  ): WorkExperienceCollection
   contact(id: String!, preview: Boolean, locale: String): Contact
-  contactCollection(skip: Int = 0, limit: Int = 100, preview: Boolean, locale: String, where: ContactFilter, order: [ContactOrder]): ContactCollection
-  academicBackground(id: String!, preview: Boolean, locale: String): AcademicBackground
-  academicBackgroundCollection(skip: Int = 0, limit: Int = 100, preview: Boolean, locale: String, where: AcademicBackgroundFilter, order: [AcademicBackgroundOrder]): AcademicBackgroundCollection
+  contactCollection(
+    skip: Int = 0
+    limit: Int = 100
+    preview: Boolean
+    locale: String
+    where: ContactFilter
+    order: [ContactOrder]
+  ): ContactCollection
+  academicBackground(
+    id: String!
+    preview: Boolean
+    locale: String
+  ): AcademicBackground
+  academicBackgroundCollection(
+    skip: Int = 0
+    limit: Int = 100
+    preview: Boolean
+    locale: String
+    where: AcademicBackgroundFilter
+    order: [AcademicBackgroundOrder]
+  ): AcademicBackgroundCollection
   author(id: String!, preview: Boolean, locale: String): Author
-  authorCollection(skip: Int = 0, limit: Int = 100, preview: Boolean, locale: String, where: AuthorFilter, order: [AuthorOrder]): AuthorCollection
-  entryCollection(skip: Int = 0, limit: Int = 100, preview: Boolean, locale: String, where: EntryFilter, order: [EntryOrder]): EntryCollection
+  authorCollection(
+    skip: Int = 0
+    limit: Int = 100
+    preview: Boolean
+    locale: String
+    where: AuthorFilter
+    order: [AuthorOrder]
+  ): AuthorCollection
+  entryCollection(
+    skip: Int = 0
+    limit: Int = 100
+    preview: Boolean
+    locale: String
+    where: EntryFilter
+    order: [EntryOrder]
+  ): EntryCollection
 }
 
-"""Represents a binary file in a space. An asset can be any file type."""
+"""
+Represents a binary file in a space. An asset can be any file type.
+"""
 type Asset {
   sys: Sys!
   contentfulMetadata: ContentfulMetadata!
@@ -98,10 +175,14 @@ type ContentfulTag {
 }
 
 input ImageTransformOptions {
-  """Desired width in pixels. Defaults to the original image width."""
+  """
+  Desired width in pixels. Defaults to the original image width.
+  """
   width: Dimension
 
-  """Desired height in pixels. Defaults to the original image height."""
+  """
+  Desired height in pixels. Defaults to the original image height.
+  """
   height: Dimension
 
   """
@@ -118,10 +199,14 @@ input ImageTransformOptions {
   """
   cornerRadius: Int
 
-  """Desired resize strategy. Defaults to `FIT`."""
+  """
+  Desired resize strategy. Defaults to `FIT`.
+  """
   resizeStrategy: ImageResizeStrategy
 
-  """Desired resize focus area. Defaults to `CENTER`."""
+  """
+  Desired resize focus area. Defaults to `CENTER`.
+  """
   resizeFocus: ImageResizeFocus
 
   """
@@ -130,7 +215,9 @@ input ImageTransformOptions {
   """
   backgroundColor: HexColor
 
-  """Desired image format. Defaults to the original image format."""
+  """
+  Desired image format. Defaults to the original image format.
+  """
   format: ImageFormat
 }
 
@@ -145,7 +232,9 @@ The 'Quality' type represents quality as whole numeric values between `1` and `1
 scalar Quality
 
 enum ImageResizeStrategy {
-  """Resizes the image to fit into the specified dimensions."""
+  """
+  Resizes the image to fit into the specified dimensions.
+  """
   FIT
 
   """
@@ -169,50 +258,78 @@ enum ImageResizeStrategy {
   """
   CROP
 
-  """Creates a thumbnail from the image."""
+  """
+  Creates a thumbnail from the image.
+  """
   THUMB
 }
 
 enum ImageResizeFocus {
-  """Focus the resizing on the center."""
+  """
+  Focus the resizing on the center.
+  """
   CENTER
 
-  """Focus the resizing on the top."""
+  """
+  Focus the resizing on the top.
+  """
   TOP
 
-  """Focus the resizing on the top right."""
+  """
+  Focus the resizing on the top right.
+  """
   TOP_RIGHT
 
-  """Focus the resizing on the right."""
+  """
+  Focus the resizing on the right.
+  """
   RIGHT
 
-  """Focus the resizing on the bottom right."""
+  """
+  Focus the resizing on the bottom right.
+  """
   BOTTOM_RIGHT
 
-  """Focus the resizing on the bottom."""
+  """
+  Focus the resizing on the bottom.
+  """
   BOTTOM
 
-  """Focus the resizing on the bottom left."""
+  """
+  Focus the resizing on the bottom left.
+  """
   BOTTOM_LEFT
 
-  """Focus the resizing on the left."""
+  """
+  Focus the resizing on the left.
+  """
   LEFT
 
-  """Focus the resizing on the top left."""
+  """
+  Focus the resizing on the top left.
+  """
   TOP_LEFT
 
-  """Focus the resizing on the largest face."""
+  """
+  Focus the resizing on the largest face.
+  """
   FACE
 
-  """Focus the resizing on the area containing all the faces."""
+  """
+  Focus the resizing on the area containing all the faces.
+  """
   FACES
 }
 
-"""The 'HexColor' type represents color in `rgb:ffffff` string format."""
+"""
+The 'HexColor' type represents color in `rgb:ffffff` string format.
+"""
 scalar HexColor
 
 enum ImageFormat {
-  """JPG image format."""
+  """
+  JPG image format.
+  """
   JPG
 
   """
@@ -223,7 +340,9 @@ enum ImageFormat {
   """
   JPG_PROGRESSIVE
 
-  """PNG image format"""
+  """
+  PNG image format
+  """
   PNG
 
   """
@@ -232,13 +351,25 @@ enum ImageFormat {
   """
   PNG8
 
-  """WebP image format."""
+  """
+  WebP image format.
+  """
   WEBP
 }
 
 type AssetLinkingCollections {
-  entryCollection(skip: Int = 0, limit: Int = 100, preview: Boolean, locale: String): EntryCollection
-  authorCollection(skip: Int = 0, limit: Int = 100, preview: Boolean, locale: String): AuthorCollection
+  entryCollection(
+    skip: Int = 0
+    limit: Int = 100
+    preview: Boolean
+    locale: String
+  ): EntryCollection
+  authorCollection(
+    skip: Int = 0
+    limit: Int = 100
+    preview: Boolean
+    locale: String
+  ): AuthorCollection
 }
 
 type EntryCollection {
@@ -275,12 +406,42 @@ type Author implements Entry {
 }
 
 type AuthorLinkingCollections {
-  entryCollection(skip: Int = 0, limit: Int = 100, preview: Boolean, locale: String): EntryCollection
-  achievementCollection(skip: Int = 0, limit: Int = 100, preview: Boolean, locale: String): AchievementCollection
-  awardCollection(skip: Int = 0, limit: Int = 100, preview: Boolean, locale: String): AwardCollection
-  workExperienceCollection(skip: Int = 0, limit: Int = 100, preview: Boolean, locale: String): WorkExperienceCollection
-  contactCollection(skip: Int = 0, limit: Int = 100, preview: Boolean, locale: String): ContactCollection
-  academicBackgroundCollection(skip: Int = 0, limit: Int = 100, preview: Boolean, locale: String): AcademicBackgroundCollection
+  entryCollection(
+    skip: Int = 0
+    limit: Int = 100
+    preview: Boolean
+    locale: String
+  ): EntryCollection
+  achievementCollection(
+    skip: Int = 0
+    limit: Int = 100
+    preview: Boolean
+    locale: String
+  ): AchievementCollection
+  awardCollection(
+    skip: Int = 0
+    limit: Int = 100
+    preview: Boolean
+    locale: String
+  ): AwardCollection
+  workExperienceCollection(
+    skip: Int = 0
+    limit: Int = 100
+    preview: Boolean
+    locale: String
+  ): WorkExperienceCollection
+  contactCollection(
+    skip: Int = 0
+    limit: Int = 100
+    preview: Boolean
+    locale: String
+  ): ContactCollection
+  academicBackgroundCollection(
+    skip: Int = 0
+    limit: Int = 100
+    preview: Boolean
+    locale: String
+  ): AcademicBackgroundCollection
 }
 
 type AchievementCollection {
@@ -305,12 +466,22 @@ type Achievement implements Entry {
   endPage(locale: String): Int
   publishedDate(locale: String): DateTime
   sessionId(locale: String): String
-  authorsCollection(skip: Int = 0, limit: Int = 100, preview: Boolean, locale: String): AchievementAuthorsCollection
+  authorsCollection(
+    skip: Int = 0
+    limit: Int = 100
+    preview: Boolean
+    locale: String
+  ): AchievementAuthorsCollection
   note(locale: String): String
 }
 
 type AchievementLinkingCollections {
-  entryCollection(skip: Int = 0, limit: Int = 100, preview: Boolean, locale: String): EntryCollection
+  entryCollection(
+    skip: Int = 0
+    limit: Int = 100
+    preview: Boolean
+    locale: String
+  ): EntryCollection
 }
 
 """
@@ -325,8 +496,18 @@ type AchievementCategory implements Entry {
 }
 
 type AchievementCategoryLinkingCollections {
-  entryCollection(skip: Int = 0, limit: Int = 100, preview: Boolean, locale: String): EntryCollection
-  achievementCollection(skip: Int = 0, limit: Int = 100, preview: Boolean, locale: String): AchievementCollection
+  entryCollection(
+    skip: Int = 0
+    limit: Int = 100
+    preview: Boolean
+    locale: String
+  ): EntryCollection
+  achievementCollection(
+    skip: Int = 0
+    limit: Int = 100
+    preview: Boolean
+    locale: String
+  ): AchievementCollection
 }
 
 type AchievementAuthorsCollection {
@@ -357,7 +538,12 @@ type Award implements Entry {
 }
 
 type AwardLinkingCollections {
-  entryCollection(skip: Int = 0, limit: Int = 100, preview: Boolean, locale: String): EntryCollection
+  entryCollection(
+    skip: Int = 0
+    limit: Int = 100
+    preview: Boolean
+    locale: String
+  ): EntryCollection
 }
 
 type WorkExperienceCollection {
@@ -382,7 +568,12 @@ type WorkExperience implements Entry {
 }
 
 type WorkExperienceLinkingCollections {
-  entryCollection(skip: Int = 0, limit: Int = 100, preview: Boolean, locale: String): EntryCollection
+  entryCollection(
+    skip: Int = 0
+    limit: Int = 100
+    preview: Boolean
+    locale: String
+  ): EntryCollection
 }
 
 type ContactCollection {
@@ -406,7 +597,12 @@ type Contact implements Entry {
 }
 
 type ContactLinkingCollections {
-  entryCollection(skip: Int = 0, limit: Int = 100, preview: Boolean, locale: String): EntryCollection
+  entryCollection(
+    skip: Int = 0
+    limit: Int = 100
+    preview: Boolean
+    locale: String
+  ): EntryCollection
 }
 
 type AcademicBackgroundCollection {
@@ -430,7 +626,12 @@ type AcademicBackground implements Entry {
 }
 
 type AcademicBackgroundLinkingCollections {
-  entryCollection(skip: Int = 0, limit: Int = 100, preview: Boolean, locale: String): EntryCollection
+  entryCollection(
+    skip: Int = 0
+    limit: Int = 100
+    preview: Boolean
+    locale: String
+  ): EntryCollection
 }
 
 type AssetCollection {

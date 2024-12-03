@@ -1,8 +1,8 @@
-import React from 'react'
+import Container from '@components/atoms/Container'
 import { AcademicBackground, useTopQuery } from '@graphql/generated/graphql'
 import { useLocale } from '@hooks/Locale'
 import moment from 'moment'
-import Container from '@components/atoms/Container'
+import React from 'react'
 
 const AcademicBackgrounds: React.FC = () => {
   const locale = useLocale()
@@ -22,8 +22,8 @@ const AcademicBackgrounds: React.FC = () => {
     return startDate === endDate
       ? startDate
       : endDate
-      ? `${startDate} - ${endDate}`
-      : `${startDate} -`
+        ? `${startDate} - ${endDate}`
+        : `${startDate} -`
   }
 
   return (
@@ -43,7 +43,7 @@ const AcademicBackgrounds: React.FC = () => {
                   .join(', ')}
               </li>
             )
-          }
+          },
         )}
       </ul>
     </Container>

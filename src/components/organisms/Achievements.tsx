@@ -1,8 +1,8 @@
-import React from 'react'
 import AchievementList from '@components/atoms/AchievementList'
-import { useTopQuery, Achievement } from '@graphql/generated/graphql'
-import { useLocale } from '@hooks/Locale'
 import Container from '@components/atoms/Container'
+import { Achievement, useTopQuery } from '@graphql/generated/graphql'
+import { useLocale } from '@hooks/Locale'
+import React from 'react'
 
 const convertCategoryKeyObject = (items, locale) => {
   const localeName = locale === 'en-US' ? 'nameUS' : 'nameJP'
@@ -33,7 +33,7 @@ const Achievements: React.FC = () => {
 
   const { achievements, categoryOrder } = convertCategoryKeyObject(
     data?.achievements?.items,
-    locale
+    locale,
   )
   const achievementsData = achievements as Array<Achievement>
 

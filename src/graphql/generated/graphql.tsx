@@ -1604,21 +1604,21 @@ export const LocaleDocument = gql`
  * });
  */
 export function useLocaleQuery(
-  baseOptions?: Apollo.QueryHookOptions<LocaleQuery, LocaleQueryVariables>
+  baseOptions?: Apollo.QueryHookOptions<LocaleQuery, LocaleQueryVariables>,
 ) {
   const options = { ...defaultOptions, ...baseOptions }
   return Apollo.useQuery<LocaleQuery, LocaleQueryVariables>(
     LocaleDocument,
-    options
+    options,
   )
 }
 export function useLocaleLazyQuery(
-  baseOptions?: Apollo.LazyQueryHookOptions<LocaleQuery, LocaleQueryVariables>
+  baseOptions?: Apollo.LazyQueryHookOptions<LocaleQuery, LocaleQueryVariables>,
 ) {
   const options = { ...defaultOptions, ...baseOptions }
   return Apollo.useLazyQuery<LocaleQuery, LocaleQueryVariables>(
     LocaleDocument,
-    options
+    options,
   )
 }
 export type LocaleQueryHookResult = ReturnType<typeof useLocaleQuery>
@@ -1736,13 +1736,13 @@ export const TopDocument = gql`
  * });
  */
 export function useTopQuery(
-  baseOptions: Apollo.QueryHookOptions<TopQuery, TopQueryVariables>
+  baseOptions: Apollo.QueryHookOptions<TopQuery, TopQueryVariables>,
 ) {
   const options = { ...defaultOptions, ...baseOptions }
   return Apollo.useQuery<TopQuery, TopQueryVariables>(TopDocument, options)
 }
 export function useTopLazyQuery(
-  baseOptions?: Apollo.LazyQueryHookOptions<TopQuery, TopQueryVariables>
+  baseOptions?: Apollo.LazyQueryHookOptions<TopQuery, TopQueryVariables>,
 ) {
   const options = { ...defaultOptions, ...baseOptions }
   return Apollo.useLazyQuery<TopQuery, TopQueryVariables>(TopDocument, options)

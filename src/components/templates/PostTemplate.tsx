@@ -1,8 +1,8 @@
-import React from 'react'
-import Header from '@components/atoms/Header'
-import Footer from '@components/atoms/Footer'
 import Container from '@components/atoms/Container'
+import Footer from '@components/atoms/Footer'
+import Header from '@components/atoms/Header'
 import { useRouter } from 'next/dist/client/router'
+import React from 'react'
 
 const PostTemplate: React.FC = () => {
   const router = useRouter()

@@ -1,12 +1,12 @@
-import React from 'react'
-import Header from '@components/atoms/Header'
 import Footer from '@components/atoms/Footer'
+import Header from '@components/atoms/Header'
+import AboutUs from '@components/organisms/AboutUs'
+import AcademicBackgrounds from '@components/organisms/AcademicBackgrounds'
 import Achievements from '@components/organisms/Achievements'
 import Awards from '@components/organisms/Awards'
-import WorkExperiences from '@components/organisms/WorkExperience'
-import AcademicBackgrounds from '@components/organisms/AcademicBackgrounds'
-import AboutUs from '@components/organisms/AboutUs'
 import LocaleLink from '@components/organisms/LocaleLink'
+import WorkExperiences from '@components/organisms/WorkExperience'
+import React from 'react'
 
 const TopTemplate: React.FC = () => {
   return (

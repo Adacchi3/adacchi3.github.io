@@ -1,8 +1,8 @@
-/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
-import { useMemo } from 'react'
 import { ApolloClient, HttpLink, InMemoryCache, makeVar } from '@apollo/client'
 import merge from 'deepmerge'
 import isEqual from 'lodash/isEqual'
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
+import { useMemo } from 'react'
 
 export const APOLLO_STATE_PROP_NAME = '__APOLLO_STATE__'
 
@@ -51,10 +51,10 @@ export function initializeApollo(initialState = null) {
         arrayMerge: (destinationArray, sourceArray) => [
           ...sourceArray,
           ...destinationArray.filter((d) =>
-            sourceArray.every((s) => !isEqual(d, s))
+            sourceArray.every((s) => !isEqual(d, s)),
           ),
         ],
-      }
+      },
     )
 
     // Restore the cache with the merged data

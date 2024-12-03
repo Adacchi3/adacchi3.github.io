@@ -31,7 +31,7 @@ query Top($preview: Boolean, $locale: String!, $authorId: String!) {
       endDate
     }
   }
-achievements: achievementCollection(
+  achievements: achievementCollection(
     preview: $preview
     locale: $locale
     order: publishedDate_DESC

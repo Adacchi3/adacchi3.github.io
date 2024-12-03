@@ -1,6 +1,6 @@
-import React from 'react'
-import moment from 'moment'
 import { Achievement } from '@graphql/generated/graphql'
+import moment from 'moment'
+import React from 'react'
 
 type Props = {
   achievements: Array<Achievement>
@@ -84,7 +84,7 @@ const AchievementList: React.FC<Props> = ({
                 .reduce((previous, current) => [previous, ', ', current])}
             </li>
           )
-        }
+        },
       )}
     </ul>
   )

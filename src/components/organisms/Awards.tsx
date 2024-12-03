@@ -1,8 +1,8 @@
-import React from 'react'
+import Container from '@components/atoms/Container'
 import { Award, useTopQuery } from '@graphql/generated/graphql'
 import { useLocale } from '@hooks/Locale'
 import moment from 'moment'
-import Container from '@components/atoms/Container'
+import React from 'react'
 
 const Awards: React.FC = () => {
   const locale = useLocale()
