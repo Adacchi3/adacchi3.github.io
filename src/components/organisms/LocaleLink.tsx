@@ -1,7 +1,7 @@
-import React from 'react'
-import Link from 'next/link'
 import Container from '@components/atoms/Container'
 import { useLocale } from '@hooks/Locale'
+import Link from 'next/link'
+import React from 'react'
 
 const LocaleLink: React.FC = () => {
   const locale = useLocale()

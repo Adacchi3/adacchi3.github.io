@@ -1,7 +1,7 @@
-import React from 'react'
-import Link from 'next/link'
 import { Disclosure } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import Link from 'next/link'
+import React from 'react'
 
 const navigation = [
   { name: 'About', href: '/' },
@@ -16,7 +16,7 @@ const Header: React.FC = () => {
           <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
             <div className="relative flex h-16 items-center justify-between">
               <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
-                <Disclosure.Button className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+                <Disclosure.Button className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-white focus:ring-inset">
                   <span className="sr-only">Open main menu</span>
                   {open ? (
                     <XMarkIcon className="block h-6 w-6" aria-hidden="true" />
@@ -27,7 +27,7 @@ const Header: React.FC = () => {
               </div>
               <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex flex-shrink-0 items-center">
-                  <p className="text-lg text-gray-600">Adacchi3</p>
+                  <p className="text-gray-600 text-lg">Adacchi3</p>
                 </div>
                 <div className="hidden sm:ml-6 sm:block">
                   <div className="flex space-x-4">
@@ -35,7 +35,7 @@ const Header: React.FC = () => {
                       <Link
                         href={item.href}
                         key={index}
-                        className="rounded-md px-3 py-2 text-sm font-medium text-gray-500 hover:bg-gray-200 hover:text-gray-600"
+                        className="rounded-md px-3 py-2 font-medium text-gray-500 text-sm hover:bg-gray-200 hover:text-gray-600"
                       >
                         {item.name}
                       </Link>
@@ -47,12 +47,12 @@ const Header: React.FC = () => {
             </div>
           </div>
           <Disclosure.Panel className="sm:hidden">
-            <div className="space-y-1 px-2 pb-3 pt-2">
+            <div className="space-y-1 px-2 pt-2 pb-3">
               {navigation.map((item, index) => (
                 <Link
                   href={item.href}
                   key={index}
-                  className="block rounded-md px-3 py-2 text-base font-medium text-gray-500 hover:bg-gray-200 hover:text-gray-600"
+                  className="block rounded-md px-3 py-2 font-medium text-base text-gray-500 hover:bg-gray-200 hover:text-gray-600"
                 >
                   {item.name}
                 </Link>

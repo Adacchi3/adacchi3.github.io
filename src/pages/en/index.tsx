@@ -1,10 +1,10 @@
-import React from 'react'
-import { GetStaticProps } from 'next'
-import { TopDocument, useTopQuery } from '@graphql/generated/graphql'
 import { addApolloState, initializeApollo, localeVar } from '@client'
-import TopTemplate from '@components/templates/TopTemplate'
-import Head from 'next/head'
 import Metadata from '@components/atoms/Metadata'
+import TopTemplate from '@components/templates/TopTemplate'
+import { TopDocument, useTopQuery } from '@graphql/generated/graphql'
+import { GetStaticProps } from 'next'
+import Head from 'next/head'
+import React from 'react'
 
 export const getStaticProps: GetStaticProps = async () => {
   const apolloClient = initializeApollo()
