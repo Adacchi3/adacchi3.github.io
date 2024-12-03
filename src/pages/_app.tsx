@@ -2,8 +2,9 @@ import { ApolloProvider } from '@apollo/client'
 import { useApollo } from '@client'
 import { AppProps } from 'next/app'
 import React, { useEffect } from 'react'
-import 'tailwindcss/tailwind.css'
 import TagManager from 'react-gtm-module'
+
+import '@styles/globals.css'
 
 const MyApp: React.FC<AppProps> = ({ Component, pageProps }: AppProps) => {
   const apolloClient = useApollo(pageProps)

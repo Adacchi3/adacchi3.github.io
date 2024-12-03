@@ -10,7 +10,7 @@ const PostTemplate: React.FC = () => {
 
   return (
     <div className="flex min-h-screen flex-col bg-white">
-      <div className="flex-grow">
+      <div className="grow">
         <Header />
         <Container>
           <p className="text-center">Post Slug: {slug}</p>
