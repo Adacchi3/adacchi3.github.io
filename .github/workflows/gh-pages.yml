@@ -1,44 +1,57 @@
-name: deploy github page
+name: Deploy GitHub Pages
+
 on:
   push:
     branches:
       - master
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+env:
+  GRAPHQL_ENDPOINT: ${{ secrets.GRAPHQL_ENDPOINT }}
+  AUTHOR_ID: ${{ secrets.AUTHOR_ID }}
+  GTM_ID: ${{ secrets.GTM_ID }}
+
 jobs:
-  deploy:
-    name: next build, export and deploy
+  build:
+    name: Build and export
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: setup node
-        uses: actions/setup-node@v2
+      - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
+      - name: Setup Node.js
+        uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238 # v6.2.0
         with:
-          node-version: '18'
-      - name: setup corepack
-        run: corepack enable
-      - name: get yarn cache directory path
-        id: yarn-cache-dir-path
-        run: echo "dir=$(yarn config get cacheFolder)" >> $GITHUB_OUTPUT
-      - uses: actions/cache@v4
-        id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
-        with:
-          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
-      - name: install dependencies
-        run: yarn install
-      - name: build
-        env:
-          GRAPHQL_ENDPOINT: ${{secrets.GRAPHQL_ENDPOINT}}
-          AUTHOR_ID: ${{secrets.AUTHOR_ID}}
-          GTM_ID: ${{secrets.GTM_ID}}
+          node-version-file: .node-version
+          cache: yarn
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+      - name: Build
         run: yarn run build
-      - name: export
+      - name: Export
         run: yarn run export
-      - name: add nojekyll
+      - name: Add .nojekyll
         run: touch ./out/.nojekyll
-      - name: deploy
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@7b1f4a764d45c48632c6b24a0339c27f5614fb0b # v4.0.0
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./out
+          path: ./out
+
+  deploy:
+    name: Deploy to GitHub Pages
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e # v4.0.5
