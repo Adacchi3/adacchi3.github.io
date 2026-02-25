@@ -1,0 +1,38 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git status*)",
+      "Bash(git diff*)",
+      "Bash(git log*)",
+      "Bash(git show*)",
+      "Bash(git branch*)",
+      "Bash(git add*)",
+      "Bash(git stash*)",
+      "Bash(yarn dev*)",
+      "Bash(yarn lint*)",
+      "Bash(yarn build*)",
+      "Bash(yarn install*)",
+      "Bash(yarn generate*)",
+      "Bash(yarn export*)",
+      "Bash(gh pr list*)",
+      "Bash(gh pr view*)",
+      "Bash(gh pr diff*)",
+      "Bash(gh issue list*)",
+      "Bash(gh issue view*)",
+      "Bash(gh run list*)",
+      "Bash(gh run view*)",
+      "Bash(gh api graphql*)",
+      "Edit(/src/**)",
+      "Edit(.claude/**)"
+    ],
+    "deny": [
+      "Bash(git push --force origin master*)",
+      "Bash(git push -f origin master*)",
+      "Bash(git reset --hard*)",
+      "Bash(git clean*)",
+      "Bash(git stash drop*)",
+      "Bash(git stash clear*)",
+      "Edit(/src/graphql/generated/**)"
+    ]
+  }
+}
