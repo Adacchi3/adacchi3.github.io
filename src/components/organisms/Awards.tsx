@@ -1,7 +1,7 @@
 import Container from '@components/atoms/Container'
 import { Award, useTopQuery } from '@graphql/generated/graphql'
 import { useLocale } from '@hooks/Locale'
-import moment from 'moment'
+import { format } from 'date-fns'
 import React from 'react'
 
 const Awards: React.FC = () => {
@@ -25,7 +25,9 @@ const Awards: React.FC = () => {
               {[
                 award.name,
                 award.publication,
-                moment(award.awardDate).format('YYYY.MM'),
+                award.awardDate
+                  ? format(new Date(award.awardDate), 'yyyy.MM')
+                  : null,
               ]
                 .filter((value) => value)
                 .join(', ')}

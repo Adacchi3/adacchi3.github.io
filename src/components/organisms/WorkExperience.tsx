@@ -1,7 +1,7 @@
 import Container from '@components/atoms/Container'
 import { WorkExperience, useTopQuery } from '@graphql/generated/graphql'
 import { useLocale } from '@hooks/Locale'
-import moment from 'moment'
+import { format } from 'date-fns'
 import React from 'react'
 
 const WorkExperiences: React.FC = () => {
@@ -15,15 +15,19 @@ const WorkExperiences: React.FC = () => {
   })
 
   const workDate = (workExperience: WorkExperience) => {
-    const startDate = moment(workExperience.startDate).format('YYYY.MM')
-    const endDate = workExperience.endDate
-      ? moment(workExperience.endDate).format('YYYY.MM')
+    const startDate = workExperience.startDate
+      ? format(new Date(workExperience.startDate), 'yyyy.MM')
       : null
-    return startDate === endDate
-      ? startDate
-      : endDate
-        ? `${startDate} - ${endDate}`
-        : `${startDate} -`
+    const endDate = workExperience.endDate
+      ? format(new Date(workExperience.endDate), 'yyyy.MM')
+      : null
+    return startDate
+      ? startDate === endDate
+        ? startDate
+        : endDate
+          ? `${startDate} - ${endDate}`
+          : `${startDate} -`
+      : null
   }
 
   return (
