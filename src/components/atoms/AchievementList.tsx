@@ -1,5 +1,5 @@
 import { Achievement } from '@graphql/generated/graphql'
-import moment from 'moment'
+import { format } from 'date-fns'
 import React from 'react'
 
 type Props = {
@@ -62,7 +62,9 @@ const AchievementList: React.FC<Props> = ({
   }
 
   const publishedDate = (achievement: Achievement) => {
-    return moment(achievement.publishedDate).format('YYYY.MM')
+    return achievement.publishedDate
+      ? format(new Date(achievement.publishedDate), 'yyyy.MM')
+      : null
   }
 
   return (
