@@ -3,7 +3,7 @@
 import Container from '@components/atoms/Container'
 import { WorkExperience, useTopQuery } from '@graphql/generated/graphql'
 import { useLocale } from '@hooks/Locale'
-import { format } from 'date-fns'
+import { formatYearMonth } from '@utils/date'
 import React from 'react'
 
 const WorkExperiences: React.FC = () => {
@@ -18,10 +18,10 @@ const WorkExperiences: React.FC = () => {
 
   const workDate = (workExperience: WorkExperience) => {
     const startDate = workExperience.startDate
-      ? format(new Date(workExperience.startDate), 'yyyy.MM')
+      ? formatYearMonth(workExperience.startDate)
       : null
     const endDate = workExperience.endDate
-      ? format(new Date(workExperience.endDate), 'yyyy.MM')
+      ? formatYearMonth(workExperience.endDate)
       : null
     return startDate
       ? startDate === endDate

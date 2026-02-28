@@ -3,7 +3,7 @@
 import Container from '@components/atoms/Container'
 import { AcademicBackground, useTopQuery } from '@graphql/generated/graphql'
 import { useLocale } from '@hooks/Locale'
-import { format } from 'date-fns'
+import { formatYearMonth } from '@utils/date'
 import React from 'react'
 
 const AcademicBackgrounds: React.FC = () => {
@@ -18,10 +18,10 @@ const AcademicBackgrounds: React.FC = () => {
 
   const academicDate = (academicBackground: AcademicBackground) => {
     const startDate = academicBackground.startDate
-      ? format(new Date(academicBackground.startDate), 'yyyy.MM')
+      ? formatYearMonth(academicBackground.startDate)
       : null
     const endDate = academicBackground.endDate
-      ? format(new Date(academicBackground.endDate), 'yyyy.MM')
+      ? formatYearMonth(academicBackground.endDate)
       : null
     return startDate
       ? startDate === endDate
