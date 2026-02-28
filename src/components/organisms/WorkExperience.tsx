@@ -1,7 +1,7 @@
 'use client'
 
 import Container from '@components/atoms/Container'
-import { WorkExperience, useTopQuery } from '@graphql/generated/graphql'
+import { useTopQuery, WorkExperience } from '@graphql/generated/graphql'
 import { useLocale } from '@hooks/Locale'
 import { formatYearMonth } from '@utils/date'
 import React from 'react'
