@@ -10,7 +10,18 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }: AppProps) => {
   const apolloClient = useApollo(pageProps)
 
   useEffect(() => {
-    TagManager.initialize({ gtmId: String(process.env.GTM_ID) })
+    const gtmId = process.env.GTM_ID
+    if (!gtmId) return
+
+    const initGTM = () => {
+      TagManager.initialize({ gtmId })
+    }
+
+    if ('requestIdleCallback' in window) {
+      window.requestIdleCallback(initGTM)
+    } else {
+      setTimeout(initGTM, 3000)
+    }
   }, [])
 
   return (
