@@ -1,3 +1,5 @@
+'use client'
+
 import Container from '@components/atoms/Container'
 import { AcademicBackground, useTopQuery } from '@graphql/generated/graphql'
 import { useLocale } from '@hooks/Locale'
@@ -8,7 +10,7 @@ const AcademicBackgrounds: React.FC = () => {
   const locale = useLocale()
   const { data } = useTopQuery({
     variables: {
-      preview: Boolean(process.env.PREVIEW),
+      preview: process.env.PREVIEW === 'true',
       locale: locale,
       authorId: String(process.env.AUTHOR_ID),
     },

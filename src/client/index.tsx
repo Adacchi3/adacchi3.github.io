@@ -1,48 +1,66 @@
 import { ApolloClient, HttpLink, InMemoryCache, makeVar } from '@apollo/client'
+import { TopDocument } from '@graphql/generated/graphql'
 import merge from 'deepmerge'
 import isEqual from 'lodash/isEqual'
-/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
-import { useMemo } from 'react'
 
-export const APOLLO_STATE_PROP_NAME = '__APOLLO_STATE__'
+export const localeVar = makeVar('ja-JP')
 
-let apolloClient
-
-export const cache = new InMemoryCache({
-  typePolicies: {
-    Query: {
-      fields: {
-        locale: {
-          read() {
-            return localeVar()
-          },
+const typePolicies = {
+  Query: {
+    fields: {
+      locale: {
+        read() {
+          return localeVar()
         },
       },
     },
   },
-})
+}
+
+let apolloClient
+
+const cache = new InMemoryCache({ typePolicies })
 
 function createApolloClient() {
   return new ApolloClient({
     ssrMode: typeof window === 'undefined',
     link: new HttpLink({
-      uri: process.env.GRAPHQL_ENDPOINT, // Server URL (must be absolute)
-      credentials: 'same-origin', // Additional fetch() options like `credentials` or `headers`
+      uri: process.env.GRAPHQL_ENDPOINT,
+      credentials: 'same-origin',
     }),
-    cache: cache,
+    cache,
   })
 }
 
-export function initializeApollo(initialState = null) {
+export function makeClient() {
+  return new ApolloClient({
+    ssrMode: true,
+    link: new HttpLink({
+      uri: process.env.GRAPHQL_ENDPOINT,
+      credentials: 'same-origin',
+    }),
+    cache: new InMemoryCache({ typePolicies }),
+  })
+}
+
+export async function prefetchTopData(locale: string) {
+  const client = makeClient()
+  await client.query({
+    query: TopDocument,
+    variables: {
+      preview: process.env.PREVIEW === 'true',
+      locale,
+      authorId: String(process.env.AUTHOR_ID),
+    },
+  })
+  return JSON.parse(JSON.stringify(client.cache.extract()))
+}
+
+export function initializeApollo(initialState: object | null = null) {
   const _apolloClient = apolloClient ?? createApolloClient()
 
-  // If your page has Next.js data fetching methods that use Apollo Client, the initial state
-  // gets hydrated here
   if (initialState) {
-    // Get existing cache, loaded during client side data fetching
     const existingCache = _apolloClient.extract()
-
-    // Merge the existing cache into data passed from getStaticProps/getServerSideProps
     const data = merge(
       initialState as unknown as Partial<unknown>,
       existingCache,
@@ -56,30 +74,12 @@ export function initializeApollo(initialState = null) {
         ],
       },
     )
-
-    // Restore the cache with the merged data
     _apolloClient.cache.restore(data)
   }
+
   // For SSG and SSR always create a new Apollo Client
   if (typeof window === 'undefined') return _apolloClient
   // Create the Apollo Client once in the client
   if (!apolloClient) apolloClient = _apolloClient
-
   return _apolloClient
 }
-
-export function addApolloState(client, pageProps) {
-  if (pageProps?.props) {
-    pageProps.props[APOLLO_STATE_PROP_NAME] = client.cache.extract()
-  }
-
-  return pageProps
-}
-
-export function useApollo(pageProps) {
-  const state = pageProps[APOLLO_STATE_PROP_NAME]
-  const store = useMemo(() => initializeApollo(state), [state])
-  return store
-}
-
-export const localeVar = makeVar('ja-JP')

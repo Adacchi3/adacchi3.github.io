@@ -8,9 +8,7 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start",
-    "export": "next export",
-    "serve": "yarn run build && yarn run export && serve ./out",
+    "start": "yarn run build && serve ./out",
     "lint": "biome check src",
     "apollo:download": "apollo client:download-schema src/graphql/schemas/contentful/schema.graphql",
     "prepare": "husky install",
@@ -24,7 +22,7 @@
     "deepmerge": "4.3.1",
     "graphql": "16.9.0",
     "lodash": "4.17.21",
-    "next": "13.4.0",
+    "next": "15.5.10",
     "react": "18.3.1",
     "react-dom": "18.3.1",
     "react-gtm-module": "2.0.11"
