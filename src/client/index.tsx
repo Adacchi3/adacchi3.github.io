@@ -33,7 +33,31 @@ function createApolloClient() {
   })
 }
 
-export function initializeApollo(initialState = null) {
+export function makeClient() {
+  const freshCache = new InMemoryCache({
+    typePolicies: {
+      Query: {
+        fields: {
+          locale: {
+            read() {
+              return localeVar()
+            },
+          },
+        },
+      },
+    },
+  })
+  return new ApolloClient({
+    ssrMode: true,
+    link: new HttpLink({
+      uri: process.env.GRAPHQL_ENDPOINT,
+      credentials: 'same-origin',
+    }),
+    cache: freshCache,
+  })
+}
+
+export function initializeApollo(initialState: object | null = null) {
   const _apolloClient = apolloClient ?? createApolloClient()
 
   // If your page has Next.js data fetching methods that use Apollo Client, the initial state

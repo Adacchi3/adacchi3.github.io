@@ -10,7 +10,7 @@ const AcademicBackgrounds: React.FC = () => {
   const locale = useLocale()
   const { data } = useTopQuery({
     variables: {
-      preview: Boolean(process.env.PREVIEW),
+      preview: process.env.PREVIEW === 'true',
       locale: locale,
       authorId: String(process.env.AUTHOR_ID),
     },
