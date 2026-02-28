@@ -11,6 +11,11 @@ generates:
       withHOC: false
       withHooks: true
       withComponents: false
+      scalars:
+        DateTime: string
+        Dimension: number
+        HexColor: string
+        Quality: number
   src/graphql/graphql.schema.json:
     plugins:
       - "introspection"
