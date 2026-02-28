@@ -6,7 +6,7 @@ Adacchi3 の個人ポートフォリオサイト。Next.js + Contentful で構�
 
 ## 技術スタック
 
-- **フレームワーク:** Next.js 13 / React 18 / TypeScript
+- **フレームワーク:** Next.js 15 / React 18 / TypeScript 5
 - **スタイリング:** Tailwind CSS v4
 - **CMS:** Contentful (Apollo Client / GraphQL)
 - **リンター:** Biome
@@ -16,8 +16,7 @@ Adacchi3 の個人ポートフォリオサイト。Next.js + Contentful で構�
 
 ```bash
 yarn dev        # 開発サーバ起動
-yarn build      # ビルド
-yarn export     # 静的ファイルを ./out に出力
+yarn build      # ビルド & 静的ファイルを ./out に出力
 yarn lint       # Biome でリント（biome check src）
 yarn generate   # GraphQL 型生成
 ```

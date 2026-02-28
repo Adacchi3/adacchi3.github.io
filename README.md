@@ -6,11 +6,11 @@ Adacchi3 の個人ポートフォリオサイト。Next.js + Contentful で構�
 
 | Category | Technology |
 |----------|-----------|
-| Framework | Next.js / React / TypeScript |
-| Styling | Tailwind CSS |
+| Framework | Next.js 15 / React 18 / TypeScript 5 |
+| Styling | Tailwind CSS v4 |
 | CMS | Contentful (Apollo Client / GraphQL) |
 | Linter | Biome |
-| Package Manager | Yarn |
+| Package Manager | Yarn v4 |
 | Hosting | GitHub Pages |
 
 ## Getting Started
@@ -30,9 +30,8 @@ yarn install
 yarn dev
 ```
 
-### Build & Export
+### Build
 
 ```bash
-yarn build
-yarn export   # 静的ファイルを ./out に出力
+yarn build   # ビルド & 静的ファイルを ./out に出力
 ```
