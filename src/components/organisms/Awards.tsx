@@ -3,7 +3,7 @@
 import Container from '@components/atoms/Container'
 import { Award, useTopQuery } from '@graphql/generated/graphql'
 import { useLocale } from '@hooks/Locale'
-import { format } from 'date-fns'
+import { formatYearMonth } from '@utils/date'
 import React from 'react'
 
 const Awards: React.FC = () => {
@@ -27,9 +27,7 @@ const Awards: React.FC = () => {
               {[
                 award.name,
                 award.publication,
-                award.awardDate
-                  ? format(new Date(award.awardDate), 'yyyy.MM')
-                  : null,
+                award.awardDate ? formatYearMonth(award.awardDate) : null,
               ]
                 .filter((value) => value)
                 .join(', ')}
