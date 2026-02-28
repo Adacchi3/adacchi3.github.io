@@ -1,3 +1,5 @@
+'use client'
+
 import Container from '@components/atoms/Container'
 import { useLocale } from '@hooks/Locale'
 import Link from 'next/link'

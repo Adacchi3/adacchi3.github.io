@@ -1,3 +1,5 @@
+'use client'
+
 import AchievementList from '@components/atoms/AchievementList'
 import Container from '@components/atoms/Container'
 import { Achievement, useTopQuery } from '@graphql/generated/graphql'

@@ -1,12 +1,14 @@
+'use client'
+
 import Container from '@components/atoms/Container'
 import Footer from '@components/atoms/Footer'
 import Header from '@components/atoms/Header'
-import { useRouter } from 'next/router'
+import { useParams } from 'next/navigation'
 import React from 'react'
 
 const PostTemplate: React.FC = () => {
-  const router = useRouter()
-  const { slug } = router.query
+  const params = useParams<{ slug: string }>()
+  const slug = params?.slug
 
   return (
     <div className="flex min-h-screen flex-col bg-white">

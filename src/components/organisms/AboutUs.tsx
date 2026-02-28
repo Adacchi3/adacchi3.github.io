@@ -1,3 +1,5 @@
+'use client'
+
 import Container from '@components/atoms/Container'
 import { useTopQuery } from '@graphql/generated/graphql'
 import { useLocale } from '@hooks/Locale'

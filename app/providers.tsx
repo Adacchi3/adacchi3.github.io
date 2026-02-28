@@ -1,13 +1,12 @@
+'use client'
+
 import { ApolloProvider } from '@apollo/client'
 import { useApollo } from '@client'
-import { AppProps } from 'next/app'
-import React, { useEffect } from 'react'
+import { useEffect } from 'react'
 import TagManager from 'react-gtm-module'
 
-import '@styles/globals.css'
-
-const MyApp: React.FC<AppProps> = ({ Component, pageProps }: AppProps) => {
-  const apolloClient = useApollo(pageProps)
+export function Providers({ children }: { children: React.ReactNode }) {
+  const apolloClient = useApollo({})
 
   useEffect(() => {
     const gtmId = process.env.GTM_ID
@@ -24,11 +23,5 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }: AppProps) => {
     }
   }, [])
 
-  return (
-    <ApolloProvider client={apolloClient}>
-      <Component {...pageProps} />
-    </ApolloProvider>
-  )
+  return <ApolloProvider client={apolloClient}>{children}</ApolloProvider>
 }
-
-export default MyApp
