@@ -1,7 +1,6 @@
-import { makeClient } from '@client'
+import { prefetchTopData } from '@client'
 import ApolloHydrator from '@components/atoms/ApolloHydrator'
 import TopTemplate from '@components/templates/TopTemplate'
-import { TopDocument } from '@graphql/generated/graphql'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -9,16 +8,7 @@ export const metadata: Metadata = {
 }
 
 export default async function Page() {
-  const client = makeClient()
-  await client.query({
-    query: TopDocument,
-    variables: {
-      preview: process.env.PREVIEW === 'true',
-      locale: 'ja-JP',
-      authorId: String(process.env.AUTHOR_ID),
-    },
-  })
-  const apolloState = JSON.parse(JSON.stringify(client.cache.extract()))
+  const apolloState = await prefetchTopData('ja-JP')
   return (
     <ApolloHydrator apolloState={apolloState} locale="ja-JP">
       <TopTemplate />
