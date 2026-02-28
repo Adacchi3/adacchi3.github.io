@@ -21,9 +21,13 @@ const AboutUs: React.FC = () => {
           <div className="relative block">
             <img
               alt="profile-icon"
-              src={String(data?.me?.image?.url)}
+              src={
+                data?.me?.image?.url
+                  ? `${data.me.image.url}?w=320&h=320&fit=thumb`
+                  : undefined
+              }
               className="mx-auto h-40 w-40 rounded-full object-cover"
-              loading="lazy"
+              fetchPriority="high"
               height="160"
               width="160"
             />
