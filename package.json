@@ -39,7 +39,7 @@
     "@types/react-gtm-module": "2.0.4",
     "cssnano": "7.1.2",
     "husky": "9.1.7",
-    "lint-staged": "13.2.2",
+    "lint-staged": "16.3.1",
     "postcss": "8.5.6",
     "serve": "14.2.5",
     "tailwindcss": "4.2.1",
