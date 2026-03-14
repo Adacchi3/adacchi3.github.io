@@ -8,6 +8,11 @@ updates:
     reviewers:
       - adacchi3
     groups:
+      react:
+        patterns:
+          - "react"
+          - "react-dom"
+          - "@types/react"
       npm-minor-and-patch:
         update-types:
           - minor
