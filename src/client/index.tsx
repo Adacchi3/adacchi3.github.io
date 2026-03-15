@@ -1,5 +1,5 @@
 import { ApolloClient, HttpLink, InMemoryCache } from '@apollo/client'
-import { TopDocument } from '@graphql/generated/graphql'
+import { TopDocument } from '@graphql/documents'
 import merge from 'deepmerge'
 import isEqual from 'lodash/isEqual'
 
