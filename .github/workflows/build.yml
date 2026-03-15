@@ -1,0 +1,34 @@
+name: Build
+
+on:
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+# Note: For Dependabot PRs, repository secrets are not passed automatically.
+# Register the same secrets under Settings > Secrets and variables > Dependabot.
+env:
+  GRAPHQL_ENDPOINT: ${{ secrets.GRAPHQL_ENDPOINT }}
+  AUTHOR_ID: ${{ secrets.AUTHOR_ID }}
+  GTM_ID: ${{ secrets.GTM_ID }}
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - name: Setup Node.js
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: .node-version
+          cache: yarn
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+      - name: Build
+        run: yarn build
