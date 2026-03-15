@@ -1,6 +1,6 @@
 'use client'
 
-import { ApolloProvider } from '@apollo/client'
+import { ApolloProvider } from '@apollo/client/react'
 import { initializeApollo } from '@client'
 import { LocaleContext } from '@hooks/Locale'
 import { useMemo } from 'react'

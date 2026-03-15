@@ -1,5 +1,6 @@
-import * as Apollo from '@apollo/client'
 import { gql } from '@apollo/client'
+import * as ApolloReactCommon from '@apollo/client/react'
+import * as ApolloReactHooks from '@apollo/client/react'
 export type Maybe<T> = T | null
 export type InputMaybe<T> = Maybe<T>
 export type Exact<T extends { [key: string]: unknown }> = {
@@ -1607,45 +1608,60 @@ export const LocaleDocument = gql`
  * });
  */
 export function useLocaleQuery(
-  baseOptions?: Apollo.QueryHookOptions<LocaleQuery, LocaleQueryVariables>,
+  baseOptions?: ApolloReactHooks.QueryHookOptions<
+    LocaleQuery,
+    LocaleQueryVariables
+  >,
 ) {
   const options = { ...defaultOptions, ...baseOptions }
-  return Apollo.useQuery<LocaleQuery, LocaleQueryVariables>(
+  return ApolloReactHooks.useQuery<LocaleQuery, LocaleQueryVariables>(
     LocaleDocument,
     options,
   )
 }
 export function useLocaleLazyQuery(
-  baseOptions?: Apollo.LazyQueryHookOptions<LocaleQuery, LocaleQueryVariables>,
+  baseOptions?: ApolloReactHooks.LazyQueryHookOptions<
+    LocaleQuery,
+    LocaleQueryVariables
+  >,
 ) {
   const options = { ...defaultOptions, ...baseOptions }
-  return Apollo.useLazyQuery<LocaleQuery, LocaleQueryVariables>(
+  return ApolloReactHooks.useLazyQuery<LocaleQuery, LocaleQueryVariables>(
     LocaleDocument,
     options,
   )
 }
 // @ts-ignore
 export function useLocaleSuspenseQuery(
-  baseOptions?: Apollo.SuspenseQueryHookOptions<
+  baseOptions?: ApolloReactHooks.SuspenseQueryHookOptions<
     LocaleQuery,
     LocaleQueryVariables
   >,
-): Apollo.UseSuspenseQueryResult<LocaleQuery, LocaleQueryVariables>
+): ApolloReactHooks.UseSuspenseQueryResult<LocaleQuery, LocaleQueryVariables>
 export function useLocaleSuspenseQuery(
   baseOptions?:
-    | Apollo.SkipToken
-    | Apollo.SuspenseQueryHookOptions<LocaleQuery, LocaleQueryVariables>,
-): Apollo.UseSuspenseQueryResult<LocaleQuery | undefined, LocaleQueryVariables>
+    | ApolloReactHooks.SkipToken
+    | ApolloReactHooks.SuspenseQueryHookOptions<
+        LocaleQuery,
+        LocaleQueryVariables
+      >,
+): ApolloReactHooks.UseSuspenseQueryResult<
+  LocaleQuery | undefined,
+  LocaleQueryVariables
+>
 export function useLocaleSuspenseQuery(
   baseOptions?:
-    | Apollo.SkipToken
-    | Apollo.SuspenseQueryHookOptions<LocaleQuery, LocaleQueryVariables>,
+    | ApolloReactHooks.SkipToken
+    | ApolloReactHooks.SuspenseQueryHookOptions<
+        LocaleQuery,
+        LocaleQueryVariables
+      >,
 ) {
   const options =
-    baseOptions === Apollo.skipToken
+    baseOptions === ApolloReactHooks.skipToken
       ? baseOptions
       : { ...defaultOptions, ...baseOptions }
-  return Apollo.useSuspenseQuery<LocaleQuery, LocaleQueryVariables>(
+  return ApolloReactHooks.useSuspenseQuery<LocaleQuery, LocaleQueryVariables>(
     LocaleDocument,
     options,
   )
@@ -1655,7 +1671,7 @@ export type LocaleLazyQueryHookResult = ReturnType<typeof useLocaleLazyQuery>
 export type LocaleSuspenseQueryHookResult = ReturnType<
   typeof useLocaleSuspenseQuery
 >
-export type LocaleQueryResult = Apollo.QueryResult<
+export type LocaleQueryResult = ApolloReactCommon.QueryResult<
   LocaleQuery,
   LocaleQueryVariables
 >
@@ -1768,37 +1784,52 @@ export const TopDocument = gql`
  * });
  */
 export function useTopQuery(
-  baseOptions: Apollo.QueryHookOptions<TopQuery, TopQueryVariables> &
+  baseOptions: ApolloReactHooks.QueryHookOptions<TopQuery, TopQueryVariables> &
     ({ variables: TopQueryVariables; skip?: boolean } | { skip: boolean }),
 ) {
   const options = { ...defaultOptions, ...baseOptions }
-  return Apollo.useQuery<TopQuery, TopQueryVariables>(TopDocument, options)
+  return ApolloReactHooks.useQuery<TopQuery, TopQueryVariables>(
+    TopDocument,
+    options,
+  )
 }
 export function useTopLazyQuery(
-  baseOptions?: Apollo.LazyQueryHookOptions<TopQuery, TopQueryVariables>,
+  baseOptions?: ApolloReactHooks.LazyQueryHookOptions<
+    TopQuery,
+    TopQueryVariables
+  >,
 ) {
   const options = { ...defaultOptions, ...baseOptions }
-  return Apollo.useLazyQuery<TopQuery, TopQueryVariables>(TopDocument, options)
+  return ApolloReactHooks.useLazyQuery<TopQuery, TopQueryVariables>(
+    TopDocument,
+    options,
+  )
 }
 // @ts-ignore
 export function useTopSuspenseQuery(
-  baseOptions?: Apollo.SuspenseQueryHookOptions<TopQuery, TopQueryVariables>,
-): Apollo.UseSuspenseQueryResult<TopQuery, TopQueryVariables>
+  baseOptions?: ApolloReactHooks.SuspenseQueryHookOptions<
+    TopQuery,
+    TopQueryVariables
+  >,
+): ApolloReactHooks.UseSuspenseQueryResult<TopQuery, TopQueryVariables>
 export function useTopSuspenseQuery(
   baseOptions?:
-    | Apollo.SkipToken
-    | Apollo.SuspenseQueryHookOptions<TopQuery, TopQueryVariables>,
-): Apollo.UseSuspenseQueryResult<TopQuery | undefined, TopQueryVariables>
+    | ApolloReactHooks.SkipToken
+    | ApolloReactHooks.SuspenseQueryHookOptions<TopQuery, TopQueryVariables>,
+): ApolloReactHooks.UseSuspenseQueryResult<
+  TopQuery | undefined,
+  TopQueryVariables
+>
 export function useTopSuspenseQuery(
   baseOptions?:
-    | Apollo.SkipToken
-    | Apollo.SuspenseQueryHookOptions<TopQuery, TopQueryVariables>,
+    | ApolloReactHooks.SkipToken
+    | ApolloReactHooks.SuspenseQueryHookOptions<TopQuery, TopQueryVariables>,
 ) {
   const options =
-    baseOptions === Apollo.skipToken
+    baseOptions === ApolloReactHooks.skipToken
       ? baseOptions
       : { ...defaultOptions, ...baseOptions }
-  return Apollo.useSuspenseQuery<TopQuery, TopQueryVariables>(
+  return ApolloReactHooks.useSuspenseQuery<TopQuery, TopQueryVariables>(
     TopDocument,
     options,
   )
@@ -1806,4 +1837,7 @@ export function useTopSuspenseQuery(
 export type TopQueryHookResult = ReturnType<typeof useTopQuery>
 export type TopLazyQueryHookResult = ReturnType<typeof useTopLazyQuery>
 export type TopSuspenseQueryHookResult = ReturnType<typeof useTopSuspenseQuery>
-export type TopQueryResult = Apollo.QueryResult<TopQuery, TopQueryVariables>
+export type TopQueryResult = ApolloReactCommon.QueryResult<
+  TopQuery,
+  TopQueryVariables
+>

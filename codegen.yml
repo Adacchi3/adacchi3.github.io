@@ -11,6 +11,8 @@ generates:
       withHOC: false
       withHooks: true
       withComponents: false
+      apolloReactCommonImportFrom: "@apollo/client/react"
+      apolloReactHooksImportFrom: "@apollo/client/react"
       scalars:
         DateTime: string
         Dimension: number
