@@ -1,29 +1,14 @@
-import { ApolloClient, HttpLink, InMemoryCache, makeVar } from '@apollo/client'
+import { ApolloClient, HttpLink, InMemoryCache } from '@apollo/client'
 import { TopDocument } from '@graphql/generated/graphql'
 import merge from 'deepmerge'
 import isEqual from 'lodash/isEqual'
 
-export const localeVar = makeVar('ja-JP')
-
-const typePolicies = {
-  Query: {
-    fields: {
-      locale: {
-        read() {
-          return localeVar()
-        },
-      },
-    },
-  },
-}
-
 let apolloClient
 
-const cache = new InMemoryCache({ typePolicies })
+const cache = new InMemoryCache()
 
 function createApolloClient() {
   return new ApolloClient({
-    ssrMode: typeof window === 'undefined',
     link: new HttpLink({
       uri: process.env.GRAPHQL_ENDPOINT,
       credentials: 'same-origin',
@@ -34,12 +19,11 @@ function createApolloClient() {
 
 export function makeClient() {
   return new ApolloClient({
-    ssrMode: true,
     link: new HttpLink({
       uri: process.env.GRAPHQL_ENDPOINT,
       credentials: 'same-origin',
     }),
-    cache: new InMemoryCache({ typePolicies }),
+    cache: new InMemoryCache(),
   })
 }
 

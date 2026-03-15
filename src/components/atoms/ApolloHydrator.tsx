@@ -1,7 +1,8 @@
 'use client'
 
 import { ApolloProvider } from '@apollo/client'
-import { initializeApollo, localeVar } from '@client'
+import { initializeApollo } from '@client'
+import { LocaleContext } from '@hooks/Locale'
 import { useMemo } from 'react'
 
 type Props = {
@@ -15,9 +16,10 @@ export default function ApolloHydrator({
   apolloState,
   locale,
 }: Props) {
-  const client = useMemo(() => {
-    localeVar(locale)
-    return initializeApollo(apolloState)
-  }, [apolloState, locale])
-  return <ApolloProvider client={client}>{children}</ApolloProvider>
+  const client = useMemo(() => initializeApollo(apolloState), [apolloState])
+  return (
+    <LocaleContext.Provider value={locale}>
+      <ApolloProvider client={client}>{children}</ApolloProvider>
+    </LocaleContext.Provider>
+  )
 }
