@@ -10,7 +10,7 @@ import React from 'react'
 
 const TopTemplate: React.FC = () => {
   return (
-    <div className="flex min-h-screen flex-col bg-white">
+    <div className="flex min-h-screen flex-col bg-white dark:bg-gray-900">
       <div className="grow">
         <Header />
         <AboutUs />

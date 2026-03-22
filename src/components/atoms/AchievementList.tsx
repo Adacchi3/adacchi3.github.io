@@ -36,7 +36,7 @@ const AchievementList: React.FC<Props> = ({
       <React.Fragment key={achievement.title}>
         “
         <a
-          className="text-blue-600 hover:underline"
+          className="text-blue-600 hover:underline dark:text-blue-400"
           href={achievement.link}
           rel="noopener noreferrer"
           target="_blank"

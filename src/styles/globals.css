@@ -8,4 +8,18 @@
   ::file-selector-button {
     border-color: var(--color-gray-200, currentColor);
   }
+
+  @media (prefers-color-scheme: dark) {
+    *,
+    ::after,
+    ::before,
+    ::backdrop,
+    ::file-selector-button {
+      border-color: var(--color-gray-700, currentColor);
+    }
+
+    body {
+      color: var(--color-gray-100);
+    }
+  }
 }
