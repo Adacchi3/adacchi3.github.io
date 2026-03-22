@@ -11,10 +11,7 @@ const LocaleLink: React.FC = () => {
   const links =
     locale === 'en-US' ? (
       <>
-        <Link
-          href="/"
-          className="text-blue-600 hover:underline dark:text-blue-400"
-        >
+        <Link href="/" className="text-blue-600 underline dark:text-blue-400">
           日本語
         </Link>{' '}
         / English
@@ -24,7 +21,7 @@ const LocaleLink: React.FC = () => {
         日本語 /{' '}
         <Link
           href="/en/"
-          className="text-blue-600 hover:underline dark:text-blue-400"
+          className="text-blue-600 underline dark:text-blue-400"
         >
           English
         </Link>
