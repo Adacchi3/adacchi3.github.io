@@ -1,11 +1,58 @@
 @import "tailwindcss";
 
+@custom-variant dark {
+  @media (prefers-color-scheme: dark) {
+    &:not(:is(.light, .light *)) {
+      @slot;
+    }
+  }
+  &:is(.dark, .dark *) {
+    @slot;
+  }
+}
+
 @layer base {
+  :root {
+    --dark-bg: theme(--color-gray-900);
+    --dark-text: theme(--color-gray-100);
+    --dark-border: theme(--color-gray-700);
+  }
+
   *,
   ::after,
   ::before,
   ::backdrop,
   ::file-selector-button {
     border-color: var(--color-gray-200, currentColor);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    html:not(.light),
+    html:not(.light) body {
+      background-color: var(--dark-bg);
+      color: var(--dark-text);
+    }
+
+    html:not(.light) *,
+    html:not(.light) ::after,
+    html:not(.light) ::before,
+    html:not(.light) ::backdrop,
+    html:not(.light) ::file-selector-button {
+      border-color: var(--dark-border);
+    }
+  }
+
+  html.dark,
+  html.dark body {
+    background-color: var(--dark-bg);
+    color: var(--dark-text);
+  }
+
+  html.dark *,
+  html.dark ::after,
+  html.dark ::before,
+  html.dark ::backdrop,
+  html.dark ::file-selector-button {
+    border-color: var(--dark-border);
   }
 }

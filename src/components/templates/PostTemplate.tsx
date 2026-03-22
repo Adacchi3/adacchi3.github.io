@@ -11,7 +11,7 @@ const PostTemplate: React.FC = () => {
   const slug = params?.slug
 
   return (
-    <div className="flex min-h-screen flex-col bg-white">
+    <div className="flex min-h-screen flex-col bg-white dark:bg-gray-900">
       <div className="grow">
         <Header />
         <Container>

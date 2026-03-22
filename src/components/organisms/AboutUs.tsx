@@ -18,7 +18,7 @@ const AboutUs: React.FC = () => {
 
   return (
     <Container>
-      <div className="bg-gray-50 p-6">
+      <div className="bg-gray-50 p-6 dark:bg-gray-800">
         <div className="mb-4 text-center opacity-90">
           <div className="relative block">
             <img
@@ -37,12 +37,14 @@ const AboutUs: React.FC = () => {
         </div>
         <div className="text-center">
           <h1 className="text-3xl">{data?.me?.name}</h1>
-          <p className="text-gray-600 text-xl">{data?.me?.nickname}</p>
-          <p className="py-4 text-center text-gray-600 md:mx-20">
+          <p className="text-gray-600 text-xl dark:text-gray-300">
+            {data?.me?.nickname}
+          </p>
+          <p className="py-4 text-center text-gray-600 md:mx-20 dark:text-gray-300">
             <SimpleFormat text={String(data?.me?.description)} />
           </p>
         </div>
-        <div className="border-t text-center text-gray-700">
+        <div className="border-t text-center text-gray-700 dark:border-gray-700 dark:text-gray-200">
           <ul className="mt-4">
             {data?.contacts?.items.map((contact, index) => {
               return (
@@ -52,7 +54,7 @@ const AboutUs: React.FC = () => {
                       {contact?.media}:{' '}
                       <a
                         href={contact?.link}
-                        className="text-blue-600 hover:underline"
+                        className="text-blue-600 hover:underline dark:text-blue-400"
                         rel="noopener noreferrer"
                         target="_blank"
                       >
