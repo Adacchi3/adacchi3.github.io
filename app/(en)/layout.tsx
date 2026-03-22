@@ -1,3 +1,4 @@
+import { ANTI_FLASH_SCRIPT } from '@utils/theme'
 import type { Metadata } from 'next'
 import { Providers } from '../providers'
 import '@styles/globals.css'
@@ -22,8 +23,9 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
+        <script dangerouslySetInnerHTML={{ __html: ANTI_FLASH_SCRIPT }} />
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
       </head>
