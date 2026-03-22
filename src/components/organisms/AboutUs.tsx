@@ -54,7 +54,7 @@ const AboutUs: React.FC = () => {
                       {contact?.media}:{' '}
                       <a
                         href={contact?.link}
-                        className="text-blue-600 hover:underline dark:text-blue-400"
+                        className="text-blue-600 underline dark:text-blue-400"
                         rel="noopener noreferrer"
                         target="_blank"
                       >
