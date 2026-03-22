@@ -21,18 +21,28 @@ const AboutUs: React.FC = () => {
       <div className="bg-gray-50 p-6 dark:bg-gray-800">
         <div className="mb-4 text-center opacity-90">
           <div className="relative block">
-            <img
-              alt="profile-icon"
-              src={
-                data?.me?.image?.url
-                  ? `${data.me.image.url}?w=320&h=320&fit=thumb`
-                  : undefined
-              }
-              className="mx-auto h-40 w-40 rounded-full object-cover"
-              fetchPriority="high"
-              height="160"
-              width="160"
-            />
+            <picture>
+              <source
+                type="image/webp"
+                srcSet={
+                  data?.me?.image?.url
+                    ? `${data.me.image.url}?w=320&h=320&fit=thumb&fm=webp`
+                    : undefined
+                }
+              />
+              <img
+                alt="profile-icon"
+                src={
+                  data?.me?.image?.url
+                    ? `${data.me.image.url}?w=320&h=320&fit=thumb`
+                    : undefined
+                }
+                className="mx-auto h-40 w-40 rounded-full object-cover"
+                fetchPriority="high"
+                height="160"
+                width="160"
+              />
+            </picture>
           </div>
         </div>
         <div className="text-center">
