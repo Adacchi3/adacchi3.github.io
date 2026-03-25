@@ -4,7 +4,7 @@ import Container from '@components/atoms/Container'
 import { useTopQuery } from '@graphql/generated/graphql'
 import { useLocale } from '@hooks/Locale'
 import React from 'react'
-import SimpleFormat from 'src/lib/SimpleFormat'
+import SimpleFormat from '../../lib/SimpleFormat'
 
 const AboutUs: React.FC = () => {
   const locale = useLocale()
