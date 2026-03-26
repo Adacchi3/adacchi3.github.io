@@ -28,6 +28,9 @@ export function makeClient() {
 }
 
 export async function prefetchTopData(locale: string) {
+  if (!process.env.GRAPHQL_ENDPOINT) {
+    return {}
+  }
   const client = makeClient()
   await client.query({
     query: TopDocument,
