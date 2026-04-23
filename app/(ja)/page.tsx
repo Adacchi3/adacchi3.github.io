@@ -1,6 +1,7 @@
 import { prefetchTopData } from '@client'
 import ApolloHydrator from '@components/atoms/ApolloHydrator'
 import TopTemplate from '@components/templates/TopTemplate'
+import { buildPersonJsonLd, serializeJsonLd } from '@lib/jsonLd'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -8,10 +9,17 @@ export const metadata: Metadata = {
 }
 
 export default async function Page() {
-  const apolloState = await prefetchTopData('ja-JP')
+  const { apolloState, data } = await prefetchTopData('ja-JP')
+  const personJsonLd = buildPersonJsonLd(data, 'ja-JP')
   return (
-    <ApolloHydrator apolloState={apolloState} locale="ja-JP">
-      <TopTemplate />
-    </ApolloHydrator>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(personJsonLd) }}
+      />
+      <ApolloHydrator apolloState={apolloState} locale="ja-JP">
+        <TopTemplate />
+      </ApolloHydrator>
+    </>
   )
 }

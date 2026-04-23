@@ -1,5 +1,6 @@
 import { ApolloClient, HttpLink, InMemoryCache } from '@apollo/client'
 import { TopDocument } from '@graphql/documents'
+import type { TopQuery } from '@graphql/generated/graphql'
 import merge from 'deepmerge'
 import isEqual from 'lodash/isEqual'
 
@@ -29,7 +30,7 @@ export function makeClient() {
 
 export async function prefetchTopData(locale: string) {
   const client = makeClient()
-  await client.query({
+  const result = await client.query<TopQuery>({
     query: TopDocument,
     variables: {
       preview: process.env.PREVIEW === 'true',
@@ -37,7 +38,11 @@ export async function prefetchTopData(locale: string) {
       authorId: String(process.env.AUTHOR_ID),
     },
   })
-  return JSON.parse(JSON.stringify(client.cache.extract()))
+  return {
+    apolloState: JSON.parse(JSON.stringify(client.cache.extract())) as object,
+    // Apollo Client 4 types data as TData | undefined even on success
+    data: result.data as unknown as TopQuery,
+  }
 }
 
 export function initializeApollo(initialState: object | null = null) {
@@ -63,7 +68,6 @@ export function initializeApollo(initialState: object | null = null) {
 
   // For SSG and SSR always create a new Apollo Client
   if (typeof window === 'undefined') return _apolloClient
-  // Create the Apollo Client once in the client
   if (!apolloClient) apolloClient = _apolloClient
   return _apolloClient
 }
