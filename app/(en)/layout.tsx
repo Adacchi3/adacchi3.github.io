@@ -1,7 +1,10 @@
+import { buildWebSiteJsonLd } from '@lib/jsonLd'
 import { ANTI_FLASH_SCRIPT } from '@utils/theme'
 import type { Metadata } from 'next'
 import { Providers } from '../providers'
 import '@styles/globals.css'
+
+const webSiteJsonLd = buildWebSiteJsonLd('en')
 
 export const metadata: Metadata = {
   title: 'Adacchi3 Portfolio',
@@ -26,6 +29,10 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: ANTI_FLASH_SCRIPT }} />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(webSiteJsonLd) }}
+        />
         <link
           rel="preconnect"
           href="https://images.ctfassets.net"
