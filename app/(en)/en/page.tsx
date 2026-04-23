@@ -1,7 +1,7 @@
 import { prefetchTopData } from '@client'
 import ApolloHydrator from '@components/atoms/ApolloHydrator'
 import TopTemplate from '@components/templates/TopTemplate'
-import { buildPersonJsonLd } from '@lib/jsonLd'
+import { buildPersonJsonLd, serializeJsonLd } from '@lib/jsonLd'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -15,7 +15,7 @@ export default async function Page() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(personJsonLd) }}
       />
       <ApolloHydrator apolloState={apolloState} locale="en-US">
         <TopTemplate />

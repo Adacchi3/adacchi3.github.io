@@ -1,4 +1,4 @@
-import { buildWebSiteJsonLd } from '@lib/jsonLd'
+import { buildWebSiteJsonLd, serializeJsonLd } from '@lib/jsonLd'
 import { ANTI_FLASH_SCRIPT } from '@utils/theme'
 import type { Metadata } from 'next'
 import { Providers } from '../providers'
@@ -31,7 +31,7 @@ export default function RootLayout({
         <script dangerouslySetInnerHTML={{ __html: ANTI_FLASH_SCRIPT }} />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(webSiteJsonLd) }}
+          dangerouslySetInnerHTML={{ __html: serializeJsonLd(webSiteJsonLd) }}
         />
         <link
           rel="preconnect"

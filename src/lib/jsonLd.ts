@@ -2,6 +2,10 @@ import type { TopQuery } from '@graphql/generated/graphql'
 
 const SITE_URL = 'https://adacchi3.github.io'
 
+export function serializeJsonLd(data: object): string {
+  return JSON.stringify(data).replace(/</g, '\\u003c')
+}
+
 export function buildWebSiteJsonLd(locale: 'ja' | 'en') {
   return {
     '@context': 'https://schema.org',
@@ -29,13 +33,18 @@ export function buildPersonJsonLd(data: TopQuery, locale: 'ja-JP' | 'en-US') {
     )
     .map((w) => ({ '@type': 'Organization', name: w.organization }))
 
+  const rawImageUrl = data.me?.image?.url
+  const imageUrl = rawImageUrl?.startsWith('//')
+    ? `https:${rawImageUrl}`
+    : rawImageUrl
+
   return {
     '@context': 'https://schema.org',
     '@type': 'Person',
-    name: data.me?.name ?? '',
-    description: data.me?.description ?? '',
-    image: data.me?.image?.url ?? '',
     url: pageUrl,
+    ...(data.me?.name ? { name: data.me.name } : {}),
+    ...(data.me?.description ? { description: data.me.description } : {}),
+    ...(imageUrl ? { image: imageUrl } : {}),
     ...(sameAs.length > 0 ? { sameAs } : {}),
     ...(alumniOf.length > 0 ? { alumniOf } : {}),
     ...(worksFor.length > 0 ? { worksFor } : {}),
