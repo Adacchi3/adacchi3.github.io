@@ -30,7 +30,7 @@ export function makeClient() {
 
 export async function prefetchTopData(locale: string) {
   const client = makeClient()
-  const { data } = await client.query<TopQuery>({
+  const result = await client.query<TopQuery>({
     query: TopDocument,
     variables: {
       preview: process.env.PREVIEW === 'true',
@@ -40,7 +40,8 @@ export async function prefetchTopData(locale: string) {
   })
   return {
     apolloState: JSON.parse(JSON.stringify(client.cache.extract())) as object,
-    data,
+    // Apollo Client 4 types data as TData | undefined even on success
+    data: result.data as unknown as TopQuery,
   }
 }
 
