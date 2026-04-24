@@ -38,12 +38,14 @@ export function buildPersonJsonLd(data: TopQuery, locale: 'ja-JP' | 'en-US') {
     ? `https:${rawImageUrl}`
     : rawImageUrl
 
+  const description = data.me?.description?.replace(/\s+/g, ' ').trim()
+
   return {
     '@context': 'https://schema.org',
     '@type': 'Person',
     url: pageUrl,
     ...(data.me?.name ? { name: data.me.name } : {}),
-    ...(data.me?.description ? { description: data.me.description } : {}),
+    ...(description ? { description } : {}),
     ...(imageUrl ? { image: imageUrl } : {}),
     ...(sameAs.length > 0 ? { sameAs } : {}),
     ...(alumniOf.length > 0 ? { alumniOf } : {}),
