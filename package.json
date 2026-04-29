@@ -22,29 +22,29 @@
     "deepmerge": "4.3.1",
     "graphql": "16.13.2",
     "lodash": "4.18.1",
-    "next": "16.2.3",
+    "next": "16.2.4",
     "react": "19.2.5",
     "react-dom": "19.2.5",
     "react-gtm-module": "2.0.11",
     "rxjs": "^7.8.2"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.4.11",
-    "@graphql-codegen/cli": "6.3.0",
+    "@biomejs/biome": "2.4.12",
+    "@graphql-codegen/cli": "6.3.1",
     "@graphql-codegen/introspection": "5.0.2",
     "@graphql-codegen/typescript": "5.0.10",
     "@graphql-codegen/typescript-operations": "5.1.0",
-    "@graphql-codegen/typescript-react-apollo": "4.4.1",
-    "@tailwindcss/postcss": "4.2.2",
+    "@graphql-codegen/typescript-react-apollo": "4.4.2",
+    "@tailwindcss/postcss": "4.2.4",
     "@types/react": "19",
     "@types/react-gtm-module": "2.0.4",
-    "cssnano": "7.1.5",
+    "cssnano": "7.1.7",
     "husky": "9.1.7",
     "lint-staged": "16.4.0",
     "postcss": "8.5.10",
     "serve": "14.2.6",
-    "tailwindcss": "4.2.2",
-    "typescript": "6.0.2"
+    "tailwindcss": "4.2.4",
+    "typescript": "6.0.3"
   },
   "lint-staged": {
     "*.{ts,tsx,json}": "yarn run lint"

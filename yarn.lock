@@ -332,18 +332,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@biomejs/biome@npm:2.4.11":
-  version: 2.4.11
-  resolution: "@biomejs/biome@npm:2.4.11"
+"@biomejs/biome@npm:2.4.12":
+  version: 2.4.12
+  resolution: "@biomejs/biome@npm:2.4.12"
   dependencies:
-    "@biomejs/cli-darwin-arm64": "npm:2.4.11"
-    "@biomejs/cli-darwin-x64": "npm:2.4.11"
-    "@biomejs/cli-linux-arm64": "npm:2.4.11"
-    "@biomejs/cli-linux-arm64-musl": "npm:2.4.11"
-    "@biomejs/cli-linux-x64": "npm:2.4.11"
-    "@biomejs/cli-linux-x64-musl": "npm:2.4.11"
-    "@biomejs/cli-win32-arm64": "npm:2.4.11"
-    "@biomejs/cli-win32-x64": "npm:2.4.11"
+    "@biomejs/cli-darwin-arm64": "npm:2.4.12"
+    "@biomejs/cli-darwin-x64": "npm:2.4.12"
+    "@biomejs/cli-linux-arm64": "npm:2.4.12"
+    "@biomejs/cli-linux-arm64-musl": "npm:2.4.12"
+    "@biomejs/cli-linux-x64": "npm:2.4.12"
+    "@biomejs/cli-linux-x64-musl": "npm:2.4.12"
+    "@biomejs/cli-win32-arm64": "npm:2.4.12"
+    "@biomejs/cli-win32-x64": "npm:2.4.12"
   dependenciesMeta:
     "@biomejs/cli-darwin-arm64":
       optional: true
@@ -363,62 +363,62 @@ __metadata:
       optional: true
   bin:
     biome: bin/biome
-  checksum: 10c0/5e9edd2bd54f87786a6acc681843128e95eea663d0cd61dfe2e7789683a4d1008e4855f405055c1dc4095d723b1b6a290320d240707f199d1814c955d18c6eab
+  checksum: 10c0/8f03b07f33d7e1efee615945cdc907b7fdc9160d70b204a74ce1b65bdf0ca47c7bfe5e2fafd5b832927f0d4bee4ae3182d93e603e3e5ecf5d91734cff888133b
   languageName: node
   linkType: hard
 
-"@biomejs/cli-darwin-arm64@npm:2.4.11":
-  version: 2.4.11
-  resolution: "@biomejs/cli-darwin-arm64@npm:2.4.11"
+"@biomejs/cli-darwin-arm64@npm:2.4.12":
+  version: 2.4.12
+  resolution: "@biomejs/cli-darwin-arm64@npm:2.4.12"
   conditions: os=darwin & cpu=arm64
   languageName: node
   linkType: hard
 
-"@biomejs/cli-darwin-x64@npm:2.4.11":
-  version: 2.4.11
-  resolution: "@biomejs/cli-darwin-x64@npm:2.4.11"
+"@biomejs/cli-darwin-x64@npm:2.4.12":
+  version: 2.4.12
+  resolution: "@biomejs/cli-darwin-x64@npm:2.4.12"
   conditions: os=darwin & cpu=x64
   languageName: node
   linkType: hard
 
-"@biomejs/cli-linux-arm64-musl@npm:2.4.11":
-  version: 2.4.11
-  resolution: "@biomejs/cli-linux-arm64-musl@npm:2.4.11"
+"@biomejs/cli-linux-arm64-musl@npm:2.4.12":
+  version: 2.4.12
+  resolution: "@biomejs/cli-linux-arm64-musl@npm:2.4.12"
   conditions: os=linux & cpu=arm64 & libc=musl
   languageName: node
   linkType: hard
 
-"@biomejs/cli-linux-arm64@npm:2.4.11":
-  version: 2.4.11
-  resolution: "@biomejs/cli-linux-arm64@npm:2.4.11"
+"@biomejs/cli-linux-arm64@npm:2.4.12":
+  version: 2.4.12
+  resolution: "@biomejs/cli-linux-arm64@npm:2.4.12"
   conditions: os=linux & cpu=arm64 & libc=glibc
   languageName: node
   linkType: hard
 
-"@biomejs/cli-linux-x64-musl@npm:2.4.11":
-  version: 2.4.11
-  resolution: "@biomejs/cli-linux-x64-musl@npm:2.4.11"
+"@biomejs/cli-linux-x64-musl@npm:2.4.12":
+  version: 2.4.12
+  resolution: "@biomejs/cli-linux-x64-musl@npm:2.4.12"
   conditions: os=linux & cpu=x64 & libc=musl
   languageName: node
   linkType: hard
 
-"@biomejs/cli-linux-x64@npm:2.4.11":
-  version: 2.4.11
-  resolution: "@biomejs/cli-linux-x64@npm:2.4.11"
+"@biomejs/cli-linux-x64@npm:2.4.12":
+  version: 2.4.12
+  resolution: "@biomejs/cli-linux-x64@npm:2.4.12"
   conditions: os=linux & cpu=x64 & libc=glibc
   languageName: node
   linkType: hard
 
-"@biomejs/cli-win32-arm64@npm:2.4.11":
-  version: 2.4.11
-  resolution: "@biomejs/cli-win32-arm64@npm:2.4.11"
+"@biomejs/cli-win32-arm64@npm:2.4.12":
+  version: 2.4.12
+  resolution: "@biomejs/cli-win32-arm64@npm:2.4.12"
   conditions: os=win32 & cpu=arm64
   languageName: node
   linkType: hard
 
-"@biomejs/cli-win32-x64@npm:2.4.11":
-  version: 2.4.11
-  resolution: "@biomejs/cli-win32-x64@npm:2.4.11"
+"@biomejs/cli-win32-x64@npm:2.4.12":
+  version: 2.4.12
+  resolution: "@biomejs/cli-win32-x64@npm:2.4.12"
   conditions: os=win32 & cpu=x64
   languageName: node
   linkType: hard
@@ -561,9 +561,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@graphql-codegen/cli@npm:6.3.0":
-  version: 6.3.0
-  resolution: "@graphql-codegen/cli@npm:6.3.0"
+"@graphql-codegen/cli@npm:6.3.1":
+  version: 6.3.1
+  resolution: "@graphql-codegen/cli@npm:6.3.1"
   dependencies:
     "@babel/generator": "npm:^7.18.13"
     "@babel/template": "npm:^7.18.10"
@@ -611,7 +611,7 @@ __metadata:
     graphql-code-generator: cjs/bin.js
     graphql-codegen: cjs/bin.js
     graphql-codegen-esm: esm/bin.js
-  checksum: 10c0/b328e2c83bd10a8a8dac39f0ddcb99d1f738c628d9efb529b2621de1d5ec84447441e37ce74bc0843aed40e0463dbb7bda44865ab747713845e97b4afe06deb8
+  checksum: 10c0/46935d2aaf9b2b8bb2162d3b3ddb2b35aaf9f0ac501ce89bf9aae0d93661f0df6c4100848e946656ca78e454c817128a226de6f4321e957ddf60586c3a4fef96
   languageName: node
   linkType: hard
 
@@ -684,22 +684,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@graphql-codegen/plugin-helpers@npm:^6.1.1":
-  version: 6.2.0
-  resolution: "@graphql-codegen/plugin-helpers@npm:6.2.0"
-  dependencies:
-    "@graphql-tools/utils": "npm:^11.0.0"
-    change-case-all: "npm:1.0.15"
-    common-tags: "npm:1.8.2"
-    import-from: "npm:4.0.0"
-    lodash: "npm:~4.17.0"
-    tslib: "npm:~2.6.0"
-  peerDependencies:
-    graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
-  checksum: 10c0/a1c50d12e4a17c3a8c61d34209d03c0b5f51b62092259670e9a3dd9e4d1048559f7a8a5b76287dde3b50335b9e09efd575d816cfeaa4600622d3fab935cd8d02
-  languageName: node
-  linkType: hard
-
 "@graphql-codegen/plugin-helpers@npm:^6.3.0":
   version: 6.3.0
   resolution: "@graphql-codegen/plugin-helpers@npm:6.3.0"
@@ -762,18 +746,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@graphql-codegen/typescript-react-apollo@npm:4.4.1":
-  version: 4.4.1
-  resolution: "@graphql-codegen/typescript-react-apollo@npm:4.4.1"
+"@graphql-codegen/typescript-react-apollo@npm:4.4.2":
+  version: 4.4.2
+  resolution: "@graphql-codegen/typescript-react-apollo@npm:4.4.2"
   dependencies:
-    "@graphql-codegen/plugin-helpers": "npm:^6.1.1"
-    "@graphql-codegen/visitor-plugin-common": "npm:^6.2.4"
+    "@graphql-codegen/plugin-helpers": "npm:^6.3.0"
+    "@graphql-codegen/visitor-plugin-common": "npm:^6.3.0"
     auto-bind: "npm:~4.0.0"
     change-case-all: "npm:1.0.15"
     tslib: "npm:^2.8.1"
   peerDependencies:
     graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
-  checksum: 10c0/9d99fc320a0793f134707098b8924a4954ca5b55b37251f835453578e83d992cf4e9d59daabc9c29a27cf68ceb3b919fc86c4d79a28cf859aba2ce08d2ca8c3c
+  checksum: 10c0/1a89fbebd9eb55f7e15034c1e8972600d12afa1e5de3f0c948ca9054f60eee9df32ee77db7a2ad592c2e3029c6db563c9796802cd704203a9204d7ebdc99b20a
   languageName: node
   linkType: hard
 
@@ -789,26 +773,6 @@ __metadata:
   peerDependencies:
     graphql: ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
   checksum: 10c0/efb3c0053f9196635355a86c34b66feaa6cfa4ab7e2e091dd4a21f59e696acb0a15eb38b76e7063e5d5cc39532b072a038e26cae041ce9990c8f9408b4db408b
-  languageName: node
-  linkType: hard
-
-"@graphql-codegen/visitor-plugin-common@npm:^6.2.4":
-  version: 6.2.4
-  resolution: "@graphql-codegen/visitor-plugin-common@npm:6.2.4"
-  dependencies:
-    "@graphql-codegen/plugin-helpers": "npm:^6.1.1"
-    "@graphql-tools/optimize": "npm:^2.0.0"
-    "@graphql-tools/relay-operation-optimizer": "npm:^7.1.1"
-    "@graphql-tools/utils": "npm:^11.0.0"
-    auto-bind: "npm:~4.0.0"
-    change-case-all: "npm:1.0.15"
-    dependency-graph: "npm:^1.0.0"
-    graphql-tag: "npm:^2.11.0"
-    parse-filepath: "npm:^1.0.2"
-    tslib: "npm:~2.6.0"
-  peerDependencies:
-    graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
-  checksum: 10c0/1bc912ec750b8271cf3b28404dc7ce1ebfe356d071da74c711052a3dc48bcd03748fe74e2a01b01dd0e68d1b96ad180249a2162521eef682219532568b988a4c
   languageName: node
   linkType: hard
 
@@ -1844,65 +1808,65 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@next/env@npm:16.2.3":
-  version: 16.2.3
-  resolution: "@next/env@npm:16.2.3"
-  checksum: 10c0/56c3fee8ea226efe59ef065e054380f872c00c45c9fe4475eaa45f80773c3c1adc3ead3ccdd77447d3c1aeb4b3004aaaa033dd4a100d3e572fd01b83f992dde8
+"@next/env@npm:16.2.4":
+  version: 16.2.4
+  resolution: "@next/env@npm:16.2.4"
+  checksum: 10c0/4bf41f0da7cc97ca2a2f2b7f3fc81e14aba2afc280d32163b134b8f642b315fbabb5d9c224a783d8e759bbc73eedfc9acd048e772950395aa1e6290dd386d209
   languageName: node
   linkType: hard
 
-"@next/swc-darwin-arm64@npm:16.2.3":
-  version: 16.2.3
-  resolution: "@next/swc-darwin-arm64@npm:16.2.3"
+"@next/swc-darwin-arm64@npm:16.2.4":
+  version: 16.2.4
+  resolution: "@next/swc-darwin-arm64@npm:16.2.4"
   conditions: os=darwin & cpu=arm64
   languageName: node
   linkType: hard
 
-"@next/swc-darwin-x64@npm:16.2.3":
-  version: 16.2.3
-  resolution: "@next/swc-darwin-x64@npm:16.2.3"
+"@next/swc-darwin-x64@npm:16.2.4":
+  version: 16.2.4
+  resolution: "@next/swc-darwin-x64@npm:16.2.4"
   conditions: os=darwin & cpu=x64
   languageName: node
   linkType: hard
 
-"@next/swc-linux-arm64-gnu@npm:16.2.3":
-  version: 16.2.3
-  resolution: "@next/swc-linux-arm64-gnu@npm:16.2.3"
+"@next/swc-linux-arm64-gnu@npm:16.2.4":
+  version: 16.2.4
+  resolution: "@next/swc-linux-arm64-gnu@npm:16.2.4"
   conditions: os=linux & cpu=arm64 & libc=glibc
   languageName: node
   linkType: hard
 
-"@next/swc-linux-arm64-musl@npm:16.2.3":
-  version: 16.2.3
-  resolution: "@next/swc-linux-arm64-musl@npm:16.2.3"
+"@next/swc-linux-arm64-musl@npm:16.2.4":
+  version: 16.2.4
+  resolution: "@next/swc-linux-arm64-musl@npm:16.2.4"
   conditions: os=linux & cpu=arm64 & libc=musl
   languageName: node
   linkType: hard
 
-"@next/swc-linux-x64-gnu@npm:16.2.3":
-  version: 16.2.3
-  resolution: "@next/swc-linux-x64-gnu@npm:16.2.3"
+"@next/swc-linux-x64-gnu@npm:16.2.4":
+  version: 16.2.4
+  resolution: "@next/swc-linux-x64-gnu@npm:16.2.4"
   conditions: os=linux & cpu=x64 & libc=glibc
   languageName: node
   linkType: hard
 
-"@next/swc-linux-x64-musl@npm:16.2.3":
-  version: 16.2.3
-  resolution: "@next/swc-linux-x64-musl@npm:16.2.3"
+"@next/swc-linux-x64-musl@npm:16.2.4":
+  version: 16.2.4
+  resolution: "@next/swc-linux-x64-musl@npm:16.2.4"
   conditions: os=linux & cpu=x64 & libc=musl
   languageName: node
   linkType: hard
 
-"@next/swc-win32-arm64-msvc@npm:16.2.3":
-  version: 16.2.3
-  resolution: "@next/swc-win32-arm64-msvc@npm:16.2.3"
+"@next/swc-win32-arm64-msvc@npm:16.2.4":
+  version: 16.2.4
+  resolution: "@next/swc-win32-arm64-msvc@npm:16.2.4"
   conditions: os=win32 & cpu=arm64
   languageName: node
   linkType: hard
 
-"@next/swc-win32-x64-msvc@npm:16.2.3":
-  version: 16.2.3
-  resolution: "@next/swc-win32-x64-msvc@npm:16.2.3"
+"@next/swc-win32-x64-msvc@npm:16.2.4":
+  version: 16.2.4
+  resolution: "@next/swc-win32-x64-msvc@npm:16.2.4"
   conditions: os=win32 & cpu=x64
   languageName: node
   linkType: hard
@@ -2055,9 +2019,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tailwindcss/node@npm:4.2.2":
-  version: 4.2.2
-  resolution: "@tailwindcss/node@npm:4.2.2"
+"@tailwindcss/node@npm:4.2.4":
+  version: 4.2.4
+  resolution: "@tailwindcss/node@npm:4.2.4"
   dependencies:
     "@jridgewell/remapping": "npm:^2.3.5"
     enhanced-resolve: "npm:^5.19.0"
@@ -2065,77 +2029,77 @@ __metadata:
     lightningcss: "npm:1.32.0"
     magic-string: "npm:^0.30.21"
     source-map-js: "npm:^1.2.1"
-    tailwindcss: "npm:4.2.2"
-  checksum: 10c0/4c0019355cd85a08f93ba3e179de37b83cc233b8ded4bd7714e633f89dd108928742e50966593257c2c1ab8db8914ea187dae007b5c692c869ceace11aeccede
+    tailwindcss: "npm:4.2.4"
+  checksum: 10c0/58a0b8c4b8e8425e34a5240e58d90f6ef462705f790b93e6e74ae0bbd05d228457b8438a34a272b447393bfdb2ea1605400ccc5b0edb87d9dd9d092f1d8a0bb2
   languageName: node
   linkType: hard
 
-"@tailwindcss/oxide-android-arm64@npm:4.2.2":
-  version: 4.2.2
-  resolution: "@tailwindcss/oxide-android-arm64@npm:4.2.2"
+"@tailwindcss/oxide-android-arm64@npm:4.2.4":
+  version: 4.2.4
+  resolution: "@tailwindcss/oxide-android-arm64@npm:4.2.4"
   conditions: os=android & cpu=arm64
   languageName: node
   linkType: hard
 
-"@tailwindcss/oxide-darwin-arm64@npm:4.2.2":
-  version: 4.2.2
-  resolution: "@tailwindcss/oxide-darwin-arm64@npm:4.2.2"
+"@tailwindcss/oxide-darwin-arm64@npm:4.2.4":
+  version: 4.2.4
+  resolution: "@tailwindcss/oxide-darwin-arm64@npm:4.2.4"
   conditions: os=darwin & cpu=arm64
   languageName: node
   linkType: hard
 
-"@tailwindcss/oxide-darwin-x64@npm:4.2.2":
-  version: 4.2.2
-  resolution: "@tailwindcss/oxide-darwin-x64@npm:4.2.2"
+"@tailwindcss/oxide-darwin-x64@npm:4.2.4":
+  version: 4.2.4
+  resolution: "@tailwindcss/oxide-darwin-x64@npm:4.2.4"
   conditions: os=darwin & cpu=x64
   languageName: node
   linkType: hard
 
-"@tailwindcss/oxide-freebsd-x64@npm:4.2.2":
-  version: 4.2.2
-  resolution: "@tailwindcss/oxide-freebsd-x64@npm:4.2.2"
+"@tailwindcss/oxide-freebsd-x64@npm:4.2.4":
+  version: 4.2.4
+  resolution: "@tailwindcss/oxide-freebsd-x64@npm:4.2.4"
   conditions: os=freebsd & cpu=x64
   languageName: node
   linkType: hard
 
-"@tailwindcss/oxide-linux-arm-gnueabihf@npm:4.2.2":
-  version: 4.2.2
-  resolution: "@tailwindcss/oxide-linux-arm-gnueabihf@npm:4.2.2"
+"@tailwindcss/oxide-linux-arm-gnueabihf@npm:4.2.4":
+  version: 4.2.4
+  resolution: "@tailwindcss/oxide-linux-arm-gnueabihf@npm:4.2.4"
   conditions: os=linux & cpu=arm
   languageName: node
   linkType: hard
 
-"@tailwindcss/oxide-linux-arm64-gnu@npm:4.2.2":
-  version: 4.2.2
-  resolution: "@tailwindcss/oxide-linux-arm64-gnu@npm:4.2.2"
+"@tailwindcss/oxide-linux-arm64-gnu@npm:4.2.4":
+  version: 4.2.4
+  resolution: "@tailwindcss/oxide-linux-arm64-gnu@npm:4.2.4"
   conditions: os=linux & cpu=arm64 & libc=glibc
   languageName: node
   linkType: hard
 
-"@tailwindcss/oxide-linux-arm64-musl@npm:4.2.2":
-  version: 4.2.2
-  resolution: "@tailwindcss/oxide-linux-arm64-musl@npm:4.2.2"
+"@tailwindcss/oxide-linux-arm64-musl@npm:4.2.4":
+  version: 4.2.4
+  resolution: "@tailwindcss/oxide-linux-arm64-musl@npm:4.2.4"
   conditions: os=linux & cpu=arm64 & libc=musl
   languageName: node
   linkType: hard
 
-"@tailwindcss/oxide-linux-x64-gnu@npm:4.2.2":
-  version: 4.2.2
-  resolution: "@tailwindcss/oxide-linux-x64-gnu@npm:4.2.2"
+"@tailwindcss/oxide-linux-x64-gnu@npm:4.2.4":
+  version: 4.2.4
+  resolution: "@tailwindcss/oxide-linux-x64-gnu@npm:4.2.4"
   conditions: os=linux & cpu=x64 & libc=glibc
   languageName: node
   linkType: hard
 
-"@tailwindcss/oxide-linux-x64-musl@npm:4.2.2":
-  version: 4.2.2
-  resolution: "@tailwindcss/oxide-linux-x64-musl@npm:4.2.2"
+"@tailwindcss/oxide-linux-x64-musl@npm:4.2.4":
+  version: 4.2.4
+  resolution: "@tailwindcss/oxide-linux-x64-musl@npm:4.2.4"
   conditions: os=linux & cpu=x64 & libc=musl
   languageName: node
   linkType: hard
 
-"@tailwindcss/oxide-wasm32-wasi@npm:4.2.2":
-  version: 4.2.2
-  resolution: "@tailwindcss/oxide-wasm32-wasi@npm:4.2.2"
+"@tailwindcss/oxide-wasm32-wasi@npm:4.2.4":
+  version: 4.2.4
+  resolution: "@tailwindcss/oxide-wasm32-wasi@npm:4.2.4"
   dependencies:
     "@emnapi/core": "npm:^1.8.1"
     "@emnapi/runtime": "npm:^1.8.1"
@@ -2147,36 +2111,36 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tailwindcss/oxide-win32-arm64-msvc@npm:4.2.2":
-  version: 4.2.2
-  resolution: "@tailwindcss/oxide-win32-arm64-msvc@npm:4.2.2"
+"@tailwindcss/oxide-win32-arm64-msvc@npm:4.2.4":
+  version: 4.2.4
+  resolution: "@tailwindcss/oxide-win32-arm64-msvc@npm:4.2.4"
   conditions: os=win32 & cpu=arm64
   languageName: node
   linkType: hard
 
-"@tailwindcss/oxide-win32-x64-msvc@npm:4.2.2":
-  version: 4.2.2
-  resolution: "@tailwindcss/oxide-win32-x64-msvc@npm:4.2.2"
+"@tailwindcss/oxide-win32-x64-msvc@npm:4.2.4":
+  version: 4.2.4
+  resolution: "@tailwindcss/oxide-win32-x64-msvc@npm:4.2.4"
   conditions: os=win32 & cpu=x64
   languageName: node
   linkType: hard
 
-"@tailwindcss/oxide@npm:4.2.2":
-  version: 4.2.2
-  resolution: "@tailwindcss/oxide@npm:4.2.2"
+"@tailwindcss/oxide@npm:4.2.4":
+  version: 4.2.4
+  resolution: "@tailwindcss/oxide@npm:4.2.4"
   dependencies:
-    "@tailwindcss/oxide-android-arm64": "npm:4.2.2"
-    "@tailwindcss/oxide-darwin-arm64": "npm:4.2.2"
-    "@tailwindcss/oxide-darwin-x64": "npm:4.2.2"
-    "@tailwindcss/oxide-freebsd-x64": "npm:4.2.2"
-    "@tailwindcss/oxide-linux-arm-gnueabihf": "npm:4.2.2"
-    "@tailwindcss/oxide-linux-arm64-gnu": "npm:4.2.2"
-    "@tailwindcss/oxide-linux-arm64-musl": "npm:4.2.2"
-    "@tailwindcss/oxide-linux-x64-gnu": "npm:4.2.2"
-    "@tailwindcss/oxide-linux-x64-musl": "npm:4.2.2"
-    "@tailwindcss/oxide-wasm32-wasi": "npm:4.2.2"
-    "@tailwindcss/oxide-win32-arm64-msvc": "npm:4.2.2"
-    "@tailwindcss/oxide-win32-x64-msvc": "npm:4.2.2"
+    "@tailwindcss/oxide-android-arm64": "npm:4.2.4"
+    "@tailwindcss/oxide-darwin-arm64": "npm:4.2.4"
+    "@tailwindcss/oxide-darwin-x64": "npm:4.2.4"
+    "@tailwindcss/oxide-freebsd-x64": "npm:4.2.4"
+    "@tailwindcss/oxide-linux-arm-gnueabihf": "npm:4.2.4"
+    "@tailwindcss/oxide-linux-arm64-gnu": "npm:4.2.4"
+    "@tailwindcss/oxide-linux-arm64-musl": "npm:4.2.4"
+    "@tailwindcss/oxide-linux-x64-gnu": "npm:4.2.4"
+    "@tailwindcss/oxide-linux-x64-musl": "npm:4.2.4"
+    "@tailwindcss/oxide-wasm32-wasi": "npm:4.2.4"
+    "@tailwindcss/oxide-win32-arm64-msvc": "npm:4.2.4"
+    "@tailwindcss/oxide-win32-x64-msvc": "npm:4.2.4"
   dependenciesMeta:
     "@tailwindcss/oxide-android-arm64":
       optional: true
@@ -2202,20 +2166,20 @@ __metadata:
       optional: true
     "@tailwindcss/oxide-win32-x64-msvc":
       optional: true
-  checksum: 10c0/22f78d73ffcec2d0d91f9fbfc29fed23c260e3e53f510f0b2598e322bf56a92ceb7e6f5a1c88ad1e3c7cfee9dd8d39285c411de5ec3225cdae2cbfdb737862e5
+  checksum: 10c0/f9fe3d19d4384e754155030482f664c6747c7d5d1556795a510c517c2a3408bebbe60c25cebb1da47187c347c04d993585b9c2580e43df9f522e1c7692ae25fc
   languageName: node
   linkType: hard
 
-"@tailwindcss/postcss@npm:4.2.2":
-  version: 4.2.2
-  resolution: "@tailwindcss/postcss@npm:4.2.2"
+"@tailwindcss/postcss@npm:4.2.4":
+  version: 4.2.4
+  resolution: "@tailwindcss/postcss@npm:4.2.4"
   dependencies:
     "@alloc/quick-lru": "npm:^5.2.0"
-    "@tailwindcss/node": "npm:4.2.2"
-    "@tailwindcss/oxide": "npm:4.2.2"
+    "@tailwindcss/node": "npm:4.2.4"
+    "@tailwindcss/oxide": "npm:4.2.4"
     postcss: "npm:^8.5.6"
-    tailwindcss: "npm:4.2.2"
-  checksum: 10c0/b2501269d9eb2d8e80b548769b4552115ada36f7f7777d3b7656f7c7fe8b12d22305f9deb8a1fb9e41b30b98685ed3a1920ebb0b0e782b63f9483af9bc6e58a5
+    tailwindcss: "npm:4.2.4"
+  checksum: 10c0/e6abad7065558bf3c39d30f392100c934c3381a572df21d934dd5a9399e0a62e16ba3d74a51ec0b1d670b1990ae73d01dfc560db0bf0e24bad827e00be0e62c2
   languageName: node
   linkType: hard
 
@@ -2368,33 +2332,33 @@ __metadata:
   resolution: "adacchi3.github.io@workspace:."
   dependencies:
     "@apollo/client": "npm:4.1.7"
-    "@biomejs/biome": "npm:2.4.11"
-    "@graphql-codegen/cli": "npm:6.3.0"
+    "@biomejs/biome": "npm:2.4.12"
+    "@graphql-codegen/cli": "npm:6.3.1"
     "@graphql-codegen/introspection": "npm:5.0.2"
     "@graphql-codegen/typescript": "npm:5.0.10"
     "@graphql-codegen/typescript-operations": "npm:5.1.0"
-    "@graphql-codegen/typescript-react-apollo": "npm:4.4.1"
+    "@graphql-codegen/typescript-react-apollo": "npm:4.4.2"
     "@headlessui/react": "npm:2.2.10"
     "@heroicons/react": "npm:2.2.0"
-    "@tailwindcss/postcss": "npm:4.2.2"
+    "@tailwindcss/postcss": "npm:4.2.4"
     "@types/react": "npm:19"
     "@types/react-gtm-module": "npm:2.0.4"
-    cssnano: "npm:7.1.5"
+    cssnano: "npm:7.1.7"
     date-fns: "npm:4.1.0"
     deepmerge: "npm:4.3.1"
     graphql: "npm:16.13.2"
     husky: "npm:9.1.7"
     lint-staged: "npm:16.4.0"
     lodash: "npm:4.18.1"
-    next: "npm:16.2.3"
+    next: "npm:16.2.4"
     postcss: "npm:8.5.10"
     react: "npm:19.2.5"
     react-dom: "npm:19.2.5"
     react-gtm-module: "npm:2.0.11"
     rxjs: "npm:^7.8.2"
     serve: "npm:14.2.6"
-    tailwindcss: "npm:4.2.2"
-    typescript: "npm:6.0.2"
+    tailwindcss: "npm:4.2.4"
+    typescript: "npm:6.0.3"
   languageName: unknown
   linkType: soft
 
@@ -3120,7 +3084,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cssnano-preset-default@npm:^7.0.13":
+"cssnano-preset-default@npm:^7.0.15":
   version: 7.0.15
   resolution: "cssnano-preset-default@npm:7.0.15"
   dependencies:
@@ -3169,15 +3133,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cssnano@npm:7.1.5":
-  version: 7.1.5
-  resolution: "cssnano@npm:7.1.5"
+"cssnano@npm:7.1.7":
+  version: 7.1.7
+  resolution: "cssnano@npm:7.1.7"
   dependencies:
-    cssnano-preset-default: "npm:^7.0.13"
+    cssnano-preset-default: "npm:^7.0.15"
     lilconfig: "npm:^3.1.3"
   peerDependencies:
-    postcss: ^8.4.32
-  checksum: 10c0/ed2cd9520ab4f10a460924a0d3cf6d106394eef7216216b5b0b5364e36a4f27595f29a560776e5c7c8e44362bc3d45912e19de9d6be2334b78cd5576970dffa6
+    postcss: ^8.5.10
+  checksum: 10c0/be7fcefee2ef6b27c1f23f38f767935bdc0c1cd30f5d6f7d18f9ac7a14fab0b209ab96254a39dda335d0341fa2142a4d431be24ea9d71071acbea32cb1b8ed5c
   languageName: node
   linkType: hard
 
@@ -4190,13 +4154,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lodash@npm:~4.17.0":
-  version: 4.17.21
-  resolution: "lodash@npm:4.17.21"
-  checksum: 10c0/d8cbea072bb08655bb4c989da418994b073a608dffa608b09ac04b43a791b12aeae7cd7ad919aa4c925f33b48490b5cfe6c1f71d827956071dae2e7bb3a6b74c
-  languageName: node
-  linkType: hard
-
 "log-symbols@npm:^4.0.0":
   version: 4.1.0
   resolution: "log-symbols@npm:4.1.0"
@@ -4430,19 +4387,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"next@npm:16.2.3":
-  version: 16.2.3
-  resolution: "next@npm:16.2.3"
+"next@npm:16.2.4":
+  version: 16.2.4
+  resolution: "next@npm:16.2.4"
   dependencies:
-    "@next/env": "npm:16.2.3"
-    "@next/swc-darwin-arm64": "npm:16.2.3"
-    "@next/swc-darwin-x64": "npm:16.2.3"
-    "@next/swc-linux-arm64-gnu": "npm:16.2.3"
-    "@next/swc-linux-arm64-musl": "npm:16.2.3"
-    "@next/swc-linux-x64-gnu": "npm:16.2.3"
-    "@next/swc-linux-x64-musl": "npm:16.2.3"
-    "@next/swc-win32-arm64-msvc": "npm:16.2.3"
-    "@next/swc-win32-x64-msvc": "npm:16.2.3"
+    "@next/env": "npm:16.2.4"
+    "@next/swc-darwin-arm64": "npm:16.2.4"
+    "@next/swc-darwin-x64": "npm:16.2.4"
+    "@next/swc-linux-arm64-gnu": "npm:16.2.4"
+    "@next/swc-linux-arm64-musl": "npm:16.2.4"
+    "@next/swc-linux-x64-gnu": "npm:16.2.4"
+    "@next/swc-linux-x64-musl": "npm:16.2.4"
+    "@next/swc-win32-arm64-msvc": "npm:16.2.4"
+    "@next/swc-win32-x64-msvc": "npm:16.2.4"
     "@swc/helpers": "npm:0.5.15"
     baseline-browser-mapping: "npm:^2.9.19"
     caniuse-lite: "npm:^1.0.30001579"
@@ -4486,7 +4443,7 @@ __metadata:
       optional: true
   bin:
     next: dist/bin/next
-  checksum: 10c0/8a9d27fc773d69f7f471cf1a23bde2ab2950e0411ef3e0d5c1664ed9654e94c3304eae1c4283ec0fa4e70e7b3f4416913350e118e0c18e8b055693dc5d021883
+  checksum: 10c0/81dc1ef30141891dc5cc999a0a6210c68305b585b3a7508799767572a9fb7e4c7dcb5a50f5fa3fabadf6a46c2273405360b1d6f17f89edd891da1746ae31c186
   languageName: node
   linkType: hard
 
@@ -5716,10 +5673,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tailwindcss@npm:4.2.2":
-  version: 4.2.2
-  resolution: "tailwindcss@npm:4.2.2"
-  checksum: 10c0/6eae8a125c35d504ba6c518d26ec64fba694ff4a9ab9b9cd9883050128e0b7afdf491388c472d9bed2624664c1c7d4a133d19b653151a6b52e6ce6953168a857
+"tailwindcss@npm:4.2.4":
+  version: 4.2.4
+  resolution: "tailwindcss@npm:4.2.4"
+  checksum: 10c0/1069304b6bf2855daa029ac4af382abb95ed26ae4d05bc09ea01a56e6af3de8b6fb1b4d508d8bbb39abf30a69766e6f2f75835e112ac6fc39ed94ae5d4901048
   languageName: node
   linkType: hard
 
@@ -5783,13 +5740,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tslib@npm:~2.6.0":
-  version: 2.6.3
-  resolution: "tslib@npm:2.6.3"
-  checksum: 10c0/2598aef53d9dbe711af75522464b2104724d6467b26a60f2bdac8297d2b5f1f6b86a71f61717384aa8fd897240467aaa7bcc36a0700a0faf751293d1331db39a
-  languageName: node
-  linkType: hard
-
 "type-fest@npm:^2.13.0":
   version: 2.19.0
   resolution: "type-fest@npm:2.19.0"
@@ -5797,23 +5747,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:6.0.2":
-  version: 6.0.2
-  resolution: "typescript@npm:6.0.2"
+"typescript@npm:6.0.3":
+  version: 6.0.3
+  resolution: "typescript@npm:6.0.3"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 10c0/4b860b0bf87cc0fee0f66d8ef2640b5a8a8a8c74d1129adb82e389e5f97124383823c47946bef8a73ede371461143a3aa8544399d2133c7b2e4f07e81860af7f
+  checksum: 10c0/4a25ff5045b984370f48f196b3a0120779b1b343d40b9a68d114ea5e5fff099809b2bb777576991a63a5cd59cf7bffd96ff6fe10afcefbcb8bd6fb96ad4b6606
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@npm%3A6.0.2#optional!builtin<compat/typescript>":
-  version: 6.0.2
-  resolution: "typescript@patch:typescript@npm%3A6.0.2#optional!builtin<compat/typescript>::version=6.0.2&hash=5786d5"
+"typescript@patch:typescript@npm%3A6.0.3#optional!builtin<compat/typescript>":
+  version: 6.0.3
+  resolution: "typescript@patch:typescript@npm%3A6.0.3#optional!builtin<compat/typescript>::version=6.0.3&hash=5786d5"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 10c0/49f0b84fc6ca55653e77752b8a61beabc09ee3dae5d965c31596225aa6ef213c5727b1d2e895b900416dc603854ba0872ac4a812c2a4ed6793a601f9c675de02
+  checksum: 10c0/2f25c74e65663c248fa1ade2b8459d9ce5372ff9dad07067310f132966ebec1d93f6c42f0baf77a6b6a7a91460463f708e6887013aaade22111037457c6b25df
   languageName: node
   linkType: hard
 
