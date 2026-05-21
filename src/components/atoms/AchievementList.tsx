@@ -17,7 +17,7 @@ const AchievementList: React.FC<Props> = ({
     return achievement.authorsCollection.items
       .map((author, index) => {
         const localeName =
-          locale === 'en-US' || !!achievement.category.nameUS
+          locale === 'en-US' || achievement.category.nameUS
             ? 'nameUS'
             : 'nameJP'
         return author.underline ? (
