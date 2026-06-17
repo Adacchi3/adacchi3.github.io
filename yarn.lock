@@ -12,9 +12,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@apollo/client@npm:4.2.1":
-  version: 4.2.1
-  resolution: "@apollo/client@npm:4.2.1"
+"@apollo/client@npm:4.2.3":
+  version: 4.2.3
+  resolution: "@apollo/client@npm:4.2.3"
   dependencies:
     "@graphql-typed-document-node/core": "npm:^3.1.1"
     "@wry/caches": "npm:^1.0.0"
@@ -24,7 +24,7 @@ __metadata:
     optimism: "npm:^0.18.0"
     tslib: "npm:^2.3.0"
   peerDependencies:
-    graphql: ^16.0.0
+    graphql: ^16.0.0 || ^17.0.0
     graphql-ws: ^5.5.5 || ^6.0.3
     react: ^17.0.0 || ^18.0.0 || >=19.0.0-rc
     react-dom: ^17.0.0 || ^18.0.0 || >=19.0.0-rc
@@ -39,7 +39,7 @@ __metadata:
       optional: true
     subscriptions-transport-ws:
       optional: true
-  checksum: 10c0/89cff52ee4acc70a0f67e071447eed501c899dc2865e8c9548f33e5b94c8209229f1b335dcac12dfbc155c02d7e7e676d08eea973d7ef7aed21eb3c2f60ef03e
+  checksum: 10c0/5aa020c6f859e4d97c417f0d61fc71f1c998e88667c7aacb85693b37bbcf56553d7fa122715c4f6604cb614eac513b3d2da3cbabd29e6428622f0862f13f5c7f
   languageName: node
   linkType: hard
 
@@ -2371,7 +2371,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "adacchi3.github.io@workspace:."
   dependencies:
-    "@apollo/client": "npm:4.2.1"
+    "@apollo/client": "npm:4.2.3"
     "@biomejs/biome": "npm:2.4.16"
     "@graphql-codegen/cli": "npm:7.1.2"
     "@graphql-codegen/introspection": "npm:6.0.1"
@@ -2386,7 +2386,7 @@ __metadata:
     cssnano: "npm:8.0.1"
     date-fns: "npm:4.4.0"
     deepmerge: "npm:4.3.1"
-    graphql: "npm:16.14.1"
+    graphql: "npm:16.14.2"
     husky: "npm:9.1.7"
     lint-staged: "npm:17.0.7"
     lodash: "npm:4.18.1"
@@ -3692,10 +3692,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"graphql@npm:16.14.1":
-  version: 16.14.1
-  resolution: "graphql@npm:16.14.1"
-  checksum: 10c0/a67358b4c6bbda0876903d3f6bbba46058ac7bc00c043ae0b435148e2a00481e9c7716f54f271659786f27f58bf355245216938d98ade980fd141885c907efff
+"graphql@npm:16.14.2":
+  version: 16.14.2
+  resolution: "graphql@npm:16.14.2"
+  checksum: 10c0/a95a96961eaff55cc9fe9d31fae6f33499ac988b972d07ea5085024cb1333f515b902f376e7393a5489aa82200a8aff3eb96580e4d1b69d702ed19b6eb1ce97a
   languageName: node
   linkType: hard
 
