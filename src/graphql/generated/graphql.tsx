@@ -1,27 +1,18 @@
 // @ts-nocheck
-import { gql } from '@apollo/client'
-import * as ApolloReactCommon from '@apollo/client/react'
-import * as ApolloReactHooks from '@apollo/client/react'
-export type Maybe<T> = T | null
-export type InputMaybe<T> = Maybe<T>
-export type Exact<T extends { [key: string]: unknown }> = {
-  [K in keyof T]: T[K]
-}
-export type MakeOptional<T, K extends keyof T> = Omit<T, K> & {
-  [SubKey in K]?: Maybe<T[SubKey]>
-}
-export type MakeMaybe<T, K extends keyof T> = Omit<T, K> & {
-  [SubKey in K]: Maybe<T[SubKey]>
-}
-export type MakeEmpty<
-  T extends { [key: string]: unknown },
-  K extends keyof T,
-> = { [_ in K]?: never }
+/** Internal type. DO NOT USE DIRECTLY. */
+type Exact<T extends { [key: string]: unknown }> = { [K in keyof T]: T[K] }
+/** Internal type. DO NOT USE DIRECTLY. */
 export type Incremental<T> =
   | T
   | {
       [P in keyof T]?: P extends ' $fragmentName' | '__typename' ? T[P] : never
     }
+
+import { gql } from '@apollo/client'
+import * as ApolloReactCommon from '@apollo/client/react'
+import * as ApolloReactHooks from '@apollo/client/react'
+export type Maybe<T> = T | null
+export type InputMaybe<T> = Maybe<T>
 const defaultOptions = {} as const
 /** All built-in and custom scalars, mapped to their actual values */
 export type Scalars = {
@@ -1502,87 +1493,72 @@ export type CfAuthorNestedFilter = {
 
 export type LocaleQueryVariables = Exact<{ [key: string]: never }>
 
-export type LocaleQuery = { __typename?: 'Query'; locale: string }
+export type LocaleQuery = { locale: string }
 
 export type TopQueryVariables = Exact<{
-  preview?: InputMaybe<Scalars['Boolean']['input']>
-  locale: Scalars['String']['input']
-  authorId: Scalars['String']['input']
+  preview?: boolean | null | undefined
+  locale: string
+  authorId: string
 }>
 
 export type TopQuery = {
-  __typename?: 'Query'
-  me?: {
-    __typename?: 'Author'
-    name?: string | null
-    nickname?: string | null
-    description?: string | null
-    image?: { __typename?: 'Asset'; url?: string | null } | null
+  me: {
+    name: string | null
+    nickname: string | null
+    description: string | null
+    image: { url: string | null } | null
   } | null
-  contacts?: {
-    __typename?: 'ContactCollection'
+  contacts: {
     items: Array<{
-      __typename?: 'Contact'
-      media?: string | null
-      account?: string | null
-      link?: string | null
+      media: string | null
+      account: string | null
+      link: string | null
     } | null>
   } | null
-  workExperiences?: {
-    __typename?: 'WorkExperienceCollection'
+  workExperiences: {
     items: Array<{
-      __typename?: 'WorkExperience'
-      organization?: string | null
-      role?: string | null
-      startDate?: string | null
-      endDate?: string | null
+      organization: string | null
+      role: string | null
+      startDate: string | null
+      endDate: string | null
     } | null>
   } | null
-  achievements?: {
-    __typename?: 'AchievementCollection'
+  achievements: {
     items: Array<{
-      __typename?: 'Achievement'
-      title?: string | null
-      link?: string | null
-      proceeding?: string | null
-      publishedDate?: string | null
-      startPage?: number | null
-      endPage?: number | null
-      sessionId?: string | null
-      note?: string | null
-      category?: {
-        __typename?: 'AchievementCategory'
-        orderNumber?: number | null
-        nameJP?: string | null
-        nameUS?: string | null
+      title: string | null
+      link: string | null
+      proceeding: string | null
+      publishedDate: string | null
+      startPage: number | null
+      endPage: number | null
+      sessionId: string | null
+      note: string | null
+      category: {
+        orderNumber: number | null
+        nameJP: string | null
+        nameUS: string | null
       } | null
-      authorsCollection?: {
-        __typename?: 'AchievementAuthorsCollection'
+      authorsCollection: {
         items: Array<{
-          __typename?: 'Author'
-          underline?: boolean | null
-          nameJP?: string | null
-          nameUS?: string | null
+          underline: boolean | null
+          nameJP: string | null
+          nameUS: string | null
         } | null>
       } | null
     } | null>
   } | null
-  awards?: {
-    __typename?: 'AwardCollection'
+  awards: {
     items: Array<{
-      __typename?: 'Award'
-      name?: string | null
-      publication?: string | null
-      awardDate?: string | null
+      name: string | null
+      publication: string | null
+      awardDate: string | null
     } | null>
   } | null
-  academicBackgroundCollection?: {
-    __typename?: 'AcademicBackgroundCollection'
+  academicBackgroundCollection: {
     items: Array<{
-      __typename?: 'AcademicBackground'
-      organization?: string | null
-      startDate?: string | null
-      endDate?: string | null
+      organization: string | null
+      startDate: string | null
+      endDate: string | null
     } | null>
   } | null
 }

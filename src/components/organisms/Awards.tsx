@@ -1,7 +1,7 @@
 'use client'
 
 import Container from '@components/atoms/Container'
-import { Award, useTopQuery } from '@graphql/generated/graphql'
+import { type Award, useTopQuery } from '@graphql/generated/graphql'
 import { useLocale } from '@hooks/Locale'
 import { formatYearMonth } from '@utils/date'
 import React from 'react'
@@ -16,24 +16,30 @@ const Awards: React.FC = () => {
     },
   })
 
+  const awardInfo = (
+    award: Pick<Award, 'name' | 'publication' | 'awardDate'>,
+  ) => {
+    return [
+      award.name,
+      award.publication,
+      award.awardDate ? formatYearMonth(award.awardDate) : null,
+    ]
+      .filter((value) => value)
+      .join(', ')
+  }
+
   return (
     <Container>
       <h2 className="my-4 font-medium text-4xl">Awards</h2>
       <hr />
       <ul className="mt-4 mb-1 list-disc">
-        {data?.awards?.items.map((award: Award, index) => {
-          return (
+        {data?.awards?.items
+          .filter((item) => item != null)
+          .map((award, index) => (
             <li key={index} className="mx-10 mb-1">
-              {[
-                award.name,
-                award.publication,
-                award.awardDate ? formatYearMonth(award.awardDate) : null,
-              ]
-                .filter((value) => value)
-                .join(', ')}
+              {awardInfo(award)}
             </li>
-          )
-        })}
+          ))}
       </ul>
     </Container>
   )

@@ -1,7 +1,7 @@
 'use client'
 
 import Container from '@components/atoms/Container'
-import { useTopQuery, WorkExperience } from '@graphql/generated/graphql'
+import { useTopQuery, type WorkExperience } from '@graphql/generated/graphql'
 import { useLocale } from '@hooks/Locale'
 import { formatYearMonth } from '@utils/date'
 import React from 'react'
@@ -16,7 +16,9 @@ const WorkExperiences: React.FC = () => {
     },
   })
 
-  const workDate = (workExperience: WorkExperience) => {
+  const workDate = (
+    workExperience: Pick<WorkExperience, 'startDate' | 'endDate'>,
+  ) => {
     const startDate = workExperience.startDate
       ? formatYearMonth(workExperience.startDate)
       : null
@@ -37,8 +39,9 @@ const WorkExperiences: React.FC = () => {
       <h2 className="my-4 font-medium text-4xl">Work Experiences</h2>
       <hr />
       <ul className="mt-4 mb-1 list-disc">
-        {data?.workExperiences?.items.map(
-          (workExperience: WorkExperience, index) => {
+        {data?.workExperiences?.items
+          .filter((item) => item != null)
+          .map((workExperience, index) => {
             return (
               <li key={index} className="mx-10 mb-1">
                 {[
@@ -50,8 +53,7 @@ const WorkExperiences: React.FC = () => {
                   .join(', ')}
               </li>
             )
-          },
-        )}
+          })}
       </ul>
     </Container>
   )
