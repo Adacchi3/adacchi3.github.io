@@ -25,6 +25,8 @@ jobs:
         run: yarn install --frozen-lockfile
       - name: Run codegen
         run: yarn generate
+      - name: Format generated files
+        run: yarn biome check --write src/graphql/generated/graphql.tsx src/graphql/graphql.schema.json
       - name: Check for changes
         run: |
           if ! git diff --exit-code src/graphql/generated/graphql.tsx src/graphql/graphql.schema.json; then

@@ -1,7 +1,10 @@
 'use client'
 
 import Container from '@components/atoms/Container'
-import { AcademicBackground, useTopQuery } from '@graphql/generated/graphql'
+import {
+  type AcademicBackground,
+  useTopQuery,
+} from '@graphql/generated/graphql'
 import { useLocale } from '@hooks/Locale'
 import { formatYearMonth } from '@utils/date'
 import React from 'react'
@@ -16,7 +19,9 @@ const AcademicBackgrounds: React.FC = () => {
     },
   })
 
-  const academicDate = (academicBackground: AcademicBackground) => {
+  const academicDate = (
+    academicBackground: Pick<AcademicBackground, 'startDate' | 'endDate'>,
+  ) => {
     const startDate = academicBackground.startDate
       ? formatYearMonth(academicBackground.startDate)
       : null
@@ -37,8 +42,9 @@ const AcademicBackgrounds: React.FC = () => {
       <h2 className="my-4 font-medium text-4xl">Academic Backgrounds</h2>
       <hr />
       <ul className="mt-4 mb-1 list-disc">
-        {data?.academicBackgroundCollection?.items.map(
-          (academicBackgournd: AcademicBackground, index) => {
+        {data?.academicBackgroundCollection?.items
+          .filter((item) => item != null)
+          .map((academicBackgournd, index) => {
             return (
               <li key={index} className="mx-10 mb-1">
                 {[
@@ -49,8 +55,7 @@ const AcademicBackgrounds: React.FC = () => {
                   .join(', ')}
               </li>
             )
-          },
-        )}
+          })}
       </ul>
     </Container>
   )
