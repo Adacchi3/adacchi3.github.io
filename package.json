@@ -41,7 +41,7 @@
     "cssnano": "8.0.2",
     "husky": "9.1.7",
     "lint-staged": "17.1.0",
-    "postcss": "8.5.21",
+    "postcss": "8.5.22",
     "serve": "14.2.6",
     "tailwindcss": "4.3.3",
     "typescript": "6.0.3"
