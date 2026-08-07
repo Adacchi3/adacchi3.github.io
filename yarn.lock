@@ -12,9 +12,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@apollo/client@npm:4.2.7":
-  version: 4.2.7
-  resolution: "@apollo/client@npm:4.2.7"
+"@apollo/client@npm:4.2.8":
+  version: 4.2.8
+  resolution: "@apollo/client@npm:4.2.8"
   dependencies:
     "@graphql-typed-document-node/core": "npm:^3.1.1"
     "@wry/caches": "npm:^1.0.0"
@@ -39,7 +39,7 @@ __metadata:
       optional: true
     subscriptions-transport-ws:
       optional: true
-  checksum: 10c0/77b4ab06cb7a7c824f88ef5b2e0ddd21d9ff284feec9c333c6cfd8bb3d684d8d1655d505f81ae7f750d4a9026cf7f88dcdfcb446276c562790026c76e2dc8b46
+  checksum: 10c0/ec98549965edc40eba5bd869f2633e6b1097ba5a87d92eb2d0325d8079663ca16cf856e1b1e7767bce47c0d9f617bcf82442fc6dcb3a00b28806be781b827c0a
   languageName: node
   linkType: hard
 
@@ -424,18 +424,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@biomejs/biome@npm:2.5.5":
-  version: 2.5.5
-  resolution: "@biomejs/biome@npm:2.5.5"
+"@biomejs/biome@npm:2.5.6":
+  version: 2.5.6
+  resolution: "@biomejs/biome@npm:2.5.6"
   dependencies:
-    "@biomejs/cli-darwin-arm64": "npm:2.5.5"
-    "@biomejs/cli-darwin-x64": "npm:2.5.5"
-    "@biomejs/cli-linux-arm64": "npm:2.5.5"
-    "@biomejs/cli-linux-arm64-musl": "npm:2.5.5"
-    "@biomejs/cli-linux-x64": "npm:2.5.5"
-    "@biomejs/cli-linux-x64-musl": "npm:2.5.5"
-    "@biomejs/cli-win32-arm64": "npm:2.5.5"
-    "@biomejs/cli-win32-x64": "npm:2.5.5"
+    "@biomejs/cli-darwin-arm64": "npm:2.5.6"
+    "@biomejs/cli-darwin-x64": "npm:2.5.6"
+    "@biomejs/cli-linux-arm64": "npm:2.5.6"
+    "@biomejs/cli-linux-arm64-musl": "npm:2.5.6"
+    "@biomejs/cli-linux-x64": "npm:2.5.6"
+    "@biomejs/cli-linux-x64-musl": "npm:2.5.6"
+    "@biomejs/cli-win32-arm64": "npm:2.5.6"
+    "@biomejs/cli-win32-x64": "npm:2.5.6"
   dependenciesMeta:
     "@biomejs/cli-darwin-arm64":
       optional: true
@@ -455,62 +455,62 @@ __metadata:
       optional: true
   bin:
     biome: bin/biome
-  checksum: 10c0/740fb6c160cd7257a9f974beaf0b7c0130c2b8b1dbe739a12c72bd5c64970936dbec4c6e55ddd48aae426f6ebba04f74fa46e3a2c6cbfba2c5a79d060711cf58
+  checksum: 10c0/e3d1dbcde77c756933241b3e2e7e1bec7ea54a6137791c50afbada925c69852f50bd08c1554afba6d74cd6cb0b7d1f79525348b95368cc863060c37c2864f0d9
   languageName: node
   linkType: hard
 
-"@biomejs/cli-darwin-arm64@npm:2.5.5":
-  version: 2.5.5
-  resolution: "@biomejs/cli-darwin-arm64@npm:2.5.5"
+"@biomejs/cli-darwin-arm64@npm:2.5.6":
+  version: 2.5.6
+  resolution: "@biomejs/cli-darwin-arm64@npm:2.5.6"
   conditions: os=darwin & cpu=arm64
   languageName: node
   linkType: hard
 
-"@biomejs/cli-darwin-x64@npm:2.5.5":
-  version: 2.5.5
-  resolution: "@biomejs/cli-darwin-x64@npm:2.5.5"
+"@biomejs/cli-darwin-x64@npm:2.5.6":
+  version: 2.5.6
+  resolution: "@biomejs/cli-darwin-x64@npm:2.5.6"
   conditions: os=darwin & cpu=x64
   languageName: node
   linkType: hard
 
-"@biomejs/cli-linux-arm64-musl@npm:2.5.5":
-  version: 2.5.5
-  resolution: "@biomejs/cli-linux-arm64-musl@npm:2.5.5"
+"@biomejs/cli-linux-arm64-musl@npm:2.5.6":
+  version: 2.5.6
+  resolution: "@biomejs/cli-linux-arm64-musl@npm:2.5.6"
   conditions: os=linux & cpu=arm64 & libc=musl
   languageName: node
   linkType: hard
 
-"@biomejs/cli-linux-arm64@npm:2.5.5":
-  version: 2.5.5
-  resolution: "@biomejs/cli-linux-arm64@npm:2.5.5"
+"@biomejs/cli-linux-arm64@npm:2.5.6":
+  version: 2.5.6
+  resolution: "@biomejs/cli-linux-arm64@npm:2.5.6"
   conditions: os=linux & cpu=arm64 & libc=glibc
   languageName: node
   linkType: hard
 
-"@biomejs/cli-linux-x64-musl@npm:2.5.5":
-  version: 2.5.5
-  resolution: "@biomejs/cli-linux-x64-musl@npm:2.5.5"
+"@biomejs/cli-linux-x64-musl@npm:2.5.6":
+  version: 2.5.6
+  resolution: "@biomejs/cli-linux-x64-musl@npm:2.5.6"
   conditions: os=linux & cpu=x64 & libc=musl
   languageName: node
   linkType: hard
 
-"@biomejs/cli-linux-x64@npm:2.5.5":
-  version: 2.5.5
-  resolution: "@biomejs/cli-linux-x64@npm:2.5.5"
+"@biomejs/cli-linux-x64@npm:2.5.6":
+  version: 2.5.6
+  resolution: "@biomejs/cli-linux-x64@npm:2.5.6"
   conditions: os=linux & cpu=x64 & libc=glibc
   languageName: node
   linkType: hard
 
-"@biomejs/cli-win32-arm64@npm:2.5.5":
-  version: 2.5.5
-  resolution: "@biomejs/cli-win32-arm64@npm:2.5.5"
+"@biomejs/cli-win32-arm64@npm:2.5.6":
+  version: 2.5.6
+  resolution: "@biomejs/cli-win32-arm64@npm:2.5.6"
   conditions: os=win32 & cpu=arm64
   languageName: node
   linkType: hard
 
-"@biomejs/cli-win32-x64@npm:2.5.5":
-  version: 2.5.5
-  resolution: "@biomejs/cli-win32-x64@npm:2.5.5"
+"@biomejs/cli-win32-x64@npm:2.5.6":
+  version: 2.5.6
+  resolution: "@biomejs/cli-win32-x64@npm:2.5.6"
   conditions: os=win32 & cpu=x64
   languageName: node
   linkType: hard
@@ -844,13 +844,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@graphql-codegen/typescript-operations@npm:6.1.1":
-  version: 6.1.1
-  resolution: "@graphql-codegen/typescript-operations@npm:6.1.1"
+"@graphql-codegen/typescript-operations@npm:6.1.2":
+  version: 6.1.2
+  resolution: "@graphql-codegen/typescript-operations@npm:6.1.2"
   dependencies:
     "@graphql-codegen/plugin-helpers": "npm:^7.1.0"
     "@graphql-codegen/schema-ast": "npm:^6.1.0"
-    "@graphql-codegen/visitor-plugin-common": "npm:^7.2.1"
+    "@graphql-codegen/visitor-plugin-common": "npm:^7.2.2"
     auto-bind: "npm:^5.0.0"
     tslib: "npm:^2.8.0"
   peerDependencies:
@@ -859,7 +859,7 @@ __metadata:
   peerDependenciesMeta:
     graphql-sock:
       optional: true
-  checksum: 10c0/60ce68240c1b50d28b25bcca95e432f4177321f09ebf41e6789fd898ab0395bcac7394222d752bce25e4f1f777a5d410165c9c7327da97f4b00a502bce68e51b
+  checksum: 10c0/9bdba2da163816bb9b47e8724a8a6e55f32119ce26df3b0c0824779d1302b7556eb52b3aab95e04e9eb19a57fbd55362eae499f6224f3960ed618134f96d6679
   languageName: node
   linkType: hard
 
@@ -952,7 +952,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@graphql-codegen/visitor-plugin-common@npm:^7.2.1":
+"@graphql-codegen/visitor-plugin-common@npm:^7.2.2":
   version: 7.2.2
   resolution: "@graphql-codegen/visitor-plugin-common@npm:7.2.2"
   dependencies:
@@ -1993,65 +1993,65 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@next/env@npm:16.2.11":
-  version: 16.2.11
-  resolution: "@next/env@npm:16.2.11"
-  checksum: 10c0/fdb5ff54037f5e554c7452a31f745e40a02ea55416b80c9abf5ebb3b6fba54beaa15e080fc8470f9a59b3a0506c7ce775764134256d413f17e17e4f92802cee3
+"@next/env@npm:16.2.12":
+  version: 16.2.12
+  resolution: "@next/env@npm:16.2.12"
+  checksum: 10c0/08cab40af01303ff44ba835cd8761cc248e02d27d589d59fae3780566cd95fe8f053f40b44516fc8ff1984ab32981c0973bd1923977f255fdbb2376ac53ba783
   languageName: node
   linkType: hard
 
-"@next/swc-darwin-arm64@npm:16.2.11":
-  version: 16.2.11
-  resolution: "@next/swc-darwin-arm64@npm:16.2.11"
+"@next/swc-darwin-arm64@npm:16.2.12":
+  version: 16.2.12
+  resolution: "@next/swc-darwin-arm64@npm:16.2.12"
   conditions: os=darwin & cpu=arm64
   languageName: node
   linkType: hard
 
-"@next/swc-darwin-x64@npm:16.2.11":
-  version: 16.2.11
-  resolution: "@next/swc-darwin-x64@npm:16.2.11"
+"@next/swc-darwin-x64@npm:16.2.12":
+  version: 16.2.12
+  resolution: "@next/swc-darwin-x64@npm:16.2.12"
   conditions: os=darwin & cpu=x64
   languageName: node
   linkType: hard
 
-"@next/swc-linux-arm64-gnu@npm:16.2.11":
-  version: 16.2.11
-  resolution: "@next/swc-linux-arm64-gnu@npm:16.2.11"
+"@next/swc-linux-arm64-gnu@npm:16.2.12":
+  version: 16.2.12
+  resolution: "@next/swc-linux-arm64-gnu@npm:16.2.12"
   conditions: os=linux & cpu=arm64 & libc=glibc
   languageName: node
   linkType: hard
 
-"@next/swc-linux-arm64-musl@npm:16.2.11":
-  version: 16.2.11
-  resolution: "@next/swc-linux-arm64-musl@npm:16.2.11"
+"@next/swc-linux-arm64-musl@npm:16.2.12":
+  version: 16.2.12
+  resolution: "@next/swc-linux-arm64-musl@npm:16.2.12"
   conditions: os=linux & cpu=arm64 & libc=musl
   languageName: node
   linkType: hard
 
-"@next/swc-linux-x64-gnu@npm:16.2.11":
-  version: 16.2.11
-  resolution: "@next/swc-linux-x64-gnu@npm:16.2.11"
+"@next/swc-linux-x64-gnu@npm:16.2.12":
+  version: 16.2.12
+  resolution: "@next/swc-linux-x64-gnu@npm:16.2.12"
   conditions: os=linux & cpu=x64 & libc=glibc
   languageName: node
   linkType: hard
 
-"@next/swc-linux-x64-musl@npm:16.2.11":
-  version: 16.2.11
-  resolution: "@next/swc-linux-x64-musl@npm:16.2.11"
+"@next/swc-linux-x64-musl@npm:16.2.12":
+  version: 16.2.12
+  resolution: "@next/swc-linux-x64-musl@npm:16.2.12"
   conditions: os=linux & cpu=x64 & libc=musl
   languageName: node
   linkType: hard
 
-"@next/swc-win32-arm64-msvc@npm:16.2.11":
-  version: 16.2.11
-  resolution: "@next/swc-win32-arm64-msvc@npm:16.2.11"
+"@next/swc-win32-arm64-msvc@npm:16.2.12":
+  version: 16.2.12
+  resolution: "@next/swc-win32-arm64-msvc@npm:16.2.12"
   conditions: os=win32 & cpu=arm64
   languageName: node
   linkType: hard
 
-"@next/swc-win32-x64-msvc@npm:16.2.11":
-  version: 16.2.11
-  resolution: "@next/swc-win32-x64-msvc@npm:16.2.11"
+"@next/swc-win32-x64-msvc@npm:16.2.12":
+  version: 16.2.12
+  resolution: "@next/swc-win32-x64-msvc@npm:16.2.12"
   conditions: os=win32 & cpu=x64
   languageName: node
   linkType: hard
@@ -2525,12 +2525,12 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "adacchi3.github.io@workspace:."
   dependencies:
-    "@apollo/client": "npm:4.2.7"
-    "@biomejs/biome": "npm:2.5.5"
+    "@apollo/client": "npm:4.2.8"
+    "@biomejs/biome": "npm:2.5.6"
     "@graphql-codegen/cli": "npm:7.2.0"
     "@graphql-codegen/introspection": "npm:6.1.0"
     "@graphql-codegen/typescript": "npm:6.1.0"
-    "@graphql-codegen/typescript-operations": "npm:6.1.1"
+    "@graphql-codegen/typescript-operations": "npm:6.1.2"
     "@graphql-codegen/typescript-react-apollo": "npm:4.4.2"
     "@headlessui/react": "npm:2.2.10"
     "@heroicons/react": "npm:2.2.0"
@@ -2542,10 +2542,10 @@ __metadata:
     deepmerge: "npm:4.3.1"
     graphql: "npm:16.14.2"
     husky: "npm:9.1.7"
-    lint-staged: "npm:17.1.0"
+    lint-staged: "npm:17.2.0"
     lodash: "npm:4.18.1"
-    next: "npm:16.2.11"
-    postcss: "npm:8.5.23"
+    next: "npm:16.2.12"
+    postcss: "npm:8.5.24"
     react: "npm:19.2.8"
     react-dom: "npm:19.2.8"
     react-gtm-module: "npm:2.0.11"
@@ -3679,9 +3679,9 @@ __metadata:
   linkType: hard
 
 "fast-uri@npm:^3.0.1":
-  version: 3.1.5
-  resolution: "fast-uri@npm:3.1.5"
-  checksum: 10c0/2bf60eb800dd610c65e17be436425dcb21c92aff3a87d442a8bccab0b7b071e88cf1a5d7d1ea946370b937e6fc0375c405c0296c10587e57de4f78be4646d1d0
+  version: 3.1.4
+  resolution: "fast-uri@npm:3.1.4"
+  checksum: 10c0/f90948821ceb49980f64f89b8216ba498f5957f26035be813526a55b6145d26cbd63ef5618d5205a3292b31edc9c08589749350cd72bd86c7095eb434dceb757
   languageName: node
   linkType: hard
 
@@ -4331,9 +4331,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lint-staged@npm:17.1.0":
-  version: 17.1.0
-  resolution: "lint-staged@npm:17.1.0"
+"lint-staged@npm:17.2.0":
+  version: 17.2.0
+  resolution: "lint-staged@npm:17.2.0"
   dependencies:
     picomatch: "npm:^4.0.5"
     string-argv: "npm:^0.3.2"
@@ -4344,7 +4344,7 @@ __metadata:
       optional: true
   bin:
     lint-staged: bin/lint-staged.js
-  checksum: 10c0/70d09008f7fb1b451e52ff6743f3d562b9c4d694ea5a6c038159ac11bbff1bb887952fc78ff3ca74af064bf95388a762c1ec32c0a6c3fd47509a29be13b9f013
+  checksum: 10c0/47eb70637304faa5c723a7adee4f7699a78f928b710b09f167240642285656cf0987b316e3ad4ca34bda10466fbad7a1cb4922cfbf470e5ad0d836eb384f2809
   languageName: node
   linkType: hard
 
@@ -4617,19 +4617,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"next@npm:16.2.11":
-  version: 16.2.11
-  resolution: "next@npm:16.2.11"
+"next@npm:16.2.12":
+  version: 16.2.12
+  resolution: "next@npm:16.2.12"
   dependencies:
-    "@next/env": "npm:16.2.11"
-    "@next/swc-darwin-arm64": "npm:16.2.11"
-    "@next/swc-darwin-x64": "npm:16.2.11"
-    "@next/swc-linux-arm64-gnu": "npm:16.2.11"
-    "@next/swc-linux-arm64-musl": "npm:16.2.11"
-    "@next/swc-linux-x64-gnu": "npm:16.2.11"
-    "@next/swc-linux-x64-musl": "npm:16.2.11"
-    "@next/swc-win32-arm64-msvc": "npm:16.2.11"
-    "@next/swc-win32-x64-msvc": "npm:16.2.11"
+    "@next/env": "npm:16.2.12"
+    "@next/swc-darwin-arm64": "npm:16.2.12"
+    "@next/swc-darwin-x64": "npm:16.2.12"
+    "@next/swc-linux-arm64-gnu": "npm:16.2.12"
+    "@next/swc-linux-arm64-musl": "npm:16.2.12"
+    "@next/swc-linux-x64-gnu": "npm:16.2.12"
+    "@next/swc-linux-x64-musl": "npm:16.2.12"
+    "@next/swc-win32-arm64-msvc": "npm:16.2.12"
+    "@next/swc-win32-x64-msvc": "npm:16.2.12"
     "@swc/helpers": "npm:0.5.15"
     baseline-browser-mapping: "npm:^2.9.19"
     caniuse-lite: "npm:^1.0.30001579"
@@ -4673,7 +4673,7 @@ __metadata:
       optional: true
   bin:
     next: dist/bin/next
-  checksum: 10c0/81f85262cf01ad6b4fd4a8be369925dfe206806a33e967733033d7adcf367aa0ba1f911272de6169a3d09315821eddf6b57594337a456ad134ba5aa8870a80b1
+  checksum: 10c0/e7d539d3d030fd31b6e47f14639508db3901480b7d5477709c8f980d3153c91098d4a5b10a44bfe0d6914495cb92ca628357bb72743faa473158629bdfe8b924
   languageName: node
   linkType: hard
 
@@ -5273,18 +5273,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss@npm:8.5.23":
-  version: 8.5.23
-  resolution: "postcss@npm:8.5.23"
-  dependencies:
-    nanoid: "npm:^3.3.16"
-    picocolors: "npm:^1.1.1"
-    source-map-js: "npm:^1.2.1"
-  checksum: 10c0/ed714e635b330bb42666ecdd0c0b4f30224ded15b0b0052d6bc2b92832f2cf17d1c1141359453f96f0a84f8fbf4c405a74df187f559163b8f31131b2535455aa
-  languageName: node
-  linkType: hard
-
-"postcss@npm:^8.5.16":
+"postcss@npm:8.5.24, postcss@npm:^8.5.16":
   version: 8.5.24
   resolution: "postcss@npm:8.5.24"
   dependencies:
