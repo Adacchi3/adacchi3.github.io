@@ -6,11 +6,13 @@ Adacchi3 の個人ポートフォリオサイト。Next.js + Contentful で構�
 
 ## 技術スタック
 
-- **フレームワーク:** Next.js 15 / React 18 / TypeScript 5
-- **スタイリング:** Tailwind CSS v4
+- **フレームワーク:** Next.js / React / TypeScript
+- **スタイリング:** Tailwind CSS
 - **CMS:** Contentful (Apollo Client / GraphQL)
 - **リンター:** Biome
-- **パッケージマネージャー:** Yarn v4
+- **パッケージマネージャー:** Yarn
+
+バージョンは `package.json` を参照。
 
 ## 開発コマンド
 

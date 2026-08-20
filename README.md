@@ -6,12 +6,14 @@ Adacchi3 の個人ポートフォリオサイト。Next.js + Contentful で構�
 
 | Category | Technology |
 |----------|-----------|
-| Framework | Next.js 15 / React 18 / TypeScript 5 |
-| Styling | Tailwind CSS v4 |
+| Framework | Next.js / React / TypeScript |
+| Styling | Tailwind CSS |
 | CMS | Contentful (Apollo Client / GraphQL) |
 | Linter | Biome |
-| Package Manager | Yarn v4 |
+| Package Manager | Yarn |
 | Hosting | GitHub Pages |
+
+バージョンは `package.json` を参照。
 
 ## Getting Started
 
