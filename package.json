@@ -15,7 +15,7 @@
     "generate": "graphql-codegen --config codegen.yml"
   },
   "dependencies": {
-    "@apollo/client": "4.3.0",
+    "@apollo/client": "4.3.1",
     "@headlessui/react": "2.2.10",
     "@heroicons/react": "2.2.0",
     "date-fns": "4.4.0",
@@ -29,16 +29,16 @@
     "rxjs": "^7.8.2"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.5.13",
-    "@graphql-codegen/cli": "7.4.1",
+    "@biomejs/biome": "2.5.14",
+    "@graphql-codegen/cli": "7.4.2",
     "@graphql-codegen/introspection": "6.1.0",
     "@graphql-codegen/typescript": "6.1.0",
-    "@graphql-codegen/typescript-operations": "6.1.6",
+    "@graphql-codegen/typescript-operations": "6.1.7",
     "@graphql-codegen/typescript-react-apollo": "5.0.0",
     "@tailwindcss/postcss": "4.3.3",
     "@types/react": "19",
     "@types/react-gtm-module": "2.0.4",
-    "cssnano": "9.0.4",
+    "cssnano": "9.0.5",
     "husky": "9.1.7",
     "lint-staged": "17.5.1",
     "postcss": "8.5.28",
