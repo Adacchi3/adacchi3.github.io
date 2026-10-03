@@ -44,6 +44,8 @@ PR $ARGUMENTS をレビューし、指摘があれば行ごとにコメントす
 
 ## レビューコメントの投稿
 
+レビュー全体のコメント・行ごとのコメント・PR へのコメントは、すべて**日本語**で書く（マージ見送りの報告コメントも含む）。
+
 ```bash
 gh api repos/Adacchi3/adacchi3.github.io/pulls/$ARGUMENTS/reviews \
   --method POST \
