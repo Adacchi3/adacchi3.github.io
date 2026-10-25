@@ -1,8 +1,10 @@
 'use client'
 
+import { useQuery } from '@apollo/client/react'
 import AchievementList from '@components/atoms/AchievementList'
 import Container from '@components/atoms/Container'
-import { Achievement, useTopQuery } from '@graphql/generated/graphql'
+import type { Achievement } from '@custom_types/top'
+import { TopDocument } from '@graphql/generated/graphql'
 import { useLocale } from '@hooks/Locale'
 import React from 'react'
 
@@ -25,7 +27,7 @@ const convertCategoryKeyObject = (items, locale) => {
 
 const Achievements: React.FC = () => {
   const locale = useLocale()
-  const { data } = useTopQuery({
+  const { data } = useQuery(TopDocument, {
     variables: {
       preview: process.env.PREVIEW === 'true',
       locale: locale,

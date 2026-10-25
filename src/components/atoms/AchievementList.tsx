@@ -1,4 +1,4 @@
-import { Achievement } from '@graphql/generated/graphql'
+import type { Achievement } from '@custom_types/top'
 import { formatYearMonth } from '@utils/date'
 import React from 'react'
 

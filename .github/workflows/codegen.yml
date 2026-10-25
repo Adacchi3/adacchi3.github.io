@@ -26,10 +26,10 @@ jobs:
       - name: Run codegen
         run: yarn generate
       - name: Format generated files
-        run: yarn biome check --write src/graphql/generated/graphql.tsx src/graphql/graphql.schema.json
+        run: yarn biome check --write src/graphql/generated/graphql.ts src/graphql/graphql.schema.json
       - name: Check for changes
         run: |
-          if ! git diff --exit-code src/graphql/generated/graphql.tsx src/graphql/graphql.schema.json; then
+          if ! git diff --exit-code src/graphql/generated/graphql.ts src/graphql/graphql.schema.json; then
             echo "Generated files are out of date. Run 'yarn generate' and commit the result."
             exit 1
           fi

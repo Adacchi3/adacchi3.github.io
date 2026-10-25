@@ -1,6 +1,5 @@
 import { ApolloClient, HttpLink, InMemoryCache } from '@apollo/client'
-import { TopDocument } from '@graphql/documents'
-import type { TopQuery } from '@graphql/generated/graphql'
+import { TopDocument, type TopQuery } from '@graphql/generated/graphql'
 import merge from 'deepmerge'
 import isEqual from 'lodash/isEqual'
 
@@ -30,7 +29,7 @@ export function makeClient() {
 
 export async function prefetchTopData(locale: string) {
   const client = makeClient()
-  const result = await client.query<TopQuery>({
+  const result = await client.query({
     query: TopDocument,
     variables: {
       preview: process.env.PREVIEW === 'true',

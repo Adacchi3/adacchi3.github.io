@@ -1,14 +1,15 @@
 'use client'
 
+import { useQuery } from '@apollo/client/react'
 import Container from '@components/atoms/Container'
-import { useTopQuery } from '@graphql/generated/graphql'
+import { TopDocument } from '@graphql/generated/graphql'
 import { useLocale } from '@hooks/Locale'
 import React from 'react'
 import SimpleFormat from '../../lib/SimpleFormat'
 
 const AboutUs: React.FC = () => {
   const locale = useLocale()
-  const { data } = useTopQuery({
+  const { data } = useQuery(TopDocument, {
     variables: {
       preview: process.env.PREVIEW === 'true',
       locale: locale,
