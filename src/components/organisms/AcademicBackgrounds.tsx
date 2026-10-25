@@ -1,17 +1,16 @@
 'use client'
 
+import { useQuery } from '@apollo/client/react'
 import Container from '@components/atoms/Container'
-import {
-  type AcademicBackground,
-  useTopQuery,
-} from '@graphql/generated/graphql'
+import type { AcademicBackground } from '@custom_types/top'
+import { TopDocument } from '@graphql/generated/graphql'
 import { useLocale } from '@hooks/Locale'
 import { formatYearMonth } from '@utils/date'
 import React from 'react'
 
 const AcademicBackgrounds: React.FC = () => {
   const locale = useLocale()
-  const { data } = useTopQuery({
+  const { data } = useQuery(TopDocument, {
     variables: {
       preview: process.env.PREVIEW === 'true',
       locale: locale,
