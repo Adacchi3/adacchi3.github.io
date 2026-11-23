@@ -15,10 +15,12 @@ updates:
           - "react"
           - "react-dom"
           - "@types/react"
+      graphql-codegen:
+        patterns:
+          - "@graphql-codegen/*"
       graphql:
         patterns:
           - "graphql"
-          - "@graphql-codegen/*"
       npm-minor-and-patch:
         update-types:
           - minor
